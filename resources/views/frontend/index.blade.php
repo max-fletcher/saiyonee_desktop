@@ -136,9 +136,9 @@
             }
         }
 
-        .banner_image_text{
+        /* .banner_image_text{
             margin-top: 100px;
-        }
+        } */
 
     </style>
 @endpush

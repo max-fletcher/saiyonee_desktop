@@ -89,15 +89,9 @@
             var email = $("#contact_us_email").val()
             var message = $("#contact_us_message").val()
 
-            var formData = {
-                name: $("#name").val(),
-                email: $("#email").val(),
-                superheroAlias: $("#superheroAlias").val(),
-            };
-
             $.ajax({
-                url: '{{ route("ajax_toggle_featured") }}',
-                type: 'GET',
+                url: "{{ env('SAIYONEE_BACKEND_URL') }} . '/api/submit_contact_us_mail'",
+                type: 'POST',
                 data: {
                     name: name,
                     email: email,
