@@ -80,7 +80,8 @@
         }
 
         .apps_para{
-            font-weight: 500;
+            font-weight: 600;
+            line-height: 1.6;
         }
 
         .lead{
@@ -352,6 +353,7 @@
         </div>
     </section>
 
+    {{-- POPUP MODAL ON PAGE LOAD --}}
     <div class="modal fade" id="newsletter_modal" tabindex="-1" aria-labelledby="newsletter_modal_label" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -383,11 +385,9 @@
 @push('page-specific-js')
     <script>
         $( document ).ready(function() {
-            // var newsletter_modal = document.getElementById('newsletter_modal')
-            // newsletter_modal.show();
             setTimeout(() => {
                 $("#newsletter_modal").modal('show');
-            }, 2000);
+            }, 3000);
         });
     </script>
 @endpush

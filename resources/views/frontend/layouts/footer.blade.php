@@ -71,9 +71,9 @@ footer -->
                 <div class="footer-logo mb-2"> <img class="img-center" src="{{ asset('frontend/images/saiyonee-header.png') }}" alt="" /> </div>
                 <div class="social-icons color-hover mt-2">
                     <ul>
-                    <li class="social-facebook"><a href="#" class="text-dark"><i class="fa fa-facebook social_link"></i></a></li>
-                    <li class="social-instagram"><a href="#" class="text-dark"><i class="fa fa-instagram social_link"></i></a></li>
-                    <li class="social-linkedin"><a href="#" class="text-dark"><i class="fa fa-linkedin social_link"></i></a></li>
+                    <li class="social-facebook"><a href="https://www.facebook.com/saiyonee" class="text-dark icon_link"><i class="fa fa-facebook social_link"></i></a></li>
+                    <li class="social-instagram"><a href="https://www.instagram.com/my_saiyonee" class="text-dark icon_link"><i class="fa fa-instagram social_link"></i></a></li>
+                    <li class="social-linkedin"><a href="#" class="text-dark icon_link"><i class="fa fa-linkedin social_link"></i></a></li>
                     {{-- <li class="social-twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
                     <li class="social-dribbble"><a href="#"><i class="fa fa-dribbble"></i></a></li>
                     <li class="social-gplus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
@@ -117,6 +117,7 @@ footer -->
 
     .copyright{
         color: #212529!important;
+        font-weight: 600;
     }
 
     #newsletter_modal{
@@ -125,5 +126,9 @@ footer -->
 
     #newsletter_modal>.modal-dialog>.modal-content>.modal-header{
         border-bottom: none;
+    }
+
+    .icon_link{
+        padding-top: 4px;
     }
 </style>
