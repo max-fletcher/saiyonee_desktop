@@ -34,30 +34,30 @@ footer -->
                 <div class="row mb-0 mb-md-2 mb-lg-3 mb-xl-4">
                     <div class="col-md-12 mb-0 mb-lg-2">
                         <div id="formmessage" style="display:none">Success/Error Message Goes Here</div>
-                        <form id="contactform" class="main-form" method="post" action="http://themes.potenzaglobalsolutions.com/html/cupid-love-dating-website-html5-template/cupid-love/php/contact-form.php">
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                <div class="input-group">
-                                    <input id="name" placeholder="Your name here" class="form-control input_text" name="name" type="text">
+                            <form id="contactform" class="main-form">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <div class="input-group">
+                                            <input id="contact_us_name" placeholder="Your name here" class="form-control input_text" name="name" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <div class="input-group">
+                                            <input id="contact_us_email" placeholder="Your mail here" class="form-control input_text" name="email" type="email">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 mb-3">
+                                        <div class="input-group">
+                                            <textarea id="contact_us_message" class="form-control input-message input_text" placeholder="Your message here*" rows="7" name="message"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 mb-0">
+                                        <input type="hidden" name="action" value="sendEmail" />
+                                        {{-- <button id="submit" name="submit" type="submit" value="Send" class="button btn-lg btn-theme full-rounded animated right-icn mb-0"><span>Submit Now<i class="glyph-icon flaticon-hearts" aria-hidden="true"></i></span></button> --}}
+                                        <button id="contact_us_submit" type="button" class="btn btn-light uppercase contact_us_submit_btn mt-5">Submit Now</button>
+                                    </div>
                                 </div>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                <div class="input-group">
-                                    <input id="email" placeholder="Your mail here" class="form-control input_text" name="email" type="email">
-                                </div>
-                                </div>
-                                <div class="col-md-12 mb-3">
-                                <div class="input-group">
-                                    <textarea id="message" class="form-control input-message input_text" placeholder="Your message here*" rows="7" name="message"></textarea>
-                                </div>
-                                </div>
-                                <div class="col-md-12 mb-0">
-                                <input type="hidden" name="action" value="sendEmail"/>
-                                {{-- <button id="submit" name="submit" type="submit" value="Send" class="button btn-lg btn-theme full-rounded animated right-icn mb-0"><span>Submit Now<i class="glyph-icon flaticon-hearts" aria-hidden="true"></i></span></button> --}}
-                                <button type="button" class="btn btn-light uppercase contact_us_submit_btn mt-5">Submit Now</button>
-                                </div>
-                            </div>
-                        </form>
+                            </form>
                         <div id="ajaxloader" style="display:none"><img class="center-block" src="{{ asset('frontend/images/loading.gif') }}" alt="" /></div>
                     </div>
                 </div>

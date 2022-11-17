@@ -82,6 +82,36 @@
         });
     </script>
 
+    <script>
+
+        $( "#contact_us_submit" ).on("click", function() {
+            var name = $("#contact_us_name").val()
+            var email = $("#contact_us_email").val()
+            var message = $("#contact_us_message").val()
+
+            var formData = {
+                name: $("#name").val(),
+                email: $("#email").val(),
+                superheroAlias: $("#superheroAlias").val(),
+            };
+
+            $.ajax({
+                url: '{{ route("ajax_toggle_featured") }}',
+                type: 'GET',
+                data: {
+                    name: name,
+                    email: email,
+                    message: message
+                },
+                success: function(response)
+                {
+                    console.log(response);
+                }
+            });
+
+            });
+    </script>
+
 </body>
 
 </html>
