@@ -53,7 +53,7 @@ var $window = $(window),
   $textrotate = $('.textrotate'),
   $bar = $('.bar'),
   $progressBar = $('.skill-bar'),
-  $fullScreen = $('.fullscreen') || $('.section-fullscreen'),
+  // $fullScreen = $('.fullscreen') || $('.section-fullscreen'),
   $halfScreen = $('.halfscreen'),
   $counter = $('.counter');
 

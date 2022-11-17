@@ -20,5 +20,4 @@ class FrontendController extends Controller
     {
         return view('frontend.story-details');
     }
-    
 }
