@@ -83,6 +83,39 @@
 
     <div id="back-to-top"><a class="top arrow" href="#top"><i class="fa fa-level-up"></i></a></div>
 
+
+
+    {{-- MAIL SENT SUCCESS --}}
+    <div class="modal fade" id="mail_sent_modal" tabindex="-1" aria-labelledby="mail_sent_modal_label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    {{-- <div class="modal-rounded-decoration">
+                    </div> --}}
+                        <h2 class="modal-head mail_sent_status"></h2>
+                    
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="newsletter_modal_body_text mail_sent_message"></h6>
+                    {{-- <form>
+                        <div class="mb-1">
+                            <label for="email" class="col-form-label newsletter_modal_form_label">Email:</label>
+                            <input type="text" class="form-control newsletter_modal_form_input" name="email" id="email" />
+                        </div>
+                    </form> --}}
+                </div>
+                {{-- <div class="modal-footer">
+                    <a target="_blank" href="https://app.saiyonee.com"><button type="button"  class="btn btn-light uppercase modal-button mt-3 mt-md-1">Continue </button></a>
+                    <p>By continuing you agree to our Terms and Privacy Policy.</p>
+                </div> --}}
+            </div>
+        </div>
+    </div>
+
+
+
+
     @include('frontend.layouts.inc.js')
 
     <script>
@@ -96,28 +129,59 @@
         });
     </script>
 
-    <script>
+    {{--             
+        // processData: false,
+        // accept: 'application/json',
+        // contentType: 'application/json',
+        // CrossDomain:true,
+        // async: false, 
+    --}}
 
-        $( "#contact_us_submit" ).on("click", function() {
+    <script>
+        $("#contact_us_submit" ).on("click", function() {
             var name = $("#contact_us_name").val()
             var email = $("#contact_us_email").val()
             var message = $("#contact_us_message").val()
 
+            console.log(name, email, message);
+
             $.ajax({
-                url: "{{ env('SAIYONEE_BACKEND_URL') }} . '/api/submit_contact_us_mail'",
+                url: "{{ route('submit_contact_us') }}",
                 type: 'POST',
                 data: {
+                    _token: "{{ csrf_token() }}",
                     name: name,
                     email: email,
                     message: message
                 },
-                success: function(response)
-                {
-                    console.log(response);
+                success: function(response){
+                    console.log(response.status);
+
+                    // clear fields
+                    $("#contact_us_name").val('')
+                    $("#contact_us_email").val('')
+                    $("#contact_us_message").val('')
+
+                    if(response.status === 'success'){
+                        $('.mail_sent_status').text('Mail Sent Successfully!')
+                        $('.mail_sent_message').text('Thank you for your valuable feedback. We will be with you shortly.')
+                        $("#mail_sent_modal").modal('show');
+                    }
+                    else if(response.status === 'failed'){
+                        $('.mail_sent_status').text('Whoops!')
+                        $('.mail_sent_message').text('Something went wrong! Please try again later or contact system administrators.')
+                        $("#mail_sent_modal").modal('show');
+                    }
+                },
+                error: function(request, status, error){
+                    // console.log('err', error, status, error);
+                    $('.mail_sent_status').text('Whoops!')
+                    $('.mail_sent_message').text('Something went wrong! Please try again later or contact system administrators.')
+                    $("#mail_sent_modal").modal('show');
                 }
             });
 
-            });
+        });
     </script>
 
 </body>

@@ -7,7 +7,7 @@ footer -->
                 <div class="row mb-4 mb-md-5">
                     <div class="col-md-12">
                         <h2 class="title divider mb-3 contact_us_title">Contact Us</h2>
-                       {{--  <p class="lead">We love our customers, so feel free to visit during normal business hours.</p> --}}
+                       {{--  <p cl0"lead">We love our customers, so feel free to visit during normal business hours.</p> --}}
                     </div>
                 </div>
                 <div class="row mb-4 mb-md-5">

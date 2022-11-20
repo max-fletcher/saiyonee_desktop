@@ -104,6 +104,12 @@
             font-weight: 500;
         }
 
+        .newsletter_modal_body_text{
+            font-size: 12px;
+            color: black;
+            font-weight: 600;
+        }
+
         .main_image{
             aspect-ratio: 1250/770;
             min-height: 400px;
@@ -447,7 +453,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <h6>The first 2000 sign-ups will get the opportunity to enjoy a
+                    <h6 class="newsletter_modal_body_text">The first 2000 sign-ups will get the opportunity to enjoy a
                      premium membership to our app. All the features of our app 
                       will be available to them free of cost! </h6>
                     {{-- <form>
@@ -474,7 +480,7 @@
         $( document ).ready(function() {
             setTimeout(() => {
                 $("#newsletter_modal").modal('show');
-            }, 1000);
+            }, 2000);
         });
     </script>
 @endpush
