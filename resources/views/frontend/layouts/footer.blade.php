@@ -71,13 +71,13 @@ footer -->
                 <div class="footer-logo mb-2"> <img class="img-center" src="{{ asset('frontend/images/saiyonee-header.png') }}" alt="" /> </div>
                 <div class="social-icons color-hover mt-2">
                     <ul>
-                    <li class="social-facebook"><a href="https://www.facebook.com/saiyonee" class="text-dark icon_link"><i class="fa fa-facebook social_link"></i></a></li>
-                    <li class="social-instagram"><a href="https://www.instagram.com/my_saiyonee" class="text-dark icon_link"><i class="fa fa-instagram social_link"></i></a></li>
-                    <li class="social-linkedin"><a href="#" class="text-dark icon_link"><i class="fa fa-linkedin social_link"></i></a></li>
-                    {{-- <li class="social-twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li class="social-dribbble"><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                    <li class="social-gplus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                    <li class="social-youtube"><a href="#"><i class="fa fa-youtube"></i></a></li> --}}
+                        <li class="social-facebook"><a href="https://www.facebook.com/saiyonee" class="text-dark icon_link"><i class="fa fa-facebook social_link"></i></a></li>
+                        <li class="social-instagram"><a href="https://www.instagram.com/my_saiyonee" class="text-dark icon_link"><i class="fa fa-instagram social_link"></i></a></li>
+                        {{-- <li class="social-linkedin"><a href="#" class="text-dark icon_link"><i class="fa fa-linkedin social_link"></i></a></li> --}}
+                        {{-- <li class="social-twitter"><a href="#" class="text-dark icon_link"><i class="fa fa-twitter social_link"></i></a></li> --}}
+                        {{-- <li class="social-dribbble"><a href="#" class="text-dark icon_link"><i class="fa fa-dribbble social_link"></i></a></li> --}}
+                        {{-- <li class="social-gplus"><a href="#" class="text-dark icon_link"><i class="fa fa-google-plus social_link"></i></a></li> --}}
+                        {{-- <li class="social-youtube"><a href="#" class="text-dark icon_link"><i class="fa fa-youtube social_link"></i></a></li> --}}
                     </ul>
                 </div>
                 <p class="copyright">© 2022  - Saiyonee All Right Reserved </p>

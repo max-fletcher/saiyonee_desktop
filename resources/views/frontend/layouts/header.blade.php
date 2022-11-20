@@ -14,10 +14,15 @@ header -->
             <div class="col-md-6">
             <div class="topbar-right text-end">
                 <ul class="list-inline social-icons color-hover">
-                <li class="social-facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li class="social-twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li class="social-instagram"><a href="#"><i class="fa fa-instagram"></i></a></li>
-                <li class="social-dribbble"><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                <li class="social-facebook"><a href="https://www.facebook.com/saiyonee"><i class="fa fa-facebook"></i></a></li>
+                <li class="social-instagram"><a href="https://www.instagram.com/my_saiyonee"><i class="fa fa-instagram"></i></a></li>
+                {{-- <li class="social-linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li> --}}
+                {{-- <li class="social-twitter"><a href="#"><i class="fa fa-twitter"></i></a></li> --}}
+                {{-- <li class="social-dribbble"><a href="#"><i class="fa fa-dribbble"></i></a></li> --}}
+                {{-- <li class="social-gplus"><a href="#"><i class="fa fa-google-plus"></i></a></li> --}}
+                {{-- <li class="social-youtube"><a href="#"><i class="fa fa-youtube"></i></a></li> --}}
+                
+                {{-- <li class="social-dribbble"><a href="#"><i class="fa fa-dribbble"></i></a></li> --}}
                 </ul>
                 {{-- <ul class="list-inline text-uppercase top-menu">
                 <li><a href="register.html">register</a></li>

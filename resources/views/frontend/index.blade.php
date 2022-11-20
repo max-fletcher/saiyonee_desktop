@@ -35,10 +35,6 @@
             }
         }
 
-        h2.title.divider, h2.title.divider-2, h2.title.divider-3, h4.title.divider-3{
-            color: #212529 !important;
-        }
-
         .apps_title{
             font-weight: 500;
             font-size: 60px;
@@ -48,6 +44,7 @@
 
         .register_btn{
             width: 55%;
+            min-width: 200px;
             border-radius: 22px;
             height: 60px;
             font-weight: 700;
@@ -82,10 +79,6 @@
         .apps_para{
             font-weight: 600;
             line-height: 1.6;
-        }
-
-        .lead{
-            color:#212529!important;
         }
 
         .newsletter_modal_header_text{
@@ -136,9 +129,51 @@
             }
         }
 
-        /* .banner_image_text{
-            margin-top: 100px;
+        .text_no_wrap{
+            white-space: nowrap;
+        }
+
+        @media only screen and (max-width: 1300px) {
+            .banner_image_text{
+                padding-top: 85px;
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+            .banner_image_text{
+                padding-top: 60px;
+            }
+        }
+
+        @media only screen and (min-width: 1200px) {
+            .founded_description{
+                margin-top: -138px;
+            }
+        }
+
+        @media only screen and (min-width: 992px) and (max-width: 1199px) {
+            .founded_description{
+                margin-top: -68px;
+            }
+        }
+
+        .modal-header{
+            padding: 0px;
+        }
+
+        .modal-header.btn-close{
+            margin: 0.5rem 0.5rem 0.5rem auto !important;
+        }
+
+        /* .modal-rounded-decoration{
+            background-color: #FFB7AC;
         } */
+
+        .modal-header-text{
+            position: absolute;
+            width: 89%;
+            background-color: #FFB7AC;
+        }
 
     </style>
 @endpush
@@ -156,7 +191,7 @@
                         <div class="col-md-12 text-start banner_image_text">
                             <h3 class="text-dark" style="font-weight: 600">Smarter Way to</h3>
                         <div class="slider-1">
-                            <h1 class="animated2 text-white divider-3">Find <span>Your</span> Perfect <span> Match !</span></h1>
+                            <h1 class="animated2 text-white divider-3">Find <span>Your</span> Perfect <span class="text_no_wrap"> Match !</span></h1>
                         </div>
                     </div>
                     </div>
@@ -253,7 +288,7 @@
             </div>
             <div class="row d-flex align-items-center">
             <div class="col-md-6 align-self-center mb-3"><img class="img-fluid" src="{{ asset('frontend/images/about/01.png') }}" alt="" /></div>
-            <div class="col-md-6">
+            <div class="col-md-6 founded_description">
                 <h3 class="title">Founded in 2020</h3>
                 <h5 class="clearfix text-orange mb-4">New Generation Matchmaking</h5>
                 <p class="mb-0">
@@ -266,6 +301,7 @@
         </div>
     </section>
 
+    {{-- COUNTERS SECTION --}}
     {{-- <section class="page-section-pb">
         <div class="container">
             <div class="row">
@@ -293,7 +329,8 @@
         </div>
     </section> --}}
 
-    <section id="blogs" class="page-section-ptb grey-bg">
+    {{-- RECENT BLOGS SECTION --}}
+    {{-- <section id="blogs" class="page-section-ptb grey-bg">
         <div class="container">
             <div class="row justify-content-center mb-5 sm-mb-3">
                 <div class="col-md-8 text-center">
@@ -351,28 +388,32 @@
             </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     {{-- POPUP MODAL ON PAGE LOAD --}}
     <div class="modal fade" id="newsletter_modal" tabindex="-1" aria-labelledby="newsletter_modal_label" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <div style="width: 100%;">
-                        <h5 class="modal-title newsletter_modal_header_text" id="newsletter_modal_label"> Subscribe To Our Newsletter </h5>
+                    {{-- <div class="modal-rounded-decoration">
+                    </div> --}}
+                    <div class="modal-header-text">
+                        header
                     </div>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    body
+                    {{-- <form>
                         <div class="mb-1">
                             <label for="email" class="col-form-label newsletter_modal_form_label">Email:</label>
                             <input type="text" class="form-control newsletter_modal_form_input" name="email" id="email" />
                         </div>
-                    </form>
+                    </form> --}}
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn newsletter_modal_subscribe_btn">Subscribe</button>
+                    footer
+                    {{-- <button type="button" class="btn newsletter_modal_subscribe_btn">Subscribe</button> --}}
                 </div>
             </div>
         </div>
@@ -387,7 +428,7 @@
         $( document ).ready(function() {
             setTimeout(() => {
                 $("#newsletter_modal").modal('show');
-            }, 3000);
+            }, 1000);
         });
     </script>
 @endpush

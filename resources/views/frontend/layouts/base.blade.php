@@ -16,6 +16,20 @@
 
     @include('frontend.layouts.inc.css')
 
+    <style>
+        .topbar ul li a:hover, .topbar ul li a:hover i{
+            color: white !important;
+        }
+
+        h2.title.divider, h2.title.divider-2, h2.title.divider-3, h4.title.divider-3{
+            color: #212529 !important;
+        }
+
+        .lead{
+            color:#212529!important;
+        }
+    </style>
+
 </head>
 
 <body>
