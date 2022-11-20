@@ -159,6 +159,17 @@
 
         .modal-header{
             padding: 0px;
+            background-color: #F99187;
+            height: 10em; 
+            border-bottom-left-radius: 100%;
+            border-bottom-right-radius: 100%;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+            
+        }
+        .modal-content{
+            text-align: center;
+            border-radius: 1.1em !important;
         }
 
         .modal-header.btn-close{
@@ -169,10 +180,41 @@
             background-color: #FFB7AC;
         } */
 
-        .modal-header-text{
-            position: absolute;
-            width: 89%;
-            background-color: #FFB7AC;
+        .modal-head{
+            text-align: center;
+            width: 100%;
+            color: white;
+            padding-left: 1.2em;
+            font-size: 40px !important;
+            line-height: 1em !important;
+
+        }
+        .modal-footer{
+            align-items: center !important;
+            justify-content: center !important;
+        }
+        .modal-header .btn-close {
+            padding: 0.5rem 0.5rem !important;
+            margin: -5.5rem 0.5rem -0.5rem auto !important;
+            background-color: white;
+            border-radius: 20px;
+        }
+        .modal-button{
+            width: 55%;
+            min-width: 200px;
+            border-radius: 22px;
+            height: 60px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #fff !important;
+            background-color:#F99187;
+        }
+        
+        
+        .modal-button:hover{
+            color: #F99187!important;
+            background-color:#fff;
+            border: 1px solid #F99187;
         }
 
     </style>
@@ -272,6 +314,7 @@
                         Our target is to make educated Bangladeshi people from good family backgrounds fidn theirright partner.
                     </p>
                     <button type="button" class="btn btn-light uppercase register_btn mt-3 mt-md-1">Register Now</button>
+                   
                     {{-- <a class="button btn-dark btn-lg  full-rounded"><i class="fa fa-apple" aria-hidden="true"></i><span><span>available on the</span> app store</span></a>
                     <a class="button btn-lg full-rounded white-bg text-dark"><img class="img-fluid me-2" src="{{ asset('frontend/images/play-icon.png') }}" alt=""><span><span>get it on</span> google play</span></a> </div> --}}
                 </div>
@@ -289,7 +332,7 @@
             <div class="row d-flex align-items-center">
             <div class="col-md-6 align-self-center mb-3"><img class="img-fluid" src="{{ asset('frontend/images/about/01.png') }}" alt="" /></div>
             <div class="col-md-6 founded_description">
-                <h3 class="title">Founded in 2020</h3>
+                <h3 class="title">Founded in 2022</h3>
                 <h5 class="clearfix text-orange mb-4">New Generation Matchmaking</h5>
                 <p class="mb-0">
                     Saiyonee is a Bangladeshi Matchmaking App that is demystifying and re-designing matchmaking. Saiyonee is committed to showcase you the widest possible pool of Bangladeshi singles in one platform. <br/>
@@ -394,16 +437,19 @@
     <div class="modal fade" id="newsletter_modal" tabindex="-1" aria-labelledby="newsletter_modal_label" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header text-center">
                     {{-- <div class="modal-rounded-decoration">
                     </div> --}}
-                    <div class="modal-header-text">
-                        header
-                    </div>
+                   
+                       <h2 class="modal-head"> Want to become a <br/>
+                        Premium Member? </h2>
+                    
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    body
+                    <h6>The first 2000 sign-ups will get the opportunity to enjoy a
+                     premium membership to our app. All the features of our app 
+                      will be available to them free of cost! </h6>
                     {{-- <form>
                         <div class="mb-1">
                             <label for="email" class="col-form-label newsletter_modal_form_label">Email:</label>
@@ -412,8 +458,8 @@
                     </form> --}}
                 </div>
                 <div class="modal-footer">
-                    footer
-                    {{-- <button type="button" class="btn newsletter_modal_subscribe_btn">Subscribe</button> --}}
+                    <a target="_blank" href="https://app.saiyonee.com"><button type="button"  class="btn btn-light uppercase modal-button mt-3 mt-md-1">Continue </button></a>
+                    <p>By continuing you agree to our Terms and Privacy Policy.</p>
                 </div>
             </div>
         </div>

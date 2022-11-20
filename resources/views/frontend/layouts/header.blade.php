@@ -1,7 +1,7 @@
 <!--=================================
 header -->
 <header id="header" class="dark">
-    <div class="topbar">
+    {{-- <div class="topbar">
         <div class="container">
         <div class="row align-items-center">
             <div class="col-md-6">
@@ -15,7 +15,7 @@ header -->
             <div class="topbar-right text-end">
                 <ul class="list-inline social-icons color-hover">
                 <li class="social-facebook"><a href="https://www.facebook.com/saiyonee"><i class="fa fa-facebook"></i></a></li>
-                <li class="social-instagram"><a href="https://www.instagram.com/my_saiyonee"><i class="fa fa-instagram"></i></a></li>
+                <li class="social-instagram"><a href="https://www.instagram.com/my_saiyonee"><i class="fa fa-instagram"></i></a></li> --}}
                 {{-- <li class="social-linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li> --}}
                 {{-- <li class="social-twitter"><a href="#"><i class="fa fa-twitter"></i></a></li> --}}
                 {{-- <li class="social-dribbble"><a href="#"><i class="fa fa-dribbble"></i></a></li> --}}
@@ -23,16 +23,16 @@ header -->
                 {{-- <li class="social-youtube"><a href="#"><i class="fa fa-youtube"></i></a></li> --}}
                 
                 {{-- <li class="social-dribbble"><a href="#"><i class="fa fa-dribbble"></i></a></li> --}}
-                </ul>
+               {{--  </ul> --}}
                 {{-- <ul class="list-inline text-uppercase top-menu">
                 <li><a href="register.html">register</a></li>
                 <li><a href="login.html">login</a></li>
                 </ul> --}}
-            </div>
+         {{--    </div>
             </div>
         </div>
         </div>
-    </div>
+    </div> --}}
     <!--=================================
     mega menu -->
     <div class="menu">

@@ -7,28 +7,28 @@ footer -->
                 <div class="row mb-4 mb-md-5">
                     <div class="col-md-12">
                         <h2 class="title divider mb-3 contact_us_title">Contact Us</h2>
-                        <p class="lead">We love our customers, so feel free to visit during normal business hours.</p>
+                       {{--  <p class="lead">We love our customers, so feel free to visit during normal business hours.</p> --}}
                     </div>
                 </div>
                 <div class="row mb-4 mb-md-5">
-                <div class="col-md-4">
-                    <div class="address-block"> <img src="{{ asset('frontend/images/icon1.png') }}" width="40" alt=""> </i> <a href="tel:+8801737556883">+8801737556883</a> </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="address-block"> <img src="{{ asset('frontend/images/icon2.png') }}" width="40" alt=""></i>
-                    <address>
-                    T317 Timber Oak Drive<br/>
-                    Sundown, TX 79372
-                    </address>
+                   {{--  <div class="col-md-4">
+                        <div class="address-block"> <img src="{{ asset('frontend/images/icon1.png') }}" width="40" alt=""> </i> <a href="tel:+8801737556883">+8801737556883</a> </div>
                     </div>
-                </div>
                     <div class="col-md-4">
-                        <div class="address-block"> <img src="{{ asset('frontend/images/icon3.png') }}" width="40" alt=""></i> <a href="mailto:contact@saiyonee.com">contact@saiyonee.com</a> </div>
-                    </div>
+                        <div class="address-block"> <img src="{{ asset('frontend/images/icon2.png') }}" width="40" alt=""></i>
+                        <address>
+                        T317 Timber Oak Drive<br/>
+                        Sundown, TX 79372
+                        </address>
+                        </div>
+                    </div> --}}
+                        <div class="col-md-12">
+                            <div class="address-block"> <img src="{{ asset('frontend/images/icon3.png') }}" width="40" alt=""></i> <a href="mailto:contact@saiyonee.com">contact@saiyonee.com</a> </div>
+                        </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12 mb-3">
-                        <h4 class="title divider-3" style="font-weight: 700;">We Love Talking</h4>
+                        <h4 class="title divider-3" style="font-weight: 700;">We love to hear from our customers.<br/>Please share your question or feedback using the form.</h4>
                     </div>
                 </div>
                 <div class="row mb-0 mb-md-2 mb-lg-3 mb-xl-4">
@@ -73,7 +73,7 @@ footer -->
                     <ul>
                         <li class="social-facebook"><a href="https://www.facebook.com/saiyonee" class="text-dark icon_link"><i class="fa fa-facebook social_link"></i></a></li>
                         <li class="social-instagram"><a href="https://www.instagram.com/my_saiyonee" class="text-dark icon_link"><i class="fa fa-instagram social_link"></i></a></li>
-                        {{-- <li class="social-linkedin"><a href="#" class="text-dark icon_link"><i class="fa fa-linkedin social_link"></i></a></li> --}}
+                        <li class="social-linkedin"><a href="https://www.linkedin.com/company/saiyonee/" class="text-dark icon_link"><i class="fa fa-linkedin social_link"></i></a></li>
                         {{-- <li class="social-twitter"><a href="#" class="text-dark icon_link"><i class="fa fa-twitter social_link"></i></a></li> --}}
                         {{-- <li class="social-dribbble"><a href="#" class="text-dark icon_link"><i class="fa fa-dribbble social_link"></i></a></li> --}}
                         {{-- <li class="social-gplus"><a href="#" class="text-dark icon_link"><i class="fa fa-google-plus social_link"></i></a></li> --}}
