@@ -19,6 +19,6 @@ Route::get('/', [FrontendController::class, 'index'])->name('index');
 Route::get('/blog-details', [FrontendController::class, 'blogDetails'])->name('blog.details');
 Route::get('/story-details', [FrontendController::class, 'storyDetails'])->name('story.details');
 
-Route::post('/submit_contact_us', [ContactUsController::class, 'submit_contact_us'])->name('submit_contact_us');
+Route::post('/submit_contact_us', [ContactUsController::class, 'submit_contact_us'])->middleware('throttle:5,86400')->name('submit_contact_us');
 
 // url: "{{ env('SAIYONEE_BACKEND_URL') }}" + "/api/submit_contact_us_mail",

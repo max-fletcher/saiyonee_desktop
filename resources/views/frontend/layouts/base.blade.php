@@ -143,7 +143,7 @@
             var email = $("#contact_us_email").val()
             var message = $("#contact_us_message").val()
 
-            console.log(name, email, message);
+            // console.log(name, email, message);
 
             $.ajax({
                 url: "{{ route('submit_contact_us') }}",
@@ -174,10 +174,25 @@
                     }
                 },
                 error: function(request, status, error){
-                    // console.log('err', error, status, error);
-                    $('.mail_sent_status').text('Whoops!')
-                    $('.mail_sent_message').text('Something went wrong! Please try again later or contact system administrators.')
-                    $("#mail_sent_modal").modal('show');
+
+                    // console.log('err', request, status, error);
+
+                    if(request.status === 429){
+                        // clear fields
+                        $("#contact_us_name").val('')
+                        $("#contact_us_email").val('')
+                        $("#contact_us_message").val('')
+
+                        $('.mail_sent_status').text('Limit Exceeded!')
+                        $('.mail_sent_message').text('You have exceeded your limit of 5 messages per day. Please try again tomorrow.')
+                        $("#mail_sent_modal").modal('show');
+                    }
+                    else{
+                        $('.mail_sent_status').text('Whoops!')
+                        $('.mail_sent_message').text('Something went wrong! Please try again later or contact system administrators.')
+                        $("#mail_sent_modal").modal('show');
+                    }
+
                 }
             });
 
