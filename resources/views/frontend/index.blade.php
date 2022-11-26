@@ -319,7 +319,7 @@
                         Through our extensive profile analysis and a smart algorithm, we will make sure that you find suitable partners for marriage to your taste.
                         Our target is to make educated Bangladeshi people from good family backgrounds fidn theirright partner.
                     </p>
-                    <button type="button" class="btn btn-light uppercase register_btn mt-3 mt-md-1">Register Now</button>
+                    <a href="https://app.saiyonee.com"><button type="button" class="btn btn-light uppercase register_btn mt-3 mt-md-1">Register Now</button></a>
                    
                     {{-- <a class="button btn-dark btn-lg  full-rounded"><i class="fa fa-apple" aria-hidden="true"></i><span><span>available on the</span> app store</span></a>
                     <a class="button btn-lg full-rounded white-bg text-dark"><img class="img-fluid me-2" src="{{ asset('frontend/images/play-icon.png') }}" alt=""><span><span>get it on</span> google play</span></a> </div> --}}
