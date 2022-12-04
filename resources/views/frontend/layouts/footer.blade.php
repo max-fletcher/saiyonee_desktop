@@ -111,6 +111,12 @@ footer -->
         color:#212529!important;
     }
 
+    .contact_us_submit_btn:hover{
+        background-color:#000;
+        border-color: #000;
+        color:#f8f9fa !important;
+    }
+
     .social_link{
         font-size: 23px;
     }

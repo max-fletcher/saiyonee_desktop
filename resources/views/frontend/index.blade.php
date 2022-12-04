@@ -234,16 +234,16 @@
             <!--/ Carousel item end -->
             <div class="mt-5 carousel-item active h-100 bg-overlay-red main_image" style="background: url({{ asset('frontend/images/banner2.png') }}) no-repeat 0 0; background-size: cover;" >
                 <div class="slider-content">
-                <div class="container">
-                    <div class="row carousel-caption align-items-center h-100">
-                        <div class="col-md-12 text-start banner_image_text">
-                            <h3 class="text-dark" style="font-weight: 600">Smarter Way to</h3>
-                        <div class="slider-1">
-                            <h1 class="animated2 text-white divider-3">Find <span>Your</span> Perfect <span class="text_no_wrap"> Match !</span></h1>
+                    <div class="container">
+                        <div class="row carousel-caption align-items-center h-100">
+                            <div class="col-md-12 text-start banner_image_text">
+                                <h3 class="text-dark" style="font-weight: 600">Smarter Way to</h3>
+                                <div class="slider-1">
+                                    <h1 class="animated2 text-white divider-3">Find <span>Your</span> Perfect <span class="text_no_wrap"> Match !</span></h1>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    </div>
-                </div>
                 </div>
             </div>
         </div>
@@ -267,34 +267,34 @@
                     <li class="timeline-inverted">
                         <div class="timeline-badge"><img class="img-fluid" src="{{ asset('frontend/images/step1.png') }}" width="150" alt="" /></div>
                         <div class="timeline-panel">
-                        <div class="timeline-heading text-center">
-                            <h4 class="timeline-title divider-3">CREATE PROFILE</h4>
-                        </div>
-                        <div class="timeline-body">
-                            <p>Fill up details about your education, family, likes, dislikes and more. Remember the more information you give, the better matches we can suggest!</p>
-                        </div>
+                            <div class="timeline-heading text-center">
+                                <h4 class="timeline-title divider-3">CREATE PROFILE</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p>Fill up details about your education, family, likes, dislikes and more. Remember the more information you give, the better matches we can suggest!</p>
+                            </div>
                         </div>
                     </li>
                 <li>
                     <div class="timeline-badge"><img class="img-fluid" src="{{ asset('frontend/images/step2.png') }}" width="150" alt="" /></div>
                     <div class="timeline-panel">
-                    <div class="timeline-heading text-center">
-                        <h4 class="timeline-title divider-3">FIND MATCH</h4>
-                    </div>
-                    <div class="timeline-body">
-                        <p>Browse our collection of potential brides and grooms, see their profiles and swipe right to the ones who seem like the right match for you.</p>
-                    </div>
+                        <div class="timeline-heading text-center">
+                            <h4 class="timeline-title divider-3">FIND MATCH</h4>
+                        </div>
+                            <div class="timeline-body">
+                            <p>Browse our collection of potential brides and grooms, see their profiles and swipe right to the ones who seem like the right match for you.</p>
+                        </div>
                     </div>
                 </li>
                 <li class="timeline-inverted">
                     <div class="timeline-badge"><img class="img-fluid" src="{{ asset('frontend/images/step3.png') }}" width="150" alt="" /></div>
                     <div class="timeline-panel">
-                    <div class="timeline-heading text-center">
-                        <h4 class="timeline-title divider-3">START DATING</h4>
-                    </div>
-                    <div class="timeline-body">
-                        <p>Start messaging your potential soulmate, set up a meet, and find out if they really are the one.</p>
-                    </div>
+                        <div class="timeline-heading text-center">
+                            <h4 class="timeline-title divider-3">START DATING</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p>Start messaging your potential soulmate, set up a meet, and find out if they really are the one.</p>
+                        </div>
                     </div>
                 </li>
                 </ul>
@@ -317,10 +317,9 @@
                     <p class="apps_para"> 
                         Saiyonee is here to take away the usual pains that every family has to face in the rigorous journey of matchmaking in this country.
                         Through our extensive profile analysis and a smart algorithm, we will make sure that you find suitable partners for marriage to your taste.
-                        Our target is to make educated Bangladeshi people from good family backgrounds fidn theirright partner.
+                        Our target is to make educated Bangladeshi people from good family backgrounds find their right partner.
                     </p>
                     <a href="https://app.saiyonee.com"><button type="button" class="btn btn-light uppercase register_btn mt-3 mt-md-1">Register Now</button></a>
-                   
                     {{-- <a class="button btn-dark btn-lg  full-rounded"><i class="fa fa-apple" aria-hidden="true"></i><span><span>available on the</span> app store</span></a>
                     <a class="button btn-lg full-rounded white-bg text-dark"><img class="img-fluid me-2" src="{{ asset('frontend/images/play-icon.png') }}" alt=""><span><span>get it on</span> google play</span></a> </div> --}}
                 </div>
@@ -446,16 +445,13 @@
                 <div class="modal-header text-center">
                     {{-- <div class="modal-rounded-decoration">
                     </div> --}}
-                   
-                       <h2 class="modal-head"> Want to become a <br/>
-                        Premium Member? </h2>
+                    <h2 class="modal-head"> Want to become a <br/> Premium Member? </h2>
                     
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <h6 class="newsletter_modal_body_text">The first 2000 sign-ups will get the opportunity to enjoy a
-                     premium membership to our app. All the features of our app 
-                      will be available to them free of cost! </h6>
+                    <h6 class="newsletter_modal_body_text">The first 1000 sign-ups will get the opportunity to enjoy a premium membership to our app. All the features 
+                        of our app will be available to them free of cost! </h6>
                     {{-- <form>
                         <div class="mb-1">
                             <label for="email" class="col-form-label newsletter_modal_form_label">Email:</label>

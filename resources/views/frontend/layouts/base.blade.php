@@ -138,7 +138,10 @@
     --}}
 
     <script>
-        $("#contact_us_submit" ).on("click", function() {
+        $("#contact_us_submit").on("click", function() {
+
+            $("#contact_us_submit").prop('disabled', true)
+
             var name = $("#contact_us_name").val()
             var email = $("#contact_us_email").val()
             var message = $("#contact_us_message").val()
@@ -157,27 +160,32 @@
                 success: function(response){
                     console.log(response.status);
 
-                    // clear fields
-                    $("#contact_us_name").val('')
-                    $("#contact_us_email").val('')
-                    $("#contact_us_message").val('')
-
                     if(response.status === 'success'){
+                        // clear fields
+                        $("#contact_us_name").val('')
+                        $("#contact_us_email").val('')
+                        $("#contact_us_message").val('')
+                        
                         $('.mail_sent_status').text('Mail Sent Successfully!')
                         $('.mail_sent_message').text('Thank you for your valuable feedback. We will be with you shortly.')
-                        $("#mail_sent_modal").modal('show');
+                        $("#mail_sent_modal").modal('show')
+
+                        $("#contact_us_submit").prop('disabled', false)
                     }
                     else if(response.status === 'failed'){
                         $('.mail_sent_status').text('Whoops!')
                         $('.mail_sent_message').text('Something went wrong! Please try again later or contact system administrators.')
-                        $("#mail_sent_modal").modal('show');
+                        $("#mail_sent_modal").modal('show')
+
+                        $("#contact_us_submit").prop('disabled', false)
                     }
+
                 },
-                error: function(request, status, error){
+                error: function(error){
 
-                    // console.log('err', request, status, error);
+                    // console.log('err', error);
 
-                    if(request.status === 429){
+                    if(error.status === 429){
                         // clear fields
                         $("#contact_us_name").val('')
                         $("#contact_us_email").val('')
@@ -186,11 +194,45 @@
                         $('.mail_sent_status').text('Limit Exceeded!')
                         $('.mail_sent_message').text('You have exceeded your limit of 5 messages per day. Please try again tomorrow.')
                         $("#mail_sent_modal").modal('show');
+
+                        $("#contact_us_submit").prop('disabled', false)
+                    }
+                    else if(error.status === 422){
+                        // console.log(error.responseJSON.errors, 'Validation errors');
+                        // console.log(error.responseJSON.errors.name);
+                        // console.log(error.responseJSON.errors.name[0]);
+                        // console.log(typeof(error.responseJSON.errors.name[0]));
+
+                        var message = ''
+
+                        all_errors = error.responseJSON.errors
+                        // console.log(all_errors);
+
+                        // console.log((Object.keys(all_errors).length - 1))
+
+                        Object.values(all_errors).forEach((each_error, index) => {
+                            // console.log(each_error[0]);
+                            message += each_error
+                            // console.log(index);
+                                message += '<br>'
+                        });
+
+                        message = 'The following validation errors occured. <br>' + message + '<br> Please resolve them and try again.'
+
+                        // console.log(message);
+
+                        $('.mail_sent_status').text('Validation Errors!')
+                        $('.mail_sent_message').html(message)
+                        $("#mail_sent_modal").modal('show');
+
+                        $("#contact_us_submit").prop('disabled', false)
                     }
                     else{
                         $('.mail_sent_status').text('Whoops!')
                         $('.mail_sent_message').text('Something went wrong! Please try again later or contact system administrators.')
                         $("#mail_sent_modal").modal('show');
+
+                        $("#contact_us_submit").prop('disabled', false)
                     }
 
                 }
