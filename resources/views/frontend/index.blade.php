@@ -1,7 +1,7 @@
 @extends('frontend.layouts.base')
 
-@section('home')active @endsection
-@section('frontend-header-title')Home @endsection
+@section('home') active @endsection
+@section('frontend-header-title') Home @endsection
 
 @push('page-specific-css')
     <style>
@@ -78,7 +78,7 @@
 
         .apps_para{
             font-weight: 600;
-            line-height: 1.6;
+            /* line-height: 1.6; */
         }
 
         .newsletter_modal_header_text{
@@ -153,17 +153,17 @@
 
         @media only screen and (min-width: 1200px) {
             .founded_description{
-                margin-top: -138px;
+                margin-top: -220px;
             }
         }
 
         @media only screen and (min-width: 992px) and (max-width: 1199px) {
             .founded_description{
-                margin-top: -68px;
+                margin-top: -150px;
             }
         }
 
-        .modal-header{
+        .onload-design{
             padding: 0px;
             background-color: #F99187;
             height: 10em; 
@@ -178,15 +178,11 @@
             border-radius: 1.1em !important;
         }
 
-        .modal-header.btn-close{
-            margin: 0.5rem 0.5rem 0.5rem auto !important;
-        }
-
         /* .modal-rounded-decoration{
             background-color: #FFB7AC;
         } */
 
-        .modal-head{
+        .modal-head-onload-design{
             text-align: center;
             width: 100%;
             color: white;
@@ -199,7 +195,7 @@
             align-items: center !important;
             justify-content: center !important;
         }
-        .modal-header .btn-close {
+        .modal-header-onload-design .btn-close {
             padding: 0.5rem 0.5rem !important;
             margin: -5.5rem 0.5rem -0.5rem auto !important;
             background-color: white;
@@ -216,14 +212,23 @@
             background-color:#F99187;
         }
         
-        
         .modal-button:hover{
             color: #F99187!important;
             background-color:#fff;
             border: 1px solid #F99187;
         }
 
+        .image_circle{
+            border-radius: 50%;
+        }
+
+        .steps_video_link{
+            color: #CF0000;
+        }
     </style>
+
+    {{-- RBox plugin CSS --}}
+    <link rel="stylesheet" href="{{ asset('frontend/rbox/jquery-rbox.css') }}" />
 @endpush
 
 @section('frontend-page-content')
@@ -237,7 +242,7 @@
                     <div class="container">
                         <div class="row carousel-caption align-items-center h-100">
                             <div class="col-md-12 text-start banner_image_text">
-                                <h3 class="text-dark" style="font-weight: 600">Smarter Way to</h3>
+                                <h3 class="text-dark" style="font-weight: 600">Smartest Way to</h3>
                                 <div class="slider-1">
                                     <h1 class="animated2 text-white divider-3">Find <span>Your</span> Perfect <span class="text_no_wrap"> Match !</span></h1>
                                 </div>
@@ -248,6 +253,12 @@
             </div>
         </div>
     </section>
+
+    {{-- <h2>HTML5 Video</h2>
+    <a href="#" class="rbox-video-autoplay" data-rbox-type="video" data-rbox-video="{{ asset('frontend/videos/sign-up-video-tutorial.mp4') }}" data-rbox-autoplay="true">
+        Video with autoplay
+    </a> --}}
+
     <!--=================================
     banner -->
 
@@ -265,35 +276,39 @@
             <div class="col-lg-10 col-md-12">
                 <ul class="timeline list-inline">
                     <li class="timeline-inverted">
-                        <div class="timeline-badge"><img class="img-fluid" src="{{ asset('frontend/images/step1.png') }}" width="150" alt="" /></div>
+                        <div class="timeline-badge"><img class="img-fluid image_circle" src="{{ asset('frontend/images/steps/1.png') }}" width="150" alt="" /></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading text-center">
                                 <h4 class="timeline-title divider-3">CREATE PROFILE</h4>
                             </div>
                             <div class="timeline-body">
-                                <p>Fill up details about your education, family, likes, dislikes and more. Remember the more information you give, the better matches we can suggest!</p>
+                                <p>Fill up your personal, family, educational and professional information. Remember, the more information you provide, the better matches we can suggest!
+                                    <a class="rbox-video-autoplay steps_video_link" data-rbox-type="video" data-rbox-video="{{ asset('frontend/videos/sign-up-video-tutorial.mp4') }}" data-rbox-autoplay="true">
+                                        Click here to see video instruction.
+                                    </a>
+                                </p>
                             </div>
                         </div>
                     </li>
                 <li>
-                    <div class="timeline-badge"><img class="img-fluid" src="{{ asset('frontend/images/step2.png') }}" width="150" alt="" /></div>
+                    <div class="timeline-badge"><img class="img-fluid image_circle" src="{{ asset('frontend/images/steps/2.png') }}" width="150" alt="" /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading text-center">
-                            <h4 class="timeline-title divider-3">FIND MATCH</h4>
+                            <h4 class="timeline-title divider-3">FIND YOUR MATCH</h4>
                         </div>
                             <div class="timeline-body">
-                            <p>Browse our collection of potential brides and grooms, see their profiles and swipe right to the ones who seem like the right match for you.</p>
+                            <p>We’ll show you potential bride/groom profiles one by one. You’ll hit LIKE button on a profile if you are interested. If that person also LIKES you back, it’s a MATCH!</p>
                         </div>
                     </div>
                 </li>
                 <li class="timeline-inverted">
-                    <div class="timeline-badge"><img class="img-fluid" src="{{ asset('frontend/images/step3.png') }}" width="150" alt="" /></div>
+                    <div class="timeline-badge"><img class="img-fluid image_circle" src="{{ asset('frontend/images/steps/3.png') }}" width="150" alt="" /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading text-center">
-                            <h4 class="timeline-title divider-3">START DATING</h4>
+                            <h4 class="timeline-title divider-3">START DISCOVERING</h4>
                         </div>
                         <div class="timeline-body">
-                            <p>Start messaging your potential soulmate, set up a meet, and find out if they really are the one.</p>
+                            <p>Start messaging your potential soulmate and ask all you need to know. Satisfied? Now set up a meeting and find out if it’s the right person. We encourage involvement of family members throughout the journey.</p>
                         </div>
                     </div>
                 </li>
@@ -340,8 +355,6 @@
                 <h3 class="title">Founded in 2022</h3>
                 <h5 class="clearfix text-orange mb-4">New Generation Matchmaking</h5>
                 <p class="mb-0">
-                    Saiyonee is a Bangladeshi Matchmaking App that is demystifying and re-designing matchmaking. Saiyonee is committed to showcase you the widest possible pool of Bangladeshi singles in one platform. <br/>
-                    <br/>
                     Saiyonee is a Bangladeshi Matchmaking App that is demystifying and re-designing matchmaking. Saiyonee is committed to showcase you the widest possible pool of Bangladeshi singles in one platform.
                 </p>
             </div>
@@ -442,10 +455,10 @@
     <div class="modal fade" id="newsletter_modal" tabindex="-1" aria-labelledby="newsletter_modal_label" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header text-center">
+                <div class="modal-header modal-header-onload-design onload-design text-center">
                     {{-- <div class="modal-rounded-decoration">
                     </div> --}}
-                    <h2 class="modal-head"> Want to become a <br/> Premium Member? </h2>
+                    <h2 class="modal-head-onload-design"> Want to become a <br/> Premium Member? </h2>
                     
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -477,6 +490,14 @@
             setTimeout(() => {
                 $("#newsletter_modal").modal('show');
             }, 2000);
+        });
+    </script>
+
+    {{-- RBox plugin JS --}}
+    <script src="{{asset('frontend/rbox/jquery-rbox.js')}}"></script>
+    <script>
+        $(".rbox-video-autoplay").rbox({
+            'type': 'video',
         });
     </script>
 @endpush
