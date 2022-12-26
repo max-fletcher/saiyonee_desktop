@@ -5,33 +5,44 @@
 
 @push('page-specific-css')
     <style>
+
         @media only screen and (min-width: 992px) and (max-width: 1129px) {
             .timeline-inner{
                 background-position: right -520px bottom -120px !important;
+                background-position-x: right -520px !important;
+                background-position-y: bottom -120px !important;
             }
         }
 
         @media only screen and (min-width: 1130px) and (max-width: 1299px) {
             .timeline-inner{
                 background-position: right -430px bottom -100px !important;
+                background-position-x: right -430px !important;
+                background-position-y: bottom -100px !important;
             }
         }
 
         @media only screen and (min-width: 1300px) and (max-width: 1499px) {
             .timeline-inner{
                 background-position: right -380px bottom -100px !important;
+                background-position-x: right -380px !important;
+                background-position-y: bottom -100px !important;
             }
         }
 
         @media only screen and (min-width: 1500px) {
             .timeline-inner{
                 background-position: right -300px bottom -100px !important;
+                background-position-x: right -300px !important;
+                background-position-y: bottom -100px !important;
             }
         }
 
         @media only screen and (min-width: 1500px) {
             .timeline-inner{
                 background-position: right -290px bottom -100px !important;
+                background-position-x: right -290px !important;
+                background-position-y: bottom -100px !important;
             }
         }
 
@@ -52,13 +63,22 @@
             color:#212529!important;
         }
 
-        @media only screen and (max-width: 660px) {
+        .apps_para{
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .apps_para{
+            padding: 0em 2em;
+        }
+
+        @media only screen and (min-width: 500px) and (max-width: 660px) {
             .apps_para{
                 padding: 0em 5em;
             }
         }
 
-        @media only screen and (max-width: 992px) {
+        @media only screen and (min-width: 661px) and (max-width: 992px) {
             .apps_para{
                 padding: 0em 7em;
             }
@@ -74,11 +94,6 @@
             .apps_para{
                 padding: 0em 15em;
             }
-        }
-
-        .apps_para{
-            font-weight: 600;
-            /* line-height: 1.6; */
         }
 
         .newsletter_modal_header_text{
@@ -105,22 +120,39 @@
         }
 
         .newsletter_modal_body_text{
-            font-size: 12px;
+            font-size: 14px;
             color: black;
             font-weight: 600;
         }
 
+        /* Bunch of media queries for positioning main_image */
         .main_image{
             aspect-ratio: 1250/770;
             min-height: 400px;
             /* background: url(http://localhost:8000/frontend/images/banner2.png) no-repeat 0 0; */
             /* background-size: cover; */
-            background-position-x: center !important;
+            /* background-position-x: center !important; */
             /* no-repeat 0 0; background-size: cover; */
             /* background-repeat: no-repeat 0 0; */
+            /* background-position: 72% 30% !important; */
             background-position-x: 72% !important;
             background-position-y: 30% !important;
             background-size: cover;
+        }
+
+        @media only screen and (max-width: 570px) {
+            .main_image{
+                background-position: -400px 0px !important;
+            }
+            .carousel-caption{
+                left: 50px;
+            }
+        }
+
+        @media only screen and (max-width: 470px) {
+            .main_image{
+                background-position: -450px 0px !important;
+            }
         }
 
         @media only screen and (max-width: 1100px) {
@@ -134,6 +166,7 @@
                 min-height: 600px;
             }
         }
+        /* End Bunch of media queries for positioning main_image */
 
         .text_no_wrap{
             white-space: nowrap;
@@ -160,6 +193,12 @@
         @media only screen and (min-width: 992px) and (max-width: 1199px) {
             .founded_description{
                 margin-top: -150px;
+            }
+        }
+
+        @media only screen and (min-width: 767px) and (max-width: 991px) {
+            .founded_description{
+                margin-top: -70px;
             }
         }
 
@@ -225,10 +264,78 @@
         .steps_video_link{
             color: #CF0000;
         }
+
+        .timeline-body{
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .founded_description > p{
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        @media screen and (max-width: 479px){
+            h3 {
+                font-size: 25px;
+            }
+        }
+
+        @media screen and (max-width: 479px){
+            h1 {
+                font-size: 36px;
+            }
+        }
+
+        @media screen and (max-width: 767px){
+            h2 {
+                font-size: 40px;
+            }
+        }
+        
+        /* Bunch of media queries for positioning steps couple image properly */
+        @media screen and (min-width: 1571px) and (max-width: 1770px){
+            .timeline-section:before {
+                left: -110px;
+            }
+        }
+
+        @media screen and (min-width: 1550px) and (max-width: 1570px){
+            .timeline-section:before {
+                left: -30px;
+            }
+        }
+
+        @media screen and (min-width: 1400px) and (max-width: 1549px){
+            .timeline-section:before {
+                left: -70px;
+            }
+        }
+
+        @media screen and (min-width: 1360px) and (max-width: 1399px){
+            .timeline-section:before {
+                height: 450px;
+                left: -30px;
+            }
+        }
+        /* End Bunch of media queries for positioning steps couple image properly */
     </style>
 
     {{-- RBox plugin CSS --}}
     <link rel="stylesheet" href="{{ asset('frontend/rbox/jquery-rbox.css') }}" />
+    {{-- RBox Custom CSS --}}
+    <style>
+        @media only screen and (min-width: 1000px) {
+            .rbox-wrap {
+                max-width: 50%;
+            }
+        }
+        @media only screen and (min-width: 0px) and (max-width: 999px) {
+            .rbox-wrap {
+                max-width: 80%;
+            }
+        }
+    </style>
 @endpush
 
 @section('frontend-page-content')
@@ -242,7 +349,7 @@
                     <div class="container">
                         <div class="row carousel-caption align-items-center h-100">
                             <div class="col-md-12 text-start banner_image_text">
-                                <h3 class="text-dark" style="font-weight: 600">Smartest Way to</h3>
+                                <h3 class="text-white" style="font-weight: 600">Smartest Way to</h3>
                                 <div class="slider-1">
                                     <h1 class="animated2 text-white divider-3">Find <span>Your</span> Perfect <span class="text_no_wrap"> Match !</span></h1>
                                 </div>
@@ -296,7 +403,7 @@
                         <div class="timeline-heading text-center">
                             <h4 class="timeline-title divider-3">FIND YOUR MATCH</h4>
                         </div>
-                            <div class="timeline-body">
+                        <div class="timeline-body">
                             <p>We’ll show you potential bride/groom profiles one by one. You’ll hit LIKE button on a profile if you are interested. If that person also LIKES you back, it’s a MATCH!</p>
                         </div>
                     </div>
