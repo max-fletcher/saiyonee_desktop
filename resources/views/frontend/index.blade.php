@@ -263,6 +263,7 @@
 
         .steps_video_link{
             color: #CF0000;
+            cursor: pointer;
         }
 
         .timeline-body{
@@ -397,28 +398,28 @@
                             </div>
                         </div>
                     </li>
-                <li>
-                    <div class="timeline-badge"><img class="img-fluid image_circle" src="{{ asset('frontend/images/steps/2.png') }}" width="150" alt="" /></div>
-                    <div class="timeline-panel">
-                        <div class="timeline-heading text-center">
-                            <h4 class="timeline-title divider-3">FIND YOUR MATCH</h4>
+                    <li>
+                        <div class="timeline-badge"><img class="img-fluid image_circle" src="{{ asset('frontend/images/steps/2.png') }}" width="150" alt="" /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading text-center">
+                                <h4 class="timeline-title divider-3">FIND YOUR MATCH</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p>We’ll show you potential bride/groom profiles one by one. You’ll hit LIKE button on a profile if you are interested. If that person also LIKES you back, it’s a MATCH!</p>
+                            </div>
                         </div>
-                        <div class="timeline-body">
-                            <p>We’ll show you potential bride/groom profiles one by one. You’ll hit LIKE button on a profile if you are interested. If that person also LIKES you back, it’s a MATCH!</p>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-badge"><img class="img-fluid image_circle" src="{{ asset('frontend/images/steps/3.png') }}" width="150" alt="" /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading text-center">
+                                <h4 class="timeline-title divider-3">START DISCOVERING</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p>Start messaging your potential soulmate and ask all you need to know. Satisfied? Now set up a meeting and find out if it’s the right person. We encourage involvement of family members throughout the journey.</p>
+                            </div>
                         </div>
-                    </div>
-                </li>
-                <li class="timeline-inverted">
-                    <div class="timeline-badge"><img class="img-fluid image_circle" src="{{ asset('frontend/images/steps/3.png') }}" width="150" alt="" /></div>
-                    <div class="timeline-panel">
-                        <div class="timeline-heading text-center">
-                            <h4 class="timeline-title divider-3">START DISCOVERING</h4>
-                        </div>
-                        <div class="timeline-body">
-                            <p>Start messaging your potential soulmate and ask all you need to know. Satisfied? Now set up a meeting and find out if it’s the right person. We encourage involvement of family members throughout the journey.</p>
-                        </div>
-                    </div>
-                </li>
+                    </li>
                 </ul>
             </div>
             </div>
