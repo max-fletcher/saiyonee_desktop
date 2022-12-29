@@ -7,11 +7,11 @@ footer -->
                 <div class="row mb-4 mb-md-5">
                     <div class="col-md-12">
                         <h2 class="title divider mb-3 contact_us_title">Contact Us</h2>
-                       {{--  <p cl0"lead">We love our customers, so feel free to visit during normal business hours.</p> --}}
+                        {{--  <p cl0"lead">We love our customers, so feel free to visit during normal business hours.</p> --}}
                     </div>
                 </div>
                 <div class="row mb-4 mb-md-5">
-                   {{--  <div class="col-md-4">
+                    {{--  <div class="col-md-4">
                         <div class="address-block"> <img src="{{ asset('frontend/images/icon1.png') }}" width="40" alt=""> </i> <a href="tel:+8801737556883">+8801737556883</a> </div>
                     </div>
                     <div class="col-md-4">
@@ -80,7 +80,7 @@ footer -->
                         {{-- <li class="social-youtube"><a href="#" class="text-dark icon_link"><i class="fa fa-youtube social_link"></i></a></li> --}}
                     </ul>
                 </div>
-                <p class="copyright">© 2022  - Saiyonee All Right Reserved </p>
+                    <p class="copyright">© 2022  - Saiyonee All Right Reserved </p>
                 </div>
             </div>
         </div>

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContestController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ContactUsController;
 
@@ -18,6 +19,9 @@ use App\Http\Controllers\ContactUsController;
 Route::get('/', [FrontendController::class, 'index'])->name('index');
 Route::get('/blog-details', [FrontendController::class, 'blogDetails'])->name('blog.details');
 Route::get('/story-details', [FrontendController::class, 'storyDetails'])->name('story.details');
+
+Route::get('/contest', [ContestController::class, 'index'])->name('contest.index');
+Route::post('/contest/store', [ContestController::class, 'store'])->name('contest.store');
 
 Route::post('/submit_contact_us', [ContactUsController::class, 'submit_contact_us'])->middleware('throttle:5,1440')->name('submit_contact_us');
 
