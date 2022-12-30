@@ -28,7 +28,7 @@
                      title: 'Form Submission Failed!',
                      text: "Recaptcha validation failed! Please try again.",
                      showConfirmButton: false,
-                     timer: 1500,
+                     timer: 2000,
                   })
 
                })
@@ -42,7 +42,7 @@
             title: 'Form Submission Failed!',
             text: error,
             showConfirmButton: false,
-            timer: 1500,
+            timer: 2000,
          })
       }
    </script>
@@ -553,7 +553,7 @@
             icon: 'success',
             title: 'Form Submitted Successfully!',
             showConfirmButton: false,
-            timer: 1500,
+            timer: 2000,
          })
       @endif
    </script>
@@ -565,7 +565,7 @@
             title: 'Form Submission Failed!',
             text: 'Something went wrong! Please try again.',
             showConfirmButton: false,
-            timer: 1500,
+            timer: 2000,
          })
       @endif
    </script>

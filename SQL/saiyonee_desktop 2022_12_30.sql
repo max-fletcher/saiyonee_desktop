@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 29, 2022 at 01:21 PM
+-- Generation Time: Dec 30, 2022 at 02:52 PM
 -- Server version: 5.7.33
--- PHP Version: 8.1.7
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -36,14 +36,6 @@ CREATE TABLE `contests` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `contests`
---
-
-INSERT INTO `contests` (`id`, `name`, `email`, `video`, `created_at`, `updated_at`) VALUES
-(1, 'some_name', 'some_name@mail.com', 'uploads/contest_video/14c3533c9e1c8d02ac8a1a5c6a2ffe47.mp4', '2022-12-29 07:05:47', '2022-12-29 07:05:47'),
-(2, 'some_name_2', 'some_name_2@mail.com', 'uploads/contest_video/84f5221800b485da8134bb5cfb1c50dc.mp4', '2022-12-29 07:19:20', '2022-12-29 07:19:20');
-
 -- --------------------------------------------------------
 
 --
@@ -57,16 +49,6 @@ CREATE TABLE `contest_images` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `contest_images`
---
-
-INSERT INTO `contest_images` (`id`, `contest_id`, `image`, `created_at`, `updated_at`) VALUES
-(1, 1, 'uploads/contest_image/dd9a4c9e76908d14b8a8d0f393cec4da.jpg', '2022-12-29 07:05:47', '2022-12-29 07:05:47'),
-(2, 1, 'uploads/contest_image/fa41d88b4575c53380639fadac332e62.jpg', '2022-12-29 07:05:47', '2022-12-29 07:05:47'),
-(3, 2, 'uploads/contest_image/3983403f57a3dc736fb68a42623d8055.jpg', '2022-12-29 07:19:20', '2022-12-29 07:19:20'),
-(4, 2, 'uploads/contest_image/9a473ea97382e42eca292f3321caba8c.jpg', '2022-12-29 07:19:20', '2022-12-29 07:19:20');
 
 -- --------------------------------------------------------
 
@@ -214,13 +196,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `contests`
 --
 ALTER TABLE `contests`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `contest_images`
 --
 ALTER TABLE `contest_images`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
