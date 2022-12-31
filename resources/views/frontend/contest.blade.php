@@ -110,12 +110,30 @@
          color:#212529!important;
       }
 
-      .apps_para{
+      .contest_opening{
+         font-size: 0.9rem !important;
+         font-weight: 800;
+      }
+
+      .contest_para{
          font-size: 0.9rem;
          font-weight: 600;
       }
 
+      .contest_link:hover{
+         text-decoration: underline !important;
+      }
+
+      .underline{
+         text-decoration: underline;
+      }
+      .font_inline_bold_800{
+         font-weight: 800;
+      }
+
       .apps_para{
+         font-size: 0.9rem;
+         font-weight: 600;
          padding: 0em 2em;
       }
 
@@ -341,6 +359,12 @@
          }
       }
 
+      .contest_boundary{
+         margin-top: 10px;
+         margin-bottom:35px;
+         opacity: 0.75;
+      }
+
       .contest_submit_btn{
          width: 55%;
          border-radius: 22px;
@@ -350,16 +374,22 @@
          background: #F99187;
       }
 
+      .label_text{
+         color: #CF0000 !important;
+         font-weight: 600 !important;
+         font-size: 16px !important;
+      }
+
       .input_text::placeholder{
          color: #FFB7AC !important;
          font-weight: 600;
-         font-size: 20px;
+         font-size: 16px;
       }
 
       .input_text{
          color: #CF0000 !important;
          font-weight: 600;
-         font-size: 20px;
+         font-size: 16px;
       }
 
       .contest_labels{
@@ -440,13 +470,106 @@
    <!--=================================
    Page Section -->
 
-   <section id="history" class="page-section-ptb">
+   <section id="contest" class="page-section-ptb">
       <div class="container">
          <div class="row justify-content-center">
             <div class="col-md-8 text-center mb-4 mb-md-5">
-               <h2 class="title divider-2 mb-3">Contest</h2>
+               <h2 class="title divider-2">Saiyonee X Chitrogolpo</h2>
             </div>
          </div>
+
+         <div class="row">
+            <div class="col-12 px-2">
+               <div class="row mb-0 mb-md-2 mb-lg-3 mb-xl-4 mx-3">
+                  <div class="col-12 mb-0 mb-lg-2">
+
+                     <h5 class="contest_opening mb-3"> Dear Couples, </h5>
+
+                     <span class="contest_para">
+                        Thank you for your interest in this contest. We are excited to see your best memories as couple.
+                        Please upload <span class="underline">1 photo and 1 short video</span> that show how beautiful and precious your
+                        relationship is.
+                        <br><br>
+
+                        <h6 class="contest_opening"> Photo submission guideline </h6>
+                        It can be from any type of event or setup. Show us your favourite couple photo !
+                        <br><br>
+                        The image file size must not exceed 
+                        <span class="underline">5 MB</span>. Having trouble to keep it under 5 MB ? You can use this online tool to shrink photo: 
+                        <a class="contest_link" href="https://www.freeconvert.com/image-compressor" target="_blank">https://www.freeconvert.com/image-compressor</a>
+                        <br><br>
+
+                        <h6 class="contest_opening"> Video submission guideline </h6>
+                        Create a short video <span class="underline">under 30 seconds</span>. 
+
+                        The video should cover <span class="underline">ONE</span> of the following theme, in the context of your relationship.
+                        <br>
+                        1. Why did you choose 'arranged marriage' over love marriage ?
+                        <br>
+                        2. What are the beautiful aspects of 'arranged marriage' in your opinion ?
+                        <br>
+                        3. What are the "myths" against 'arranged marriage' that you believe are not true ?
+                        <br><br>
+
+                        You can be as creative as you like !
+                        <br><br>
+
+                        The file size must not exceed <span class="underline">25 MB</span>. Having trouble to keep it under 25 MB ? You can use this 
+                        online tool to shrink your video:
+                        <a class="contest_link" href="https://www.freeconvert.com/video-compressor" target="_blank">https://www.freeconvert.com/video-compressor</a>
+                        <br><br>
+
+                        <h6 class="contest_opening mb-2"> Last date of submission : 15th January, 2023 </h6>
+
+                        <h6 class="contest_opening mb-2 underline"> Awards </h6>
+
+                        - <span class="font_inline_bold_800"> 1st award </span> will be given for <span class="font_inline_bold_800">
+                        "Best Overall Photo and Video"</span> category. This couple will get an "Outdoor Photo + video shoot" by Chitrogolpo Sr. 
+                        Photographer.
+                        <br><br>
+
+                        - <span class="font_inline_bold_800"> 2nd award </span> will be given for <span class="font_inline_bold_800"> 
+                        "Best Photo" </span>. This couple will get an "Outdoor Photo + video shoot"  by Chitrogolpo Jr. Photographer.
+                        <br><br>
+
+                        - <span class="font_inline_bold_800"> 3rd award </span> will be given for <span class="font_inline_bold_800"> 
+                        "Best Video" </span>. This couple will get an "Outdoor Photo + video shoot"  by Chitrogolpo Jr. Photographer.
+                        <br><br>
+
+                        - All of the <span class="font_inline_bold_800"> Top 10 photos and videos </span> winner will get exciting 
+                        <span class="font_inline_bold_800"> merchandises </span> from <span class="font_inline_bold_800"> Saiyonee </span>.
+                        <br><br>
+
+
+                        <h6 class="contest_opening underline"> Contest Terms and conditions </h6>
+                        1. For this contest, we are ONLY looking for couples who have done &quotArranged Marriage&quot. To elaborate further, 
+                           couples who were first introduced through parent, family, online matchmaking sites, newspaper ad, 'Ghotok', matchmaking 
+                           agency etc and eventually got married with both family's consent. 
+                           <br><br>
+
+                        2. You have to submit <span class="underline">1 photo and 1 short video</span> under 30 seconds. If you do not submit both, 
+                           your submission will be considered <span class="underline">incomplete</span>.
+                           <br><br>
+
+                        3. <a class="contest_link" href="https://www.facebook.com/saiyonee" target="_blank">Saiyonee</a> and Chitrogolpo together will select the winners.
+                           <br><br>
+
+                        4. <span class="font_inline_bold_800"> Saiyonee will have the right to use Top 10 photos and videos in it's website and 
+                           social media. Visit <a class="contest_link" href="www.saiyonee.com" target="_blank">www.saiyonee.com</a> to know more
+                           about Saiyonee </span>
+                           <br><br>
+
+                        5. If you have any question, please email to <span class="font_inline_bold_800"> contact@saiyonee.com </span> or message us 
+                           in facebook <a class="contest_link" href="https://www.facebook.com/saiyonee" target="_blank"> https://www.facebook.com/saiyonee </a> 
+                           or instagram <a class="contest_link" href="https://www.instagram.com/my_saiyonee" target="_blank"> https://www.instagram.com/my_saiyonee </a>
+                     </span>
+
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <hr class="contest_boundary">
 
          @foreach($errors->all() as $error)
             <h1 style="color: #CF0000">{{ $error }}</h1>
@@ -461,54 +584,104 @@
                         @csrf
                         <div class="row">
                            <div class="col-md-6 mb-3">
-                              <div class="input-group">
-                                 <input id="contact_us_name" placeholder="Your name here" class="form-control input_text" name="contest_user_name"
+                              {{-- <div class="input-group"> --}}
+                                 <label class="label_text" for="contest_user_name">Please tell us your names(Both Husband and Wife)*</label>
+                                 <input id="contest_user_name" placeholder="Your names here"
+                                    class="form-control input_text" name="contest_user_name"
                                     type="text" autocomplete="off" value="{{ old('contest_user_name') }}">
-                              </div>
+                              {{-- </div> --}}
                               @error('contest_user_name')
                                  <div class="text-danger">{{ $message }}</div>
                               @enderror
                            </div>
 
                            <div class="col-md-6 mb-3">
-                              <div class="input-group">
-                                 <input id="contact_us_email" placeholder="Your mail here" class="form-control input_text" name="contest_user_email"
+                              {{-- <div class="input-group"> --}}
+                                 <label class="label_text" for="contest_marriage_year">When did you get married? (e.g 2016 / 2018 / 2020)</label>
+                                 <input id="contest_marriage_year" placeholder="Your year of marriage here"
+                                    class="form-control input_text" name="contest_marriage_year"
+                                    type="text" autocomplete="off" value="{{ old('contest_marriage_year') }}">
+                              {{-- </div> --}}
+                              @error('contest_marriage_year')
+                                 <div class="text-danger">{{ $message }}</div>
+                              @enderror
+                           </div>
+
+                           <div class="col-md-6 mb-3">
+                              {{-- <div class="input-group"> --}}
+                                 <label class="label_text" for="contest_marriage_medium">How did you get introduced? (e.g Parents / Ghotok / Neighbour / Relative etc)</label>
+                                 <input id="contest_marriage_medium" placeholder="Your marriage medium here"
+                                    class="form-control input_text" name="contest_marriage_medium"
+                                    type="text" autocomplete="off" value="{{ old('contest_marriage_medium') }}">
+                              {{-- </div> --}}
+                              @error('contest_marriage_medium')
+                                 <div class="text-danger">{{ $message }}</div>
+                              @enderror
+                           </div>
+
+                           <div class="col-md-6 mb-3">
+                              {{-- <div class="input-group"> --}}
+                                 <label class="label_text" for="contest_known_duration">How long did you get to know each-other before getting married? (e.g- 3 months / 1 year)</label>
+                                 <input id="contest_known_duration" placeholder="Your acquaintance duration here"
+                                    class="form-control input_text" name="contest_known_duration"
+                                    type="text" autocomplete="off" value="{{ old('contest_known_duration') }}">
+                              {{-- </div> --}}
+                              @error('contest_known_duration')
+                                 <div class="text-danger">{{ $message }}</div>
+                              @enderror
+                           </div>
+
+                           <div class="col-md-6 mb-3">
+                              {{-- <div class="input-group"> --}}
+                                 <label class="label_text" for="contest_user_email">Email</label>
+                                 <input id="contest_user_email" placeholder="Your email here" class="form-control input_text" name="contest_user_email"
                                     type="text" autocomplete="off" value="{{ old('contest_user_email') }}">
-                              </div>
+                              {{-- </div> --}}
                               @error('contest_user_email')
                                  <div class="text-danger">{{ $message }}</div>
                               @enderror
                            </div>
 
-                           {{-- <div class="col-md-12 mb-3">
-                              <div class="input-group">
-                                 <textarea id="contact_us_message" class="form-control input-message input_text" placeholder="Your message here"
-                                    rows="7" name="contest_user_message">{{ old('contest_user_message') }}</textarea>
-                              </div>
-                              @error('contest_user_message')
+                           <div class="col-md-6 mb-3">
+                              {{-- <div class="input-group"> --}}
+                                 <label class="label_text" for="contest_phone_number">Phone Number</label>
+                                 <input id="contest_phone_number" placeholder="Your phone number here" class="form-control input_text" name="contest_phone_number"
+                                    type="text" autocomplete="off" value="{{ old('contest_phone_number') }}">
+                              {{-- </div> --}}
+                              @error('contest_phone_number')
                                  <div class="text-danger">{{ $message }}</div>
                               @enderror
-                           </div> --}}
+                           </div>
 
-                           {{-- <div class="col-md-12 mb-3">
-                              <div class="input-group">
-                                 <input type="file" name="previous_appointments[]" class="dropify"/>
-                              </div>
-                           </div> --}}
+                           <div class="col-md-12 mb-3">
+                              {{-- <div class="input-group"> --}}
+                                 <label class="label_text" for="contest_marriage_description">Please tell us a little about how you got introduced and then 
+                                    married (Max 200 words)</label>
+                                 <textarea id="contest_marriage_description" class="form-control input-message input_text" placeholder="Your description here"
+                                    rows="7" name="contest_marriage_description">{{ old('contest_marriage_description') }}</textarea>
+                              {{-- </div> --}}
+                              @error('contest_marriage_description')
+                                 <div class="text-danger">{{ $message }}</div>
+                              @enderror
+                           </div>
 
                            {{-- Shakib Bhai's Multi/Single File Submission Plugin --}}
-                           <label class="form-label contest_labels mt-1" for="InputName">Submit Images</label>
-                           <div class="contest_images"></div>
-                           @error('contest_images')
-                              <div class="text-danger">{{ $message }}</div>
-                           @enderror
+                           <div class="col-12 mt-1">
+                              <label class="form-label contest_labels" for="InputName">Submit Images</label>
+                              <div class="contest_image"></div>
+                              @error('contest_image')
+                                 <div class="text-danger">{{ $message }}</div>
+                              @enderror
+                           </div>
 
                            {{-- Shakib Bhai's Multi/Single File Submission Plugin --}}
-                           <label class="form-label contest_labels mt-2" for="InputName">Submit Video</label>
-                           <div class="contest_video"></div>
-                           @error('contest_video')
-                              <div class="text-danger">{{ $message }}</div>
-                           @enderror
+                           <div class="col-12 mt-3">
+                              <label class="form-label contest_labels" for="InputName">Submit Video</label>
+                              <div class="contest_video"></div>
+                              @error('contest_video')
+                                 <div class="text-danger">{{ $message }}</div>
+                              @enderror
+                           </div>
 
                            {{-- <div class="col-md-12 mb-3">
                               <div class="input-group">
@@ -574,7 +747,7 @@
 
    <script type="text/javascript">
       $(document).ready(function(){
-         $('.contest_images').imageUploader({imagesInputName: 'contest_images', multiple: true});
+         $('.contest_image').imageUploader({imagesInputName: 'contest_image', multiple: false});
       });
    </script>
 

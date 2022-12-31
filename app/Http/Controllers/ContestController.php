@@ -18,11 +18,17 @@ class ContestController extends Controller
     public function store(Request $request){
 
         $request->validate([
-                'contest_user_name'     => ['required', 'string','min:2', 'max:255'],
-                'contest_user_email'    => ['required', 'string','min:2', 'max:255', 'unique:contests,email'],
-                'contest_images'        => ['required', 'array', 'between:1,10'],
-                'contest_images.*'      => ['required', 'file', 'image'],
-                'contest_video'         => ['required', new ValidateVideoRule],
+                'contest_user_name'             => ['required', 'string','min:2', 'max:255'],
+                'contest_marriage_year'         => ['required', 'string', 'date_format:"Y"'],
+                'contest_marriage_medium'       => ['required', 'string', 'max:255'],
+                'contest_known_duration'        => ['required', 'string', 'max:255'],
+                'contest_user_email'            => ['required', 'string','min:2', 'max:255', 'unique:contests,email'],
+                'contest_phone_number'          => ['required', 'string', 'max:255', 'unique:contests,phone'],
+                'contest_marriage_description'  => ['required', 'string', 'max:255'],
+                
+                'contest_image'                 => ['required', 'array'],
+                'contest_image.*'               => ['required', 'file', 'image'],
+                'contest_video'                 => ['required', new ValidateVideoRule],
                 // 'mimes:x-flv,x-mpegURL,MP2T,3gpp,quicktime,avi,mpeg,mp4,ogg,x-ms-wmv'
                 // 'mimetypes:video/x-flv,application/x-mpegURL,video/MP2T,video/3gpp,video/quicktime,video/avi,video/mpeg,video/mp4,video/ogg,video/x-ms-wmv'
             ],
@@ -31,8 +37,16 @@ class ContestController extends Controller
             ]
         );
 
+        // dd($request->all());
+
         DB::beginTransaction();
         try {
+            $image = $request->file('contest_image')[0];
+            $contest_image_name = md5(uniqid()). '.' .$image->extension();
+            $directory           = 'uploads/contest_image/';
+            $image->move($directory, $contest_image_name);
+            $contest_image_name = $directory . $contest_image_name;
+            
             $video = $request->file('contest_video')[0];
             $contest_video_name = md5(uniqid()). '.' .$video->extension();
             $directory           = 'uploads/contest_video/';
@@ -41,33 +55,30 @@ class ContestController extends Controller
 
             $contest        = new Contest();
             $contest->name  = $request->contest_user_name;
+            $contest->year  = $request->contest_marriage_year;
+            $contest->medium  = $request->contest_marriage_medium;
+            $contest->known_duration  = $request->contest_known_duration;
             $contest->email = $request->contest_user_email;
+            $contest->phone = $request->contest_phone_number;
+            $contest->description = $request->contest_marriage_description;
+            $contest->image = $contest_image_name;
             $contest->video = $contest_video_name;
             $contest->save();
 
             $contest_api_data = [
-                'password' => 'N4NUGgALgwpyrzO',
-                'contest_user_id' => $contest->id,
-                'contest_user_name' => $contest->name,
-                'contest_user_email' => $contest->email,
-                'contest_video' => asset($contest->video),
+                'password'                      => 'N4NUGgALgwpyrzO',
+                'contest_user_id'               => $contest->id,
+                'contest_user_name'             => $contest->name,
+                'contest_marriage_year'         => $request->contest_marriage_year,
+                'contest_marriage_medium'       => $request->contest_marriage_medium,
+                'contest_known_duration'        => $request->contest_known_duration,
+                'contest_user_email'            => $contest->email,
+                'contest_phone_number'          => $request->contest_phone_number,
+                'contest_marriage_description'  => $request->contest_marriage_description,
+
+                'contest_image'                 => asset($contest->image),
+                'contest_video'                 => asset($contest->video),
             ];
-
-            foreach ($request->file('contest_images') as $key => $contest_image) {
-                $contest_image_model = new ContestImage();
-
-                $image = $contest_image;
-                $contest_image_name = md5(uniqid()). '.' .$image->extension();
-                $directory           = 'uploads/contest_image/';
-                $image->move($directory, $contest_image_name);
-                $contest_image_name = $directory . $contest_image_name;
-
-                $contest_image_model->contest_id = $contest->id;
-                $contest_image_model->image = $contest_image_name;
-                $contest_image_model->save();
-
-                $contest_api_data['contest_image_names'][$key] = asset($contest_image_model->image);
-            }
 
             $client = new Client();
 

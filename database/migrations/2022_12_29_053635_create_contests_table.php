@@ -16,7 +16,13 @@ class CreateContestsTable extends Migration
         Schema::create('contests', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->year('year');
+            $table->string('medium');
+            $table->string('known_duration');
             $table->string('email')->unique();
+            $table->string('phone')->unique();
+            $table->text('description');
+            $table->string('image');
             $table->string('video');
             $table->timestamps();
         });

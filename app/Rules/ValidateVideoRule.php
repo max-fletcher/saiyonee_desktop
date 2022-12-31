@@ -26,7 +26,7 @@ class ValidateVideoRule implements Rule
     public function passes($attribute, $value)
     {
         // dd($value[0]->getMimeType());
-        return(in_array($value[0]->getMimeType(), 
+        return(in_array($value[0]->getMimeType(),
             [
                 "video/x-flv",
                 "application/x-mpegURL",
