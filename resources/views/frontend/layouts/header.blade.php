@@ -63,7 +63,7 @@ header -->
                         <a href="#history"> History </a>
                     </li>
                     <li>
-                        <a class="rbox-video-autoplay" data-rbox-type="video" data-rbox-video="{{ asset('frontend/videos/sign-up-video-tutorial.mp4') }}" data-rbox-autoplay="true">
+                        <a class="rbox-video-autoplay steps_video_link" data-rbox-type="video" data-rbox-video="{{ asset('frontend/videos/sign-up-video-tutorial.mp4') }}" data-rbox-autoplay="true">
                             Video
                         </a>
                     </li>

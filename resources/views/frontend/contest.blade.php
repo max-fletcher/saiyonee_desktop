@@ -293,18 +293,20 @@
          padding-left: 1.2em;
          font-size: 40px !important;
          line-height: 1em !important;
-
       }
+
       .modal-footer{
          align-items: center !important;
          justify-content: center !important;
       }
+
       .modal-header-onload-design .btn-close {
          padding: 0.5rem 0.5rem !important;
          margin: -5.5rem 0.5rem -0.5rem auto !important;
          background-color: white;
          border-radius: 20px;
       }
+
       .modal-button{
          width: 55%;
          min-width: 200px;
@@ -427,6 +429,22 @@
 
       #contact_us_message{
          height: 120px;
+      }
+   </style>
+
+   {{-- RBox plugin CSS --}}
+   <link rel="stylesheet" href="{{ asset('frontend/rbox/jquery-rbox.css') }}" />
+   {{-- RBox Custom CSS --}}
+   <style>
+      @media only screen and (min-width: 1000px) {
+         .rbox-wrap {
+               max-width: 50%;
+         }
+      }
+      @media only screen and (min-width: 0px) and (max-width: 999px) {
+         .rbox-wrap {
+               max-width: 80%;
+         }
       }
    </style>
 
@@ -760,6 +778,14 @@
    <script type="text/javascript">
       $(document).ready(function(){
          $('.contest_video').imageUploader({imagesInputName: 'contest_video', multiple: false});
+      });
+   </script>
+
+   {{-- RBox plugin JS --}}
+   <script src="{{asset('frontend/rbox/jquery-rbox.js')}}"></script>
+   <script>
+      $(".rbox-video-autoplay").rbox({
+         'type': 'video',
       });
    </script>
 @endpush
