@@ -375,7 +375,7 @@
       }
 
       .label_text{
-         color: #CF0000 !important;
+         color: #3d3d3d !important;
          font-weight: 600 !important;
          font-size: 16px !important;
       }
@@ -571,9 +571,9 @@
 
          <hr class="contest_boundary">
 
-         @foreach($errors->all() as $error)
+         {{-- @foreach($errors->all() as $error)
             <h1 style="color: #CF0000">{{ $error }}</h1>
-         @endforeach
+         @endforeach --}}
 
          <div class="row">
             <div class="col-12 px-4">
@@ -591,7 +591,7 @@
                                     type="text" autocomplete="off" value="{{ old('contest_user_name') }}">
                               {{-- </div> --}}
                               @error('contest_user_name')
-                                 <div class="text-danger">{{ $message }}</div>
+                                 <div class="text-danger fw-bold">{{ $message }}</div>
                               @enderror
                            </div>
 
@@ -603,7 +603,7 @@
                                     type="text" autocomplete="off" value="{{ old('contest_marriage_year') }}">
                               {{-- </div> --}}
                               @error('contest_marriage_year')
-                                 <div class="text-danger">{{ $message }}</div>
+                                 <div class="text-danger fw-bold">{{ $message }}</div>
                               @enderror
                            </div>
 
@@ -615,7 +615,7 @@
                                     type="text" autocomplete="off" value="{{ old('contest_marriage_medium') }}">
                               {{-- </div> --}}
                               @error('contest_marriage_medium')
-                                 <div class="text-danger">{{ $message }}</div>
+                                 <div class="text-danger fw-bold">{{ $message }}</div>
                               @enderror
                            </div>
 
@@ -627,7 +627,7 @@
                                     type="text" autocomplete="off" value="{{ old('contest_known_duration') }}">
                               {{-- </div> --}}
                               @error('contest_known_duration')
-                                 <div class="text-danger">{{ $message }}</div>
+                                 <div class="text-danger fw-bold">{{ $message }}</div>
                               @enderror
                            </div>
 
@@ -638,7 +638,7 @@
                                     type="text" autocomplete="off" value="{{ old('contest_user_email') }}">
                               {{-- </div> --}}
                               @error('contest_user_email')
-                                 <div class="text-danger">{{ $message }}</div>
+                                 <div class="text-danger fw-bold">{{ $message }}</div>
                               @enderror
                            </div>
 
@@ -649,7 +649,7 @@
                                     type="text" autocomplete="off" value="{{ old('contest_phone_number') }}">
                               {{-- </div> --}}
                               @error('contest_phone_number')
-                                 <div class="text-danger">{{ $message }}</div>
+                                 <div class="text-danger fw-bold">{{ $message }}</div>
                               @enderror
                            </div>
 
@@ -661,7 +661,7 @@
                                     rows="7" name="contest_marriage_description">{{ old('contest_marriage_description') }}</textarea>
                               {{-- </div> --}}
                               @error('contest_marriage_description')
-                                 <div class="text-danger">{{ $message }}</div>
+                                 <div class="text-danger fw-bold">{{ $message }}</div>
                               @enderror
                            </div>
 
@@ -670,7 +670,10 @@
                               <label class="form-label contest_labels" for="InputName">Submit Images</label>
                               <div class="contest_image"></div>
                               @error('contest_image')
-                                 <div class="text-danger">{{ $message }}</div>
+                                 <div class="text-danger fw-bold">{{ $message }}</div>
+                              @enderror
+                              @error('contest_image.*')
+                                 <div class="text-danger fw-bold">{{ $message }}</div>
                               @enderror
                            </div>
 
@@ -679,7 +682,10 @@
                               <label class="form-label contest_labels" for="InputName">Submit Video</label>
                               <div class="contest_video"></div>
                               @error('contest_video')
-                                 <div class="text-danger">{{ $message }}</div>
+                                 <div class="text-danger fw-bold">{{ $message }}</div>
+                              @enderror
+                              @error('contest_video.*')
+                                 <div class="text-danger fw-bold">{{ $message }}</div>
                               @enderror
                            </div>
 

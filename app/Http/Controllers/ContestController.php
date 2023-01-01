@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contest;
-use App\Models\ContestImage;
 use Illuminate\Http\Request;
 use App\Rules\ValidateVideoRule;
 use DB;
@@ -27,13 +26,20 @@ class ContestController extends Controller
                 'contest_marriage_description'  => ['required', 'string', 'max:255'],
                 
                 'contest_image'                 => ['required', 'array'],
-                'contest_image.*'               => ['required', 'file', 'image'],
+                'contest_image.*'               => ['required', 'file', 'image', 'max:5120'],
                 'contest_video'                 => ['required', new ValidateVideoRule],
+                'contest_video.*'               => ['required', 'file', 'max:25600'],
                 // 'mimes:x-flv,x-mpegURL,MP2T,3gpp,quicktime,avi,mpeg,mp4,ogg,x-ms-wmv'
                 // 'mimetypes:video/x-flv,application/x-mpegURL,video/MP2T,video/3gpp,video/quicktime,video/avi,video/mpeg,video/mp4,video/ogg,video/x-ms-wmv'
             ],
             [
                 'contest_user_email.unique'     => 'Only one submission per user allowed.',
+                'contest_image.*.file'            => 'Contest image has to be a file.',
+                'contest_image.*.image'           => 'Contest image has to be a file type of image.',
+                'contest_image.*.max'             => 'Contest image should have a file size lower than 5MB.',
+
+                'contest_video.*.file'            => 'Contest video has to be a file.',
+                'contest_video.*.max'             => 'Contest video should have a file size lower than 25MB.',
             ]
         );
 
@@ -82,7 +88,7 @@ class ContestController extends Controller
 
             $client = new Client();
 
-            $http_request = $client->post(env('BACKEND_URL') . 'api/store_from_api', [
+            $http_request = $client->post(env('SAIYONEE_BACKEND_URL') . 'api/store_from_api', [
                 'form_params' => [
                     'data' => json_encode($contest_api_data)
                 ]
