@@ -571,8 +571,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <h6 class="newsletter_modal_body_text">The first 1000 sign-ups will get the opportunity to enjoy a premium membership to our app. All the features 
-                        of our app will be available to them free of cost! </h6>
+                    <h6 class="newsletter_modal_body_text">First 1000 verified users will get "Premium Membership" for FREE !!</h6>
                     {{-- <form>
                         <div class="mb-1">
                             <label for="email" class="col-form-label newsletter_modal_form_label">Email:</label>
