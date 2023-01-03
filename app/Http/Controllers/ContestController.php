@@ -93,7 +93,7 @@ class ContestController extends Controller
 
             $client = new Client();
 
-            $http_request = $client->post(env('SAIYONEE_BACKEND_URL') . 'api/store_from_api', [
+            $http_request = $client->post(config('backend.saiyonee_backend_url') . 'api/store_from_api', [
                 'form_params' => [
                     'data' => json_encode($contest_api_data)
                 ]
