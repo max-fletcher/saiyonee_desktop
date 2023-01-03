@@ -21,9 +21,10 @@ class CreateContestsTable extends Migration
             $table->string('known_duration');
             $table->string('email')->unique();
             $table->string('phone')->unique();
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->string('image');
             $table->string('video');
+            $table->text('feedback')->nullable();
             $table->timestamps();
         });
     }

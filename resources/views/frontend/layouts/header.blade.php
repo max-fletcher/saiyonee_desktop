@@ -47,25 +47,29 @@ header -->
                 <ul class="menu-logo">
                     <li> <a href="/"><img src="{{ asset('frontend/images/saiyonee-header.png') }}" alt="logo" /> </a> </li>
                 </ul>
+
                 <!-- menu links -->
                 <ul class="menu-links">
                     <!-- active class -->
                     <li class="active">
-                        <a href="#top"> Home </a>
+                        <a href=@if(Route::currentRouteName() == 'index') "#top" @else {{ route('index', '#top') }} @endif> Home </a>
                     </li>
                     <li>
-                        <a href="#steps"> Steps </a>
+                        <a href=@if(Route::currentRouteName() == 'index') "#steps" @else {{ route('index', '#steps') }} @endif> Steps </a>
                     </li>
                     <li>
-                        <a href="#apps"> Apps </a>
+                        <a href=@if(Route::currentRouteName() == 'index') "#apps" @else {{ route('index', '#apps') }} @endif> Apps </a>
                     </li>
                     <li>
-                        <a href="#history"> History </a>
+                        <a href=@if(Route::currentRouteName() == 'index') "#history" @else {{ route('index', '#history') }} @endif> History </a>
                     </li>
                     <li>
                         <a class="rbox-video-autoplay steps_video_link" data-rbox-type="video" data-rbox-video="{{ asset('frontend/videos/sign-up-video-tutorial.mp4') }}" data-rbox-autoplay="true">
                             Video
                         </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('contest.index', '#contest_section') }}"> Contest </a>
                     </li>
                     {{-- <li>
                         <a href="#testimonials"> Testimonials </a>
@@ -74,7 +78,7 @@ header -->
                         <a href="#loves"> Loves </a>
                     </li> --}}
                     <li>
-                        <a href="#contact"> Contact </a>
+                        <a href=@if(Route::currentRouteName() == 'index') "#contact" @else {{ route('index', '#contact') }} @endif> Contact </a>
                     </li>
                 </ul>
                 </div>

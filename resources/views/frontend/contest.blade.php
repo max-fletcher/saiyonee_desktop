@@ -52,7 +52,13 @@
          'callback_catch' => 'callbackCatch'
    ]) !!}
 
+   <style> @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600&display=swap'); </style>
+
    <style>
+      .contest_title{
+         font-family: 'Hind Siliguri', sans-serif;
+      }
+
       @media only screen and (min-width: 992px) and (max-width: 1129px) {
          .timeline-inner{
                background-position: right -520px bottom -120px !important;
@@ -361,7 +367,7 @@
          }
       }
 
-      .contest_boundary{
+      .contest_section{
          margin-top: 10px;
          margin-bottom:35px;
          opacity: 0.75;
@@ -457,9 +463,8 @@
 @section('frontend-page-content')
    <!--=================================
    banner -->
-   <section id="home-slider" class="fullscreen">
+   {{-- <section id="home-slider" class="fullscreen">
       <div class="carousel-inner">
-         <!--/ Carousel item end -->
          <div class="mt-5 carousel-item active h-100 bg-overlay-red main_image" style="background: url({{ asset('frontend/images/banner2.png') }}) no-repeat 0 0; background-size: cover;" >
                <div class="slider-content">
                   <div class="container">
@@ -475,7 +480,7 @@
                </div>
          </div>
       </div>
-   </section>
+   </section> --}}
 
    {{-- <h2>HTML5 Video</h2>
    <a href="#" class="rbox-video-autoplay" data-rbox-type="video" data-rbox-video="{{ asset('frontend/videos/sign-up-video-tutorial.mp4') }}" data-rbox-autoplay="true">
@@ -488,11 +493,11 @@
    <!--=================================
    Page Section -->
 
-   <section id="contest" class="page-section-ptb">
+   <section id="contest_section" class="page-section-ptb">
       <div class="container">
          <div class="row justify-content-center">
             <div class="col-md-8 text-center mb-4 mb-md-5">
-               <h2 class="title divider-2">Saiyonee X Chitrogolpo</h2>
+               <h2 class="title divider-2"> <div>Saiyonee X Chitrogolpo presents</div> <div class="mt-4 contest_title">"তোমার আমার লাল নীল সংসার"</div> </h2>
             </div>
          </div>
 
@@ -537,7 +542,7 @@
                         <a class="contest_link" href="https://www.freeconvert.com/video-compressor" target="_blank">https://www.freeconvert.com/video-compressor</a>
                         <br><br>
 
-                        <h6 class="contest_opening mb-2"> Last date of submission : 15th January, 2023 </h6>
+                        <h6 class="contest_opening mb-2"> Last date of submission : 20th January, 2023 </h6>
 
                         <h6 class="contest_opening mb-2 underline"> Awards </h6>
 
@@ -580,6 +585,11 @@
                         5. If you have any question, please email to <span class="font_inline_bold_800"> contact@saiyonee.com </span> or message us 
                            in facebook <a class="contest_link" href="https://www.facebook.com/saiyonee" target="_blank"> https://www.facebook.com/saiyonee </a> 
                            or instagram <a class="contest_link" href="https://www.instagram.com/my_saiyonee" target="_blank"> https://www.instagram.com/my_saiyonee </a>
+                           <br><br>
+
+                        6. Saiyonee reserves the right, at its sole discretion, to amend the rules, regulations, and duration of the campaign at any time without any prior notice.
+                           Saiyonee has the sole right to disqualify any individual or participants from the campaign.
+                           <br><br>
                      </span>
 
                   </div>
@@ -587,7 +597,7 @@
             </div>
          </div>
 
-         <hr class="contest_boundary">
+         <hr class="contest_section">
 
          {{-- @foreach($errors->all() as $error)
             <h1 style="color: #CF0000">{{ $error }}</h1>
@@ -598,7 +608,7 @@
                <div class="row mb-0 mb-md-2 mb-lg-3 mb-xl-4">
                   <div class="col-12 mb-0 mb-lg-2">
                      <div id="formmessage" style="display:none">Success/Error Message Goes Here</div>
-                     <form method="POST" action="{{ route('contest.store', '#contestForm') }}" enctype="multipart/form-data" id="contestForm" class="main-form">
+                     <form method="POST" action="{{ route('contest.store', '#contest_section') }}" enctype="multipart/form-data" id="contestForm" class="main-form">
                         @csrf
                         <div class="row">
                            <div class="col-md-6 mb-3">
@@ -649,6 +659,19 @@
                               @enderror
                            </div>
 
+                           <div class="col-md-12 mb-3">
+                              {{-- <div class="input-group"> --}}
+                                 <label class="label_text" for="contest_marriage_description">
+                                    Please tell us a little about how you got introduced and then married (Max 200 words)
+                                 </label>
+                                 <textarea id="contest_marriage_description" class="form-control input-message input_text" placeholder="Your description here"
+                                    rows="7" name="contest_marriage_description">{{ old('contest_marriage_description') }}</textarea>
+                              {{-- </div> --}}
+                              @error('contest_marriage_description')
+                                 <div class="text-danger fw-bold">{{ $message }}</div>
+                              @enderror
+                           </div>
+
                            <div class="col-md-6 mb-3">
                               {{-- <div class="input-group"> --}}
                                  <label class="label_text" for="contest_user_email">Email</label>
@@ -667,18 +690,6 @@
                                     type="text" autocomplete="off" value="{{ old('contest_phone_number') }}">
                               {{-- </div> --}}
                               @error('contest_phone_number')
-                                 <div class="text-danger fw-bold">{{ $message }}</div>
-                              @enderror
-                           </div>
-
-                           <div class="col-md-12 mb-3">
-                              {{-- <div class="input-group"> --}}
-                                 <label class="label_text" for="contest_marriage_description">Please tell us a little about how you got introduced and then 
-                                    married (Max 200 words)</label>
-                                 <textarea id="contest_marriage_description" class="form-control input-message input_text" placeholder="Your description here"
-                                    rows="7" name="contest_marriage_description">{{ old('contest_marriage_description') }}</textarea>
-                              {{-- </div> --}}
-                              @error('contest_marriage_description')
                                  <div class="text-danger fw-bold">{{ $message }}</div>
                               @enderror
                            </div>
@@ -715,6 +726,19 @@
                            @error('contest_video1')
                               <div class="text-danger">{{ $message }}</div>
                            @enderror --}}
+
+                           <div class="col-md-12 mt-4 mb-2">
+                              {{-- <div class="input-group"> --}}
+                                 <label class="label_text" for="contest_feedback">
+                                    Do you have any opinion or feedback regarding this contest ?  Please share with us. We would love to hear from you (optional)
+                                 </label>
+                                 <textarea id="contest_feedback" class="form-control input-message input_text" placeholder="Your description here"
+                                    rows="7" name="contest_feedback">{{ old('contest_feedback') }}</textarea>
+                              {{-- </div> --}}
+                              @error('contest_feedback')
+                                 <div class="text-danger fw-bold">{{ $message }}</div>
+                              @enderror
+                           </div>
 
                            <div class="col-md-12 mb-0 d-flex justify-content-center">
                               <button id="contest_submit" type="submit" class="btn btn-light uppercase contest_submit_btn mt-5">Submit Now</button>
@@ -765,6 +789,19 @@
             timer: 2000,
          })
       @endif
+   </script>
+
+   <script>
+      $( "#contest_submit" ).on( "click", function() {
+         Swal.fire({
+            title: 'Submitting Contest Data! Please wait...',
+            didOpen: () => {
+               Swal.showLoading()
+            },
+            timerProgressBar: true,
+            allowOutsideClick: false,
+         })
+      });
    </script>
 
    <script src="{{ asset('Image Uploader/image-uploader.min.js' )}}"></script>
