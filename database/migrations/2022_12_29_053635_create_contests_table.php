@@ -22,8 +22,10 @@ class CreateContestsTable extends Migration
             $table->string('email')->unique();
             $table->string('phone')->unique();
             $table->text('description')->nullable();
-            $table->string('image');
-            $table->string('video');
+            $table->string('image')->nullable();
+            $table->string('gdrive_image_link')->nullable();
+            $table->string('video')->nullable();
+            $table->string('gdrive_video_link')->nullable();
             $table->text('feedback')->nullable();
             $table->timestamps();
         });

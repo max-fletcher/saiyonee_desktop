@@ -580,7 +580,7 @@
                     </form> --}}
                 </div>
                 <div class="modal-footer">
-                    <a target="_blank" href="https://app.saiyonee.com"><button type="button"  class="btn btn-light uppercase modal-button mt-3 mt-md-1">Continue </button></a>
+                    <a target="_blank" href="https://app.saiyonee.com"><button type="button"  class="btn btn-light uppercase modal-button mt-3 mt-md-1">Sign Up Now</button></a>
                     <p>By continuing you agree to our Terms and Privacy Policy.</p>
                 </div>
             </div>

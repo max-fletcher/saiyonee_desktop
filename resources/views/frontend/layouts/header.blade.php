@@ -69,7 +69,7 @@ header -->
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('contest.index', '#contest_section') }}"> Contest </a>
+                        <a href="{{ route('contest.index') }}"> Contest </a>
                     </li>
                     {{-- <li>
                         <a href="#testimonials"> Testimonials </a>

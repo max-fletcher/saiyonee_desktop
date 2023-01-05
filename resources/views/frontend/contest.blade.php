@@ -367,9 +367,9 @@
          }
       }
 
-      .contest_section{
-         margin-top: 10px;
-         margin-bottom:35px;
+      #contest_section{
+         margin-top: 10px !important;
+         margin-bottom: 50px !important;
          opacity: 0.75;
       }
 
@@ -404,6 +404,10 @@
          color: #FFB7AC !important;
          font-size: 20px;
          font-weight: 600;
+      }
+
+      .font_weight_or{
+         font-weight: 500;
       }
       
       /* Bunch of media queries for positioning steps couple image properly */
@@ -493,7 +497,7 @@
    <!--=================================
    Page Section -->
 
-   <section id="contest_section" class="page-section-ptb">
+   <section id="contest_rules_section" class="page-section-ptb">
       <div class="container">
          <div class="row justify-content-center">
             <div class="col-md-8 text-center mb-4 mb-md-5">
@@ -503,7 +507,7 @@
 
          <div class="row">
             <div class="col-12 px-2">
-               <div class="row mb-0 mb-md-2 mb-lg-3 mb-xl-4 mx-3">
+               <div class="row mb-0 mb-md-2 mx-3">
                   <div class="col-12 mb-0 mb-lg-2">
 
                      <h5 class="contest_opening mb-3"> Dear Couples, </h5>
@@ -597,7 +601,7 @@
             </div>
          </div>
 
-         <hr class="contest_section">
+         <hr id="contest_section">
 
          {{-- @foreach($errors->all() as $error)
             <h1 style="color: #CF0000">{{ $error }}</h1>
@@ -694,14 +698,38 @@
                               @enderror
                            </div>
 
+                           <p class="mt-2 mb-3 text-danger fw-bold" style="font-size: 1rem;">
+                              *Note: For Image and Video submissions, if the file size exceeds 10MB, it is recommended to use a google drive link. Otherwise, the submission
+                              may take too long or hang up. Just remember to make the folder accessible to everyone. To do that, store your files in a google drive folder, right click on that
+                              folder and click the "Share" button. Then from the pop-up, select "Anyone with the link" from the "General Access" dropdown. Finally, click the "Copy link"
+                              button and paste in the respective box.
+                           </p>
+
+                           <p class="mt-2 mb-3 text-danger fw-bold" style="font-size: 1rem;">
+                              Also, if both the image/video and google drive link is submitted, only the drive link will be saved.
+                           </p>
+
                            {{-- Shakib Bhai's Multi/Single File Submission Plugin --}}
                            <div class="col-12 mt-1">
-                              <label class="form-label contest_labels" for="InputName">Submit Images</label>
+                              <label class="form-label contest_labels" for="InputName">Submit Image</label>
                               <div class="contest_image"></div>
                               @error('contest_image')
                                  <div class="text-danger fw-bold">{{ $message }}</div>
                               @enderror
                               @error('contest_image.*')
+                                 <div class="text-danger fw-bold">{{ $message }}</div>
+                              @enderror
+                           </div>
+
+                           <h3 class="mt-2 text-center font_weight_or">OR</h3>
+
+                           <div class="col-md-12 mb-3">
+                              {{-- <div class="input-group"> --}}
+                                 <label class="label_text" for="contest_image_gdrive_url">Contest Image Google Drive Url</label>
+                                 <input id="contest_image_gdrive_url" placeholder="Your google drive link here" class="form-control input_text" name="contest_image_gdrive_url"
+                                    type="text" autocomplete="off" value="{{ old('contest_image_gdrive_url') }}">
+                              {{-- </div> --}}
+                              @error('contest_image_gdrive_url')
                                  <div class="text-danger fw-bold">{{ $message }}</div>
                               @enderror
                            </div>
@@ -714,6 +742,19 @@
                                  <div class="text-danger fw-bold">{{ $message }}</div>
                               @enderror
                               @error('contest_video.*')
+                                 <div class="text-danger fw-bold">{{ $message }}</div>
+                              @enderror
+                           </div>
+
+                           <h3 class="mt-2 text-center font_weight_or">OR</h3>
+
+                           <div class="col-md-12 mb-3">
+                              {{-- <div class="input-group"> --}}
+                                 <label class="label_text" for="contest_video_gdrive_url">Contest Video Google Drive Url</label>
+                                 <input id="contest_video_gdrive_url" placeholder="Your google drive link here" class="form-control input_text" name="contest_video_gdrive_url"
+                                    type="text" autocomplete="off" value="{{ old('contest_video_gdrive_url') }}">
+                              {{-- </div> --}}
+                              @error('contest_video_gdrive_url')
                                  <div class="text-danger fw-bold">{{ $message }}</div>
                               @enderror
                            </div>
