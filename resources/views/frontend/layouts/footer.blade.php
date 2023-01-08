@@ -22,9 +22,9 @@ footer -->
                         </address>
                         </div>
                     </div> --}}
-                        <div class="col-md-12">
-                            <div class="address-block"> <img src="{{ asset('frontend/images/icon3.png') }}" width="40" alt=""></i> <a href="mailto:contact@saiyonee.com">contact@saiyonee.com</a> </div>
-                        </div>
+                    <div class="col-md-12">
+                        <div class="address-block"> <img src="{{ asset('frontend/images/icon3.png') }}" width="40" alt=""></i> <p>contact@saiyonee.com</p> </div>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12 mb-3">
