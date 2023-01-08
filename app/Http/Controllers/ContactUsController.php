@@ -17,9 +17,9 @@ class ContactUsController extends Controller
             'message' => ['required', 'string', 'max:65500']
         ]);
 
-        // dd(config('backend.saiyonee_backend_url').'/api/submit_contact_us');
+        // dd(config('backend.saiyonee_backend_url').'api/submit_contact_us');
 
-        $response = Http::post(config('backend.saiyonee_backend_url').'/api/submit_contact_us_mail', [
+        $response = Http::post(config('backend.saiyonee_backend_url').'api/submit_contact_us_mail', [
             'name' => $request->name,
             'email' => $request->email,
             // 'subject' => $request->subject,

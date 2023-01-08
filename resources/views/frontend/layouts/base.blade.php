@@ -113,9 +113,6 @@
         </div>
     </div>
 
-
-
-
     @include('frontend.layouts.inc.js')
 
     <script>
@@ -241,6 +238,45 @@
         });
     </script>
 
+    {{-- To ascertain that the correct section is active on navbar on page load. --}}
+    <script>
+        $( document ).ready(function() {
+            if(window.location.pathname.includes("contest")){
+                $('.navbar_contest').addClass('active')
+            }
+            if(window.location.pathname.includes("/") && !window.location.pathname.includes("/")){
+                $('.navbar_home').addClass('active')
+            }
+
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for(var i = 0; i < hashes.length; i++)
+            {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+
+            if(vars[0].includes('top')){
+                $('.navbar_home').addClass('active')
+            }
+            if(vars[0].includes('contact')){
+                $('.navbar_contact').addClass('active')
+            }
+            if(vars[0].includes('steps')){
+                $('.navbar_steps').addClass('active')
+            }
+            if(vars[0].includes('apps')){
+                $('.navbar_apps').addClass('active')
+            }
+            if(vars[0].includes('history')){
+                $('.navbar_history').addClass('active')
+            }
+            if(vars[0].includes('contact')){
+                $('.navbar_contact').addClass('active')
+            }
+        });
+    </script>
 </body>
 
 </html>

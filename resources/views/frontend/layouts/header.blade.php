@@ -43,44 +43,44 @@ header -->
             <div class="container">
             <div class="row position-relative">
                 <div class="col-md-12 position-relative">
-                <!-- menu logo -->
-                <ul class="menu-logo">
-                    <li> <a href="/"><img src="{{ asset('frontend/images/saiyonee-header.png') }}" alt="logo" /> </a> </li>
-                </ul>
+                    <!-- menu logo -->
+                    <ul class="menu-logo">
+                        <li> <a href="/"><img src="{{ asset('frontend/images/saiyonee-header.png') }}" alt="logo" /> </a> </li>
+                    </ul>
 
-                <!-- menu links -->
-                <ul class="menu-links">
-                    <!-- active class -->
-                    <li class="active">
-                        <a href=@if(Route::currentRouteName() == 'index') "#top" @else {{ route('index', '#top') }} @endif> Home </a>
-                    </li>
-                    <li>
-                        <a href=@if(Route::currentRouteName() == 'index') "#steps" @else {{ route('index', '#steps') }} @endif> Steps </a>
-                    </li>
-                    <li>
-                        <a href=@if(Route::currentRouteName() == 'index') "#apps" @else {{ route('index', '#apps') }} @endif> Apps </a>
-                    </li>
-                    <li>
-                        <a href=@if(Route::currentRouteName() == 'index') "#history" @else {{ route('index', '#history') }} @endif> History </a>
-                    </li>
-                    <li>
-                        <a class="rbox-video-autoplay steps_video_link" data-rbox-type="video" data-rbox-video="{{ asset('frontend/videos/sign-up-video-tutorial.mp4') }}" data-rbox-autoplay="true">
-                            Video
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('contest.index') }}"> Contest </a>
-                    </li>
-                    {{-- <li>
-                        <a href="#testimonials"> Testimonials </a>
-                    </li>
-                    <li>
-                        <a href="#loves"> Loves </a>
-                    </li> --}}
-                    <li>
-                        <a href=@if(Route::currentRouteName() == 'index') "#contact" @else {{ route('index', '#contact') }} @endif> Contact </a>
-                    </li>
-                </ul>
+                    <!-- menu links -->
+                    <ul class="menu-links">
+                        <!-- active class -->
+                        <li class="nav_link navbar_home">
+                            <a href=@if(Route::currentRouteName() == 'index') "#top" @else {{ route('index', '#top') }} @endif> Home </a>
+                        </li>
+                        <li class="nav_link navbar_steps">
+                            <a href=@if(Route::currentRouteName() == 'index') "#steps" @else {{ route('index', '#steps') }} @endif> Steps </a>
+                        </li>
+                        <li class="nav_link navbar_apps">
+                            <a href=@if(Route::currentRouteName() == 'index') "#apps" @else {{ route('index', '#apps') }} @endif> Apps </a>
+                        </li>
+                        <li class="nav_link navbar_history">
+                            <a href=@if(Route::currentRouteName() == 'index') "#history" @else {{ route('index', '#history') }} @endif> History </a>
+                        </li>
+                        <li class="nav_link navbar_video">
+                            <a class="rbox-video-autoplay steps_video_link" data-rbox-type="video" data-rbox-video="{{ asset('frontend/videos/sign-up-video-tutorial.mp4') }}" data-rbox-autoplay="true">
+                                Video
+                            </a>
+                        </li>
+                        <li  class="nav_link navbar_contest">
+                            <a href="{{ route('contest.index') }}"> Contest </a>
+                        </li>
+                        {{-- <li>
+                            <a href="#testimonials"> Testimonials </a>
+                        </li>
+                        <li>
+                            <a href="#loves"> Loves </a>
+                        </li> --}}
+                        <li class="nav_link navbar_contact">
+                            <a href=@if(Route::currentRouteName() == 'index') "#contact" @else {{ route('index', '#contact') }} @endif> Contact </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
             </div>

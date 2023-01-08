@@ -25,4 +25,4 @@ Route::post('/contest/store', [ContestController::class, 'store'])->name('contes
 
 Route::post('/submit_contact_us', [ContactUsController::class, 'submit_contact_us'])->middleware('throttle:5,1440')->name('submit_contact_us');
 
-// url: "{{ env('SAIYONEE_BACKEND_URL') }}" + "/api/submit_contact_us_mail",
+// url: "{{ env('SAIYONEE_BACKEND_URL') }}" + "api/submit_contact_us_mail",
