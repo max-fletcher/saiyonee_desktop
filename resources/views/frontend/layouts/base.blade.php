@@ -244,7 +244,7 @@
             if(window.location.pathname.includes("contest")){
                 $('.navbar_contest').addClass('active')
             }
-            if(window.location.pathname.includes("/") && !window.location.pathname.includes("/")){
+            if(window.location.pathname.includes("/") && !window.location.pathname.includes("/contest")){
                 $('.navbar_home').addClass('active')
             }
 
