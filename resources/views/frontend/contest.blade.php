@@ -353,6 +353,33 @@
          color: red;
       }
 
+      .form-check-input{
+         width: 1.05rem;
+         height: 1.05rem;
+         background-size: cover;
+      }
+
+      .form-check-input:checked {
+         background-color: #CF0000;
+         border-color: #CF0000;
+      }
+
+      .radio_label{
+         color: #3d3d3d !important;
+         font-weight: 400 !important;
+         font-size: 16px !important;
+      }
+
+      .contest_form_row{
+         display: flex;
+         justify-content: center;
+      }
+
+      .small_text{
+         font-weight: 500 !important;
+         font-size: 12px !important;
+      }
+
       @media screen and (max-width: 479px){
          h3 {
                font-size: 25px;
@@ -399,13 +426,20 @@
       }
 
       .input_text{
-         color: #CF0000 !important;
+         color: #000 !important;
          font-weight: 600;
          font-size: 16px;
       }
 
+      .input_error_border_red{
+         color: #CF0000 !important;
+         font-weight: 600;
+         font-size: 16px;
+         border-bottom-color: red !important;
+      }
+
       .contest_labels{
-         color: #FFB7AC !important;
+         color: #3d3d3d !important;
          font-size: 20px;
          font-weight: 600;
       }
@@ -505,7 +539,7 @@
       <div class="container">
          <div class="row justify-content-center">
             <div class="col-md-8 text-center mb-4 mb-md-5">
-               <h2 class="title divider-2"> <div>Saiyonee X Chitrogolpo presents</div> <div class="mt-4 contest_title">"তোমার আমার লাল নীল সংসার"</div> </h2>
+               <h2 class="title divider-2"> <div>Saiyonee X Chitrogolpo presents</div> <div class="mt-4 contest_title">"তোমার আমার লাল নীল সংসারের গল্প"</div> </h2>
             </div>
          </div>
 
@@ -517,7 +551,7 @@
                      <h5 class="contest_opening mb-3"> Dear Couples, </h5>
 
                      <span class="contest_para">
-                        Thank you for your interest in this contest. We are excited to see your best memories as couple.
+                        Thank you for your interest in this contest. We are excited and eager to see your best memories as a couple.
                         Please upload <span class="underline">1 photo and 1 short video</span> that show how beautiful and precious your
                         relationship is.
                         <br><br>
@@ -525,10 +559,11 @@
                         <h6 class="contest_opening"> Photo submission guideline </h6>
                         It can be from any type of event or setup. Show us your favourite couple photo !
                         <br><br>
-                        The image file size must not exceed 
+
+                        {{-- The image file size must not exceed 
                         <span class="underline">5 MB</span>. Having trouble to keep it under 5 MB ? You can use this online tool to shrink photo: 
                         <a class="contest_link" href="https://www.freeconvert.com/image-compressor" target="_blank">https://www.freeconvert.com/image-compressor</a>
-                        <br><br>
+                        <br><br> --}}
 
                         <h6 class="contest_opening"> Video submission guideline </h6>
                         Create a short video <span class="underline">under 30 seconds</span>. 
@@ -545,12 +580,21 @@
                         You can be as creative as you like !
                         <br><br>
 
-                        The file size must not exceed <span class="underline">25 MB</span>. Having trouble to keep it under 25 MB ? You can use this 
-                        online tool to shrink your video:
-                        <a class="contest_link" href="https://www.freeconvert.com/video-compressor" target="_blank">https://www.freeconvert.com/video-compressor</a>
+                        <h6 class="contest_opening"> How to Upload ? </h6>
+                        1. Please upload your photo and video in a Google drive/Dropbox /Onedrive/iCloud folder and share the link with us <span class="contest_opening"> (Recommended method) </span>
+                        <br>
+                        <span class="contest_opening">OR,</span>
+                        <br>
+                        2. Upload photo and video directly to this form
                         <br><br>
 
+                        {{-- The file size must not exceed <span class="underline">25 MB</span>. Having trouble to keep it under 25 MB ? You can use this 
+                        online tool to shrink your video:
+                        <a class="contest_link" href="https://www.freeconvert.com/video-compressor" target="_blank">https://www.freeconvert.com/video-compressor</a>
+                        <br><br> --}}
+
                         <h6 class="contest_opening mb-2"> Last date of submission : 20th January, 2023 </h6>
+                        <br>
 
                         <h6 class="contest_opening mb-2 underline"> Awards </h6>
 
@@ -587,16 +631,19 @@
 
                         4. <span class="font_inline_bold_800"> Saiyonee will have the right to use Top 10 photos and videos in it's website and 
                            social media. Visit <a class="contest_link" href="www.saiyonee.com" target="_blank">www.saiyonee.com</a> to know more
-                           about Saiyonee </span>
+                           about Saiyonee. </span>
                            <br><br>
 
                         5. If you have any question, please email to <span class="font_inline_bold_800"> contact@saiyonee.com </span> or message us 
-                           in facebook <a class="contest_link" href="https://www.facebook.com/saiyonee" target="_blank"> https://www.facebook.com/saiyonee </a> 
-                           or instagram <a class="contest_link" href="https://www.instagram.com/my_saiyonee" target="_blank"> https://www.instagram.com/my_saiyonee </a>
+                           in 
+                           <br> 
+                           facebook <a class="contest_link" href="https://www.facebook.com/saiyonee" target="_blank"> https://www.facebook.com/saiyonee </a> or
+                           <br>
+                           instagram <a class="contest_link" href="https://www.instagram.com/my_saiyonee" target="_blank"> https://www.instagram.com/my_saiyonee </a>
                            <br><br>
 
-                        6. Saiyonee reserves the right, at its sole discretion, to amend the rules, regulations, and duration of the campaign at any time without any prior notice.
-                           Saiyonee has the sole right to disqualify any individual or participants from the campaign.
+                        6. Saiyonee and Chitrogolpo reserve the right, at its sole discretion, to amend the rules, regulations, and duration of the campaign at any
+                           time without any prior notice. Saiyonee and Chitrogolpo has the sole right to disqualify any individual or participants from the campaign.
                            <br><br>
                      </span>
 
@@ -611,21 +658,21 @@
             <h1 style="color: #CF0000">{{ $error }}</h1>
          @endforeach --}}
 
-         <div class="row">
-            <div class="col-12 px-4">
+         <div class="row contest_form_row">
+            <div class="col-8 px-4">
                <div class="row mb-0 mb-md-2 mb-lg-3 mb-xl-4">
                   <div class="col-12 mb-0 mb-lg-2">
                      <div id="formmessage" style="display:none">Success/Error Message Goes Here</div>
                      <form method="POST" action="{{ route('contest.store', '#contest_section') }}" enctype="multipart/form-data" id="contestForm" class="main-form">
                         @csrf
                         <div class="row">
-                           <div class="col-md-6 mb-3">
+                           <div class="col-12 mb-5">
                               {{-- <div class="input-group"> --}}
                                  <label class="label_text" for="contest_user_name">
                                     Please tell us your names(Both Husband and Wife)<span class="text-danger"> *</span>
                                  </label>
                                  <input id="contest_user_name" placeholder="Your names here"
-                                    class="form-control input_text" name="contest_user_name"
+                                    class="form-control @error('contest_user_name') input_error_border_red @else input_text @enderror" name="contest_user_name"
                                     type="text" autocomplete="off" value="{{ old('contest_user_name') }}">
                               {{-- </div> --}}
                               @error('contest_user_name')
@@ -633,13 +680,13 @@
                               @enderror
                            </div>
 
-                           <div class="col-md-6 mb-3">
+                           <div class="col-12 mb-5">
                               {{-- <div class="input-group"> --}}
                                  <label class="label_text" for="contest_marriage_year">
                                     When did you get married? (e.g 2016 / 2018 / 2020)<span class="text-danger"> *</span>
                                  </label>
                                  <input id="contest_marriage_year" placeholder="Your year of marriage here"
-                                    class="form-control input_text" name="contest_marriage_year"
+                                    class="form-control @error('contest_marriage_year') input_error_border_red @else input_text @enderror" name="contest_marriage_year"
                                     type="text" autocomplete="off" value="{{ old('contest_marriage_year') }}">
                               {{-- </div> --}}
                               @error('contest_marriage_year')
@@ -647,27 +694,70 @@
                               @enderror
                            </div>
 
-                           <div class="col-md-6 mb-3">
-                              {{-- <div class="input-group"> --}}
-                                 <label class="label_text" for="contest_marriage_medium">
-                                    How did you get introduced? (e.g Parents / Ghotok / Neighbour / Relative etc)<span class="text-danger"> *</span>
+                           <div class="col-12 mb-5">
+
+                              <label class="label_text mb-3" for="contest_marriage_medium">
+                                 How did you get introduced?<span class="text-danger"> *</span>
+                              </label>
+
+                              <div class="form-check mb-1">
+                                 <input class="form-check-input me-1" type="radio" name="contest_marriage_medium" id="parents_sibling" value="Parents/Sibling" checked>
+                                 <label class="radio_label" for="parents_sibling">
+                                    Parents/Sibling
                                  </label>
-                                 <input id="contest_marriage_medium" placeholder="Your marriage medium here"
-                                    class="form-control input_text" name="contest_marriage_medium"
-                                    type="text" autocomplete="off" value="{{ old('contest_marriage_medium') }}">
+                              </div>
+                              <div class="form-check mb-1">
+                                 <input class="form-check-input me-1" type="radio" name="contest_marriage_medium" id="relative" value="Relative">
+                                 <label class="radio_label" for="relative">
+                                    Relative
+                                 </label>
+                              </div>
+                              <div class="form-check mb-1">
+                                 <input class="form-check-input me-1" type="radio" name="contest_marriage_medium" id="ghotok_or_marriage_media" value="Ghotok/Marriage Media">
+                                 <label class="radio_label" for="ghotok_or_marriage_media">
+                                    Ghotok/Marriage Media
+                                 </label>
+                              </div>
+
+                              <div class="form-check mb-1">
+                                 <input class="form-check-input me-1" type="radio" name="contest_marriage_medium" id="newspaper" value="Newspaper">
+                                 <label class="radio_label" for="newspaper">
+                                    Newspaper
+                                 </label>
+                              </div>
+                              <div class="form-check mb-1">
+                                 <input class="form-check-input me-1" type="radio" name="contest_marriage_medium" id="online_matchmaking_site" value="Online Matchmaking site">
+                                 <label class="radio_label" for="online_matchmaking_site">
+                                    Online Matchmaking site
+                                 </label>
+                              </div>
+                              <div class="form-check mb-1">
+                                 <input class="form-check-input me-1" type="radio" name="contest_marriage_medium" id="other" value="Other">
+                                 <label class="radio_label" for="other">
+                                    Other
+                                 </label>
+                              </div>
+
+                              {{-- (e.g Parents / Ghotok / Neighbour / Relative etc) --}}
+
+                              {{-- <div class="input-group"> --}}
+
+                                 {{-- <input id="contest_marriage_medium" placeholder="Your marriage medium here"
+                                    class="form-control @error('contest_marriage_medium') input_error_border_red @else input_text @enderror" name="contest_marriage_medium"
+                                    type="text" autocomplete="off" value="{{ old('contest_marriage_medium') }}"> --}}
                               {{-- </div> --}}
                               @error('contest_marriage_medium')
                                  <div class="text-red fw-bold">{{ $message }}</div>
                               @enderror
                            </div>
 
-                           <div class="col-md-6 mb-3">
+                           <div class="col-12 mb-5">
                               {{-- <div class="input-group"> --}}
                                  <label class="label_text" for="contest_known_duration">
                                     How long did you get to know each-other before getting married? (e.g- 3 months / 1 year)<span class="text-danger"> *</span>
                                  </label>
                                  <input id="contest_known_duration" placeholder="Your acquaintance duration here"
-                                    class="form-control input_text" name="contest_known_duration"
+                                    class="form-control @error('contest_known_duration') input_error_border_red @else input_text @enderror" name="contest_known_duration"
                                     type="text" autocomplete="off" value="{{ old('contest_known_duration') }}">
                               {{-- </div> --}}
                               @error('contest_known_duration')
@@ -675,59 +765,53 @@
                               @enderror
                            </div>
 
-                           <div class="col-md-12 mb-3">
+                           <div class="col-md-12 mb-5">
                               {{-- <div class="input-group"> --}}
                                  <label class="label_text" for="contest_marriage_description">
                                     Please tell us a little about how you got introduced and then married (Max 200 words)
                                  </label>
-                                 <textarea id="contest_marriage_description" class="form-control input-message input_text" placeholder="Your description here"
-                                    rows="7" name="contest_marriage_description">{{ old('contest_marriage_description') }}</textarea>
+                                 <textarea id="contest_marriage_description" 
+                                    class="form-control input-message @error('contest_marriage_description') input_error_border_red @else input_text @enderror"
+                                    placeholder="Your description here" rows="7" name="contest_marriage_description">{{ old('contest_marriage_description') }}</textarea>
                               {{-- </div> --}}
                               @error('contest_marriage_description')
                                  <div class="text-red fw-bold">{{ $message }}</div>
                               @enderror
                            </div>
 
-                           <div class="col-md-6 mb-3">
+                           <div class="col-12 mb-5">
                               {{-- <div class="input-group"> --}}
                                  <label class="label_text" for="contest_user_email">
                                     Email<span class="text-danger"> *</span>
                                  </label>
-                                 <input id="contest_user_email" placeholder="Your email here" class="form-control input_text" name="contest_user_email"
-                                    type="text" autocomplete="off" value="{{ old('contest_user_email') }}">
+                                 <input id="contest_user_email" placeholder="Your email here" 
+                                    class="form-control @error('contest_user_email') input_error_border_red @else input_text @enderror"
+                                    name="contest_user_email" type="text" autocomplete="off" value="{{ old('contest_user_email') }}">
                               {{-- </div> --}}
                               @error('contest_user_email')
                                  <div class="text-red fw-bold">{{ $message }}</div>
                               @enderror
                            </div>
 
-                           <div class="col-md-6 mb-3">
+                           <div class="col-12 mb-5">
                               {{-- <div class="input-group"> --}}
                                  <label class="label_text" for="contest_phone_number">
                                     Phone Number<span class="text-danger"> *</span>
                                  </label>
-                                 <input id="contest_phone_number" placeholder="Your phone number here" class="form-control input_text" name="contest_phone_number"
-                                    type="text" autocomplete="off" value="{{ old('contest_phone_number') }}">
+                                 <input id="contest_phone_number" placeholder="Your phone number here" 
+                                    class="form-control @error('contest_phone_number') input_error_border_red @else input_text @enderror"
+                                    name="contest_phone_number" type="text" autocomplete="off" value="{{ old('contest_phone_number') }}">
                               {{-- </div> --}}
                               @error('contest_phone_number')
                                  <div class="text-red fw-bold">{{ $message }}</div>
                               @enderror
                            </div>
 
-                           <p class="mt-2 mb-3 text-danger fw-bold" style="font-size: 1rem;">
-                              *Note: For Image and Video submissions, if the file size exceeds 10MB, it is recommended to use a google drive link. Otherwise, the submission
-                              may take too long or hang up. Just remember to make the folder accessible to everyone. To do that, store your files in a google drive folder, right click on that
-                              folder and click the "Share" button. Then from the pop-up, select "Anyone with the link" from the "General Access" dropdown. Finally, click the "Copy link"
-                              button and paste in the respective box.
-                           </p>
-
-                           <p class="mt-2 mb-3 text-danger fw-bold" style="font-size: 1rem;">
-                              Also, if both the image/video and google drive link is submitted, only the drive link will be saved.
-                           </p>
-
                            {{-- Shakib Bhai's Multi/Single File Submission Plugin --}}
-                           <div class="col-12 mt-1">
-                              <label class="form-label contest_labels" for="InputName">Submit Image</label>
+                           <div class="col-12">
+                              <label class="form-label contest_labels" for="InputName">Submit Image 
+                                 <br> <small class="small_text">(max file upload size should be 30 MB)</small>
+                              </label>
                               <div class="contest_image"></div>
                               @error('contest_image')
                                  <div class="text-red fw-bold">{{ $message }}</div>
@@ -741,9 +825,13 @@
 
                            <div class="col-md-12 mb-3">
                               {{-- <div class="input-group"> --}}
-                                 <label class="label_text" for="contest_image_gdrive_url">Contest Image Google Drive Url</label>
-                                 <input id="contest_image_gdrive_url" placeholder="Your google drive link here" class="form-control input_text" name="contest_image_gdrive_url"
-                                    type="text" autocomplete="off" value="{{ old('contest_image_gdrive_url') }}">
+                                 <label class="label_text" for="contest_image_gdrive_url">
+                                    Contest Image Google Drive Url
+                                    <small class="small_text">(recommended)</small>
+                                 </label>
+                                 <input id="contest_image_gdrive_url" placeholder="Your google drive link here"
+                                    class="form-control @error('contest_image_gdrive_url') input_error_border_red @else input_text @enderror"
+                                    name="contest_image_gdrive_url" type="text" autocomplete="off" value="{{ old('contest_image_gdrive_url') }}">
                               {{-- </div> --}}
                               @error('contest_image_gdrive_url')
                                  <div class="text-red fw-bold">{{ $message }}</div>
@@ -751,8 +839,10 @@
                            </div>
 
                            {{-- Shakib Bhai's Multi/Single File Submission Plugin --}}
-                           <div class="col-12 mt-3">
-                              <label class="form-label contest_labels" for="InputName">Submit Video</label>
+                           <div class="col-12 mt-5">
+                              <label class="form-label contest_labels" for="InputName">Submit Video 
+                                 <br> <small class="small_text">(max file upload size should be 300 MB)
+                              </label>
                               <div class="contest_video"></div>
                               @error('contest_video')
                                  <div class="text-red fw-bold">{{ $message }}</div>
@@ -766,9 +856,13 @@
 
                            <div class="col-md-12 mb-3">
                               {{-- <div class="input-group"> --}}
-                                 <label class="label_text" for="contest_video_gdrive_url">Contest Video Google Drive Url</label>
-                                 <input id="contest_video_gdrive_url" placeholder="Your google drive link here" class="form-control input_text" name="contest_video_gdrive_url"
-                                    type="text" autocomplete="off" value="{{ old('contest_video_gdrive_url') }}">
+                                 <label class="label_text" for="contest_video_gdrive_url">
+                                    Contest Video Google Drive Url
+                                    <small class="small_text">(recommended)</small>
+                                 </label>
+                                 <input id="contest_video_gdrive_url" placeholder="Your google drive link here" 
+                                    class="form-control input_text @error('contest_video_gdrive_url') input_error_border_red @else input_text @enderror"
+                                    name="contest_video_gdrive_url" type="text" autocomplete="off" value="{{ old('contest_video_gdrive_url') }}">
                               {{-- </div> --}}
                               @error('contest_video_gdrive_url')
                                  <div class="text-red fw-bold">{{ $message }}</div>
@@ -789,13 +883,25 @@
                                  <label class="label_text" for="contest_feedback">
                                     Do you have any opinion or feedback regarding this contest ?  Please share with us. We would love to hear from you (optional)
                                  </label>
-                                 <textarea id="contest_feedback" class="form-control input-message input_text" placeholder="Your description here"
-                                    rows="7" name="contest_feedback">{{ old('contest_feedback') }}</textarea>
+                                 <textarea id="contest_feedback" 
+                                    class="form-control input-message @error('contest_feedback') input_error_border_red @else input_text @enderror"
+                                    placeholder="Your description here" rows="7" name="contest_feedback">{{ old('contest_feedback') }}</textarea>
                               {{-- </div> --}}
                               @error('contest_feedback')
                                  <div class="text-red fw-bold">{{ $message }}</div>
                               @enderror
                            </div>
+
+                           <p class="mt-5 mb-3 fw-bold" style="font-size: 1rem;">
+                              *Note: It is recommended to use a google drive link. Otherwise, the submission
+                              may take too long or hang up. Just remember to make the folder accessible to everyone. To do that, store your files in a google drive folder, right click on that
+                              folder and click the "Share" button. Then from the pop-up, select "Anyone with the link" from the "General Access" dropdown. Finally, click the "Copy link"
+                              button and paste in the respective box.
+                           </p>
+
+                           <p class="mb-1 fw-bold" style="font-size: 1rem;">
+                              Also, if both the image/video and google drive link is submitted, only the drive link will be saved.
+                           </p>
 
                            <div class="col-md-12 mb-0 d-flex justify-content-center">
                               <button id="contest_submit" type="submit" class="btn btn-light uppercase contest_submit_btn mt-5">Submit Now</button>
@@ -851,7 +957,7 @@
    <script>
       $( "#contest_submit" ).on( "click", function() {
          Swal.fire({
-            title: 'Submitting Contest Data! Please wait...',
+            title: 'Please wait while your Image and Video is being uploaded...',
             didOpen: () => {
                Swal.showLoading()
             },

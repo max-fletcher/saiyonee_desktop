@@ -83,8 +83,6 @@
 
     <div id="back-to-top"><a class="top arrow" href="#top"><i class="fa fa-level-up"></i></a></div>
 
-
-
     {{-- MAIL SENT SUCCESS --}}
     <div class="modal fade" id="mail_sent_modal" tabindex="-1" aria-labelledby="mail_sent_modal_label" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">

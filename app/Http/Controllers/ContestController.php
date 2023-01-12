@@ -76,11 +76,11 @@ class ContestController extends Controller
         }
         else{
             $validation_rules['contest_image']                           = ['required', 'array'];
-            $validation_rules['contest_image.*']                         = ['file', 'image', 'max:5120'];
+            $validation_rules['contest_image.*']                         = ['file', 'image', 'max:30720'];
 
             $validation_messages['contest_image.*.file']                 = 'Contest image has to be a file.';
             $validation_messages['contest_image.*.image']                = 'Contest image has to be a file type of image.';
-            $validation_messages['contest_image.*.max']                  = 'Contest image should have a file size lower than 5MB.';
+            $validation_messages['contest_image.*.max']                  = 'Contest image should have a file size lower than 30MB.';
         }
 
 
@@ -98,10 +98,10 @@ class ContestController extends Controller
         }
         else{
             $validation_rules['contest_video']                           = ['required', 'array', new ValidateVideoRule];
-            $validation_rules['contest_video.*']                         = ['required', 'file', 'max:153600'];
+            $validation_rules['contest_video.*']                         = ['required', 'file', 'max:307200'];
 
             $validation_messages['contest_video.*.file']                 = 'Contest video has to be a file.';
-            $validation_messages['contest_video.*.max']                  = 'Contest video should have a file size lower than 150MB.';
+            $validation_messages['contest_video.*.max']                  = 'Contest video should have a file size lower than 300MB.';
         }
 
         $request->validate($validation_rules, $validation_messages);
