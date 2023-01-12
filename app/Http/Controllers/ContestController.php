@@ -66,13 +66,13 @@ class ContestController extends Controller
             $validation_rules['contest_image']                           = ['required'];
             $validation_rules['contest_image_gdrive_url']                = ['required'];
 
-            $validation_messages['contest_image.required']               = 'Either an image or a google drive link has to be provided.';
-            $validation_messages['contest_image_gdrive_url.required']    = 'Either an image or a google drive link has to be provided.';
+            $validation_messages['contest_image.required']               = 'Either an image or a google drive/dropbox/onedrive link has to be provided.';
+            $validation_messages['contest_image_gdrive_url.required']    = 'Either an image or a google drive/dropbox/onedrive link has to be provided.';
         }
         if($request->contest_image_gdrive_url){
-            $validation_rules['contest_image_gdrive_url']                = ['starts_with:https://drive.google.com/drive'];
+            $validation_rules['contest_image_gdrive_url']                = ['required'];
 
-            $validation_messages['contest_image_gdrive_url.starts_with'] = 'Not a valid google drive link.';
+            $validation_messages['contest_image_gdrive_url.starts_with'] = 'Not a valid google drive/dropbox/onedrive link.';
         }
         else{
             $validation_rules['contest_image']                           = ['required', 'array'];
@@ -88,13 +88,13 @@ class ContestController extends Controller
             $validation_rules['contest_video']                           = ['required'];
             $validation_rules['contest_video_gdrive_url']                = ['required'];
 
-            $validation_messages['contest_video.required']               = 'Either a video or a google drive link has to be provided.';
-            $validation_messages['contest_video_gdrive_url.required']    = 'Either a video or a google drive link has to be provided.';
+            $validation_messages['contest_video.required']               = 'Either a video or a google drive/dropbox/onedrive link has to be provided.';
+            $validation_messages['contest_video_gdrive_url.required']    = 'Either a video or a google drive/dropbox/onedrive link has to be provided.';
         }
         if($request->contest_video_gdrive_url){
-            $validation_rules['contest_video_gdrive_url']                = ['starts_with:https://drive.google.com/drive'];
+            $validation_rules['contest_video_gdrive_url']                = ['required'];
 
-            $validation_messages['contest_video_gdrive_url.starts_with'] = 'Not a valid google drive link.';
+            $validation_messages['contest_video_gdrive_url.starts_with'] = 'Not a valid google drive/dropbox/onedrive link.';
         }
         else{
             $validation_rules['contest_video']                           = ['required', 'array', new ValidateVideoRule];

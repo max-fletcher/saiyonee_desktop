@@ -121,6 +121,11 @@
          font-weight: 800;
       }
 
+      .contest_submission_date{
+         font-size: 1.1rem !important;
+         font-weight: 800;
+      }
+
       .contest_para{
          font-size: 0.9rem;
          font-weight: 600;
@@ -581,7 +586,7 @@
                         <br><br>
 
                         <h6 class="contest_opening"> How to Upload ? </h6>
-                        1. Please upload your photo and video in a Google drive/Dropbox /Onedrive/iCloud folder and share the link with us <span class="contest_opening"> (Recommended method) </span>
+                        1. Please upload your photo and video in a Google drive/Dropbox/Onedrive folder and share the link with us <span class="contest_opening"> (Recommended method) </span>
                         <br>
                         <span class="contest_opening">OR,</span>
                         <br>
@@ -593,7 +598,7 @@
                         <a class="contest_link" href="https://www.freeconvert.com/video-compressor" target="_blank">https://www.freeconvert.com/video-compressor</a>
                         <br><br> --}}
 
-                        <h6 class="contest_opening mb-2"> Last date of submission : 20th January, 2023 </h6>
+                        <h6 class="contest_submission_date mb-2"> Last date of submission : 30th January, 2023 </h6>
                         <br>
 
                         <h6 class="contest_opening mb-2 underline"> Awards </h6>
@@ -630,8 +635,7 @@
                            <br><br>
 
                         4. <span class="font_inline_bold_800"> Saiyonee will have the right to use Top 10 photos and videos in it's website and 
-                           social media. Visit <a class="contest_link" href="www.saiyonee.com" target="_blank">www.saiyonee.com</a> to know more
-                           about Saiyonee. </span>
+                           social media.</span>
                            <br><br>
 
                         5. If you have any question, please email to <span class="font_inline_bold_800"> contact@saiyonee.com </span> or message us 
@@ -826,10 +830,10 @@
                            <div class="col-md-12 mb-3">
                               {{-- <div class="input-group"> --}}
                                  <label class="label_text" for="contest_image_gdrive_url">
-                                    Contest Image Google Drive Url
+                                    Contest Image Google drive/Dropbox/Onedrive Url
                                     <small class="small_text">(recommended)</small>
                                  </label>
-                                 <input id="contest_image_gdrive_url" placeholder="Your google drive link here"
+                                 <input id="contest_image_gdrive_url" placeholder="Your google drive/dropbox/onedrive link here"
                                     class="form-control @error('contest_image_gdrive_url') input_error_border_red @else input_text @enderror"
                                     name="contest_image_gdrive_url" type="text" autocomplete="off" value="{{ old('contest_image_gdrive_url') }}">
                               {{-- </div> --}}
@@ -857,10 +861,10 @@
                            <div class="col-md-12 mb-3">
                               {{-- <div class="input-group"> --}}
                                  <label class="label_text" for="contest_video_gdrive_url">
-                                    Contest Video Google Drive Url
+                                    Contest Video Google drive/Dropbox/Onedrive Url
                                     <small class="small_text">(recommended)</small>
                                  </label>
-                                 <input id="contest_video_gdrive_url" placeholder="Your google drive link here" 
+                                 <input id="contest_video_gdrive_url" placeholder="Your google drive/dropbox/onedrive link here" 
                                     class="form-control input_text @error('contest_video_gdrive_url') input_error_border_red @else input_text @enderror"
                                     name="contest_video_gdrive_url" type="text" autocomplete="off" value="{{ old('contest_video_gdrive_url') }}">
                               {{-- </div> --}}
@@ -893,14 +897,12 @@
                            </div>
 
                            <p class="mt-5 mb-3 fw-bold" style="font-size: 1rem;">
-                              *Note: It is recommended to use a google drive link. Otherwise, the submission
-                              may take too long or hang up. Just remember to make the folder accessible to everyone. To do that, store your files in a google drive folder, right click on that
-                              folder and click the "Share" button. Then from the pop-up, select "Anyone with the link" from the "General Access" dropdown. Finally, click the "Copy link"
-                              button and paste in the respective box.
+                              *Note: It is recommended to use a google drive/dropbox/onedrive link. Otherwise, the submission
+                              may take too long or hang up. Just remember to make the folder accessible to everyone.
                            </p>
 
                            <p class="mb-1 fw-bold" style="font-size: 1rem;">
-                              Also, if both the image/video and google drive link is submitted, only the drive link will be saved.
+                              Also, if both the image/video and google drive/dropbox/onedrive link is submitted, only the drive link will be saved.
                            </p>
 
                            <div class="col-md-12 mb-0 d-flex justify-content-center">
