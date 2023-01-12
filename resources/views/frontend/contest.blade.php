@@ -349,6 +349,10 @@
          font-size: 1rem;
       }
 
+      .text-red{
+         color: red;
+      }
+
       @media screen and (max-width: 479px){
          h3 {
                font-size: 25px;
@@ -617,49 +621,57 @@
                         <div class="row">
                            <div class="col-md-6 mb-3">
                               {{-- <div class="input-group"> --}}
-                                 <label class="label_text" for="contest_user_name">Please tell us your names(Both Husband and Wife)*</label>
+                                 <label class="label_text" for="contest_user_name">
+                                    Please tell us your names(Both Husband and Wife)<span class="text-danger"> *</span>
+                                 </label>
                                  <input id="contest_user_name" placeholder="Your names here"
                                     class="form-control input_text" name="contest_user_name"
                                     type="text" autocomplete="off" value="{{ old('contest_user_name') }}">
                               {{-- </div> --}}
                               @error('contest_user_name')
-                                 <div class="text-danger fw-bold">{{ $message }}</div>
+                                 <div class="text-red fw-bold">{{ $message }}</div>
                               @enderror
                            </div>
 
                            <div class="col-md-6 mb-3">
                               {{-- <div class="input-group"> --}}
-                                 <label class="label_text" for="contest_marriage_year">When did you get married? (e.g 2016 / 2018 / 2020)</label>
+                                 <label class="label_text" for="contest_marriage_year">
+                                    When did you get married? (e.g 2016 / 2018 / 2020)<span class="text-danger"> *</span>
+                                 </label>
                                  <input id="contest_marriage_year" placeholder="Your year of marriage here"
                                     class="form-control input_text" name="contest_marriage_year"
                                     type="text" autocomplete="off" value="{{ old('contest_marriage_year') }}">
                               {{-- </div> --}}
                               @error('contest_marriage_year')
-                                 <div class="text-danger fw-bold">{{ $message }}</div>
+                                 <div class="text-red fw-bold">{{ $message }}</div>
                               @enderror
                            </div>
 
                            <div class="col-md-6 mb-3">
                               {{-- <div class="input-group"> --}}
-                                 <label class="label_text" for="contest_marriage_medium">How did you get introduced? (e.g Parents / Ghotok / Neighbour / Relative etc)</label>
+                                 <label class="label_text" for="contest_marriage_medium">
+                                    How did you get introduced? (e.g Parents / Ghotok / Neighbour / Relative etc)<span class="text-danger"> *</span>
+                                 </label>
                                  <input id="contest_marriage_medium" placeholder="Your marriage medium here"
                                     class="form-control input_text" name="contest_marriage_medium"
                                     type="text" autocomplete="off" value="{{ old('contest_marriage_medium') }}">
                               {{-- </div> --}}
                               @error('contest_marriage_medium')
-                                 <div class="text-danger fw-bold">{{ $message }}</div>
+                                 <div class="text-red fw-bold">{{ $message }}</div>
                               @enderror
                            </div>
 
                            <div class="col-md-6 mb-3">
                               {{-- <div class="input-group"> --}}
-                                 <label class="label_text" for="contest_known_duration">How long did you get to know each-other before getting married? (e.g- 3 months / 1 year)</label>
+                                 <label class="label_text" for="contest_known_duration">
+                                    How long did you get to know each-other before getting married? (e.g- 3 months / 1 year)<span class="text-danger"> *</span>
+                                 </label>
                                  <input id="contest_known_duration" placeholder="Your acquaintance duration here"
                                     class="form-control input_text" name="contest_known_duration"
                                     type="text" autocomplete="off" value="{{ old('contest_known_duration') }}">
                               {{-- </div> --}}
                               @error('contest_known_duration')
-                                 <div class="text-danger fw-bold">{{ $message }}</div>
+                                 <div class="text-red fw-bold">{{ $message }}</div>
                               @enderror
                            </div>
 
@@ -672,29 +684,33 @@
                                     rows="7" name="contest_marriage_description">{{ old('contest_marriage_description') }}</textarea>
                               {{-- </div> --}}
                               @error('contest_marriage_description')
-                                 <div class="text-danger fw-bold">{{ $message }}</div>
+                                 <div class="text-red fw-bold">{{ $message }}</div>
                               @enderror
                            </div>
 
                            <div class="col-md-6 mb-3">
                               {{-- <div class="input-group"> --}}
-                                 <label class="label_text" for="contest_user_email">Email</label>
+                                 <label class="label_text" for="contest_user_email">
+                                    Email<span class="text-danger"> *</span>
+                                 </label>
                                  <input id="contest_user_email" placeholder="Your email here" class="form-control input_text" name="contest_user_email"
                                     type="text" autocomplete="off" value="{{ old('contest_user_email') }}">
                               {{-- </div> --}}
                               @error('contest_user_email')
-                                 <div class="text-danger fw-bold">{{ $message }}</div>
+                                 <div class="text-red fw-bold">{{ $message }}</div>
                               @enderror
                            </div>
 
                            <div class="col-md-6 mb-3">
                               {{-- <div class="input-group"> --}}
-                                 <label class="label_text" for="contest_phone_number">Phone Number</label>
+                                 <label class="label_text" for="contest_phone_number">
+                                    Phone Number<span class="text-danger"> *</span>
+                                 </label>
                                  <input id="contest_phone_number" placeholder="Your phone number here" class="form-control input_text" name="contest_phone_number"
                                     type="text" autocomplete="off" value="{{ old('contest_phone_number') }}">
                               {{-- </div> --}}
                               @error('contest_phone_number')
-                                 <div class="text-danger fw-bold">{{ $message }}</div>
+                                 <div class="text-red fw-bold">{{ $message }}</div>
                               @enderror
                            </div>
 
@@ -714,10 +730,10 @@
                               <label class="form-label contest_labels" for="InputName">Submit Image</label>
                               <div class="contest_image"></div>
                               @error('contest_image')
-                                 <div class="text-danger fw-bold">{{ $message }}</div>
+                                 <div class="text-red fw-bold">{{ $message }}</div>
                               @enderror
                               @error('contest_image.*')
-                                 <div class="text-danger fw-bold">{{ $message }}</div>
+                                 <div class="text-red fw-bold">{{ $message }}</div>
                               @enderror
                            </div>
 
@@ -730,7 +746,7 @@
                                     type="text" autocomplete="off" value="{{ old('contest_image_gdrive_url') }}">
                               {{-- </div> --}}
                               @error('contest_image_gdrive_url')
-                                 <div class="text-danger fw-bold">{{ $message }}</div>
+                                 <div class="text-red fw-bold">{{ $message }}</div>
                               @enderror
                            </div>
 
@@ -739,10 +755,10 @@
                               <label class="form-label contest_labels" for="InputName">Submit Video</label>
                               <div class="contest_video"></div>
                               @error('contest_video')
-                                 <div class="text-danger fw-bold">{{ $message }}</div>
+                                 <div class="text-red fw-bold">{{ $message }}</div>
                               @enderror
                               @error('contest_video.*')
-                                 <div class="text-danger fw-bold">{{ $message }}</div>
+                                 <div class="text-red fw-bold">{{ $message }}</div>
                               @enderror
                            </div>
 
@@ -755,7 +771,7 @@
                                     type="text" autocomplete="off" value="{{ old('contest_video_gdrive_url') }}">
                               {{-- </div> --}}
                               @error('contest_video_gdrive_url')
-                                 <div class="text-danger fw-bold">{{ $message }}</div>
+                                 <div class="text-red fw-bold">{{ $message }}</div>
                               @enderror
                            </div>
 
@@ -777,7 +793,7 @@
                                     rows="7" name="contest_feedback">{{ old('contest_feedback') }}</textarea>
                               {{-- </div> --}}
                               @error('contest_feedback')
-                                 <div class="text-danger fw-bold">{{ $message }}</div>
+                                 <div class="text-red fw-bold">{{ $message }}</div>
                               @enderror
                            </div>
 

@@ -31,9 +31,36 @@ class ContestController extends Controller
         ];
 
         $validation_messages = [
-            'contest_user_email.unique'                 => 'Only one submission per user allowed.',
-        ];
+            'contest_user_name.required'                => 'The user names are required.',
+            'contest_user_name.string'                  => 'The user names have to be a string.',
+            'contest_user_name.min'                     => 'The user names must be at least 2 characters in length.',
+            'contest_user_name.max'                     => 'The user names must be below 255 characters in length.',
 
+            'contest_marriage_year.required'            => 'The marriage year is required.',
+            'contest_marriage_year.string'              => 'The marriage year has to be a string.',
+            'contest_marriage_year.date_format'         => 'The marriage year has to be in the format \'XXXX\'.',
+
+            'contest_known_duration.required'           => 'The marriage known duration is required.',
+            'contest_known_duration.string'             => 'The marriage known duration has to be a string.',
+            'contest_known_duration.max'                => 'The marriage known duration must be below 255 characters in length.',
+
+            'contest_user_email.required'               => 'The user email is required.',
+            'contest_user_email.string'                 => 'The user email must be a string.',
+            'contest_user_email.min'                    => 'The user email must be at least 2 characters in length.',
+            'contest_user_email.max'                    => 'The user email must be below 255 characters in length.',
+            'contest_user_email.unique'                 => 'Only one submission per email allowed.',
+
+            'contest_phone_number.required'             => 'The phone number is required.',
+            'contest_phone_number.string'               => 'The phone number must be a string.',
+            'contest_phone_number.max'                  => 'The phone number must be below 255 characters in length.',
+            'contest_phone_number.unique'               => 'Only one submission per phone number allowed.',
+
+            'contest_marriage_description.string'       => 'The marriage description must be a string.',
+            'contest_marriage_description.max'          => 'The marriage description must be below 65500 characters in length.',
+
+            'contest_feedback.string'                   => 'The contest feedback must be a string.',
+            'contest_feedback.max'                      => 'The contest feedback must be below 65500 characters in length.',
+        ];
 
         if(!$request->contest_image_gdrive_url && !$request->contest_image){
             $validation_rules['contest_image']                           = ['required'];

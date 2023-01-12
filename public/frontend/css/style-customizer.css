@@ -36,7 +36,8 @@ div.style-customizer select { width: 100%; padding: 5px; border: 1px solid #b2bf
 .style-customizer .button:hover{background:#ffffff !important; color:#353535;}
 
 /*Color Skins*/
-div.style-customizer .skin-default{background: #ffbc05;}
+/* div.style-customizer .skin-default{background: #ffbc05;} */
+div.style-customizer .skin-default{background: #CF0000;}
 div.style-customizer .skin-tomato{background:#fe7043;}
 div.style-customizer .skin-ruby{background:#e81d62;}
 div.style-customizer .skin-pelorous{background:#329fa9;}
