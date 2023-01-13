@@ -18,61 +18,28 @@
       $date = date("Y-m-d");
       @endphp
 
-            <section id="contest_rules_section" class="page-section-ptb">
-               <div class="container">
+      <section id="contest_rules_section" class="page-section-ptb">
+         <div class="container">
 
-                  <div id="uploaderHolder">
-                     <form action="{{ route('file-upload') }}"
-                     class="dropzone"
-                     id="datanodeupload">
-                     @csrf
+            <div id="uploaderHolder">
+               <form action="{{ route('file-upload') }}"
+               class="dropzone"
+               id="datanodeupload">
+               @csrf
 
-                        <input type="file" name="file"  style="display: none;">
-                        <input type="hidden" name="dataTS" id="dataTS" value="{{ $ts }}">
-                        <input type="hidden" name="dataDATE" id="dataDATE" value="{{ $date }}">
-                     </form>
+                  <input type="file" name="file"  style="display: none;">
+                  <input type="hidden" name="dataTS" id="dataTS" value="{{ $ts }}">
+                  <input type="hidden" name="dataDATE" id="dataDATE" value="{{ $date }}">
+               </form>
 
-                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" onClick="window.location.reload();">{{ __('Done') }}</button>
-                     </div>
-                  </div>
-
-
-               </div>
-            </section>
-
-
-            <div class="modal-content">
-               <div class="modal-header">
-                  <h5 class="modal-title" id="uploadModalLabel">{{ __('Upload file') }}</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                     <span aria-hidden="true">&times;</span>
-                  </button>
-               </div>
-            <div class="modal-body">
-                     <div class="form-group row">
-                        <h5>{{ __('Drag and drop multipe files') }}</h5>
-                     </div>
-
-               {{-- <div id="uploaderHolder">
-                     <form action="{{ route('file-upload') }}"
-                        class="dropzone"
-                        id="datanodeupload">
-
-                        <input type="file" name="file"  style="display: none;">
-                        <input type="hidden" name="dataTS" id="dataTS" value="{{ $ts }}">
-                        <input type="hidden" name="dataDATE" id="dataDATE" value="{{ $date }}">
-                        @csrf
-                  </form>
-               </div> --}}
-
-            </div>
-               {{-- <div class="modal-footer">
+               <div class="modal-footer">
                   <button type="button" class="btn btn-primary" onClick="window.location.reload();">{{ __('Done') }}</button>
-               </div> --}}
+               </div>
             </div>
-         {{-- </div>
-      </div> --}}
+
+
+         </div>
+      </section>
 
       <div class="row justify-content-center">
          <div class="col-md-8">

@@ -11,6 +11,7 @@ use Pion\Laravel\ChunkUpload\Exceptions\UploadMissingFileException;
 use Pion\Laravel\ChunkUpload\Handler\AbstractHandler;
 use Pion\Laravel\ChunkUpload\Handler\HandlerFactory;
 use Pion\Laravel\ChunkUpload\Receiver\FileReceiver;
+use App\Models\Contest;
 
 class UploaderController extends Controller
 {
@@ -37,7 +38,7 @@ class UploaderController extends Controller
         $save = $receiver->receive();
 
         // check if the upload has finished (in chunk mode it will send smaller files)
-        if ($save->isFinished()) {
+        if ($save->isFinished()){
             // save the file and return any response you need, current example uses `move` function. If you are
             // not using move, you need to manually delete the file by unlink($save->getFile()->getPathname())
             return $this->saveFile($save->getFile(), $request);
@@ -64,22 +65,27 @@ class UploaderController extends Controller
         $fileName = $this->createFilename($file);
     
         // Get file mime type
-        $mime_original = $file->getMimeType();
-        $mime = str_replace('/', '-', $mime_original);
+        // $mime_original = $file->getMimeType();
+        // $mime = str_replace('/', '-', $mime_original);
 
-        $filePath = "uploads/contest_image/";
+        $filePath = "uploads/contest_video/";
         $finalPath = public_path($filePath);
     
-        $fileSize = $file->getSize();
+        // $fileSize = $file->getSize();
         // move the file name
         $file->move($finalPath, $fileName);
+
+        $contest_data = new Contest();
+        $contest_data->video = $filePath.$fileName;
+        $contest_data->save();
     
-        $url_base = 'storage/upload/medialibrary/'.$user_obj->id."/{$folderDATE}/".$fileName;
+        // $url_base = 'storage/upload/medialibrary/'.$user_obj->id."/{$folderDATE}/".$fileName;
     
         return response()->json([
-            'path' => $filePath,
-            'name' => $fileName,
-            'mime_type' => $mime
+            'path'              => $finalPath,
+            'name'              => $fileName,
+            'contest__data_id'  => $contest_data->id
+            // 'mime_type' => $mime
         ]);
     }
 
@@ -89,14 +95,19 @@ class UploaderController extends Controller
      * @return string
      */
     protected function createFilename(UploadedFile $file) {
-        $extension = $file->getClientOriginalExtension();
-        $filename = str_replace(".".$extension, "", $file->getClientOriginalName()); // Filename without extension
-    
+        $extension = $file->extension();
+        // $filename = str_replace(".".$extension, "", $file->getClientOriginalName()); // Filename without extension
+        $filename = md5(uniqid());
+        
+        // dd($file->getClientOriginalExtension(), $file->getClientOriginalName(), $extension, $filename);
+
+        // dd($filename.".".$extension);
+
         //delete timestamp from file name
-        $temp_arr = explode('_', $filename);
-        if ( isset($temp_arr[0]) ) unset($temp_arr[0]);
-        $filename = implode('_', $temp_arr);
-    
+        // $temp_arr = explode('_', $filename);
+        // if ( isset($temp_arr[0]) ) unset($temp_arr[0]);
+        // $filename = implode('_', $temp_arr);
+
         //here you can manipulate with file name e.g. HASHED
         return $filename.".".$extension;
     }
@@ -122,7 +133,7 @@ class UploaderController extends Controller
         $filePath = "public/upload/medialibrary/{$user_obj->id}/{$dir}/";
         $finalPath = storage_path("app/".$filePath);
     
-        if ( unlink($finalPath.$file) ){
+        if (unlink($finalPath.$file) ){
             return response()->json([
             'status' => 'ok'
             ], 200);
