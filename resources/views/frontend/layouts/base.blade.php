@@ -8,6 +8,7 @@
     <meta name="description" content="Cupid Love - Dating HTML5 Template" />
     <meta name="author" content="potenzaglobalsolutions.com" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Saiyonee</title>
 

@@ -6,7 +6,7 @@
 @push('page-specific-css')
 
    {{-- For reCaptcha --}}
-   <meta name="csrf-token" content="{{ csrf_token() }}">
+   {{-- <meta name="csrf-token" content="{{ csrf_token() }}"> --}}
 
    <script type="text/javascript">
       function callbackThen(response){
@@ -53,6 +53,9 @@
    ]) !!}
 
    <style> @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600&display=swap'); </style>
+
+   {{-- Dropzone css --}}
+   <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
 
    <style>
       .contest_title{
@@ -990,4 +993,7 @@
          'type': 'video',
       });
    </script>
+
+   {{-- Dropzone js --}}
+   <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
 @endpush
