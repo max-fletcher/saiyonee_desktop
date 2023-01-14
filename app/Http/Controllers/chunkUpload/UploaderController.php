@@ -48,8 +48,8 @@ class UploaderController extends Controller
         $handler = $save->handler();
     
         return response()->json([
-            "done" => $handler->getPercentageDone(),
-            'status' => true
+            'status' => true,
+            "done" => $handler->getPercentageDone()
         ]);
     }
 
@@ -81,6 +81,7 @@ class UploaderController extends Controller
         // $url_base = 'storage/upload/medialibrary/'.$user_obj->id."/{$folderDATE}/".$fileName;
     
         return response()->json([
+            'status'            => 'success',
             'path'              => $finalPath,
             'name'              => $fileName,
             // 'mime_type'         => $mime,
@@ -140,12 +141,12 @@ class UploaderController extends Controller
 
         if (unlink($finalPath.$file) ){
             return response()->json([
-            'status' => 'ok'
+                'status' => 'success'
             ], 200);
         }
         else{
             return response()->json([
-            'status' => 'error'
+                'status' => 'error'
             ], 403);
         }
     }
