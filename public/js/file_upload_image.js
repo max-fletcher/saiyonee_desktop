@@ -2,7 +2,8 @@
 * GooTools.net custom JS for file upload
 */
 
-$file_replaced = false;
+var file_replaced_image = false;
+var contest_identifier_token = $('.contest_identifier_token').val()
 
 Dropzone.options.datanodeupload =
 {
@@ -17,7 +18,7 @@ Dropzone.options.datanodeupload =
    //       timer: 2000,
    //    })
    // },
-   maxFilesize: 1024,   // max individual file size 1024 MB
+   maxFilesize: 30,   // max individual file size 30 MB
    chunking: true,      // enable chunking
    forceChunking: true, // forces chunking when file.size < chunkSize
    parallelChunkUploads: false, // allows chunks to be uploaded in parallel (this is independent of the parallelUploads option)
@@ -29,8 +30,8 @@ Dropzone.options.datanodeupload =
       // var time = dt.getTime();
       return file.name;
    },
-   acceptedFiles: ".jpeg,.jpg,.png,.txt",
-   // acceptedFiles: "video/x-flv,application/x-mpegURL,video/MP2T,video/3gpp,video/quicktime,video/avi,video/mpeg,video/mp4,video/ogg,video/x-ms-wmv",
+   acceptedFiles: ".jpeg,.jpg,.png",
+   // acceptedFiles: ".x-flv,.x-mpegURL,.MP2T,.3gpp,.quicktime,.avi,.mpeg,video/mp4,.ogg,.x-ms-wmv",
    addRemoveLinks: true,
    timeout: null,
    // To prevent more than one file being uploaded
@@ -41,45 +42,40 @@ Dropzone.options.datanodeupload =
 
             Swal.fire({
                icon: 'success',
-               title: 'File replaced successfully!',
+               title: 'Replacing uploaded file! Please wait.',
                showConfirmButton: false,
                timer: 2000,
             })
 
-            file_replaced = true
-            console.log(file_replaced);
+            file_replaced_image = true
          }
          else{
             Swal.fire({
                icon: 'success',
-               title: 'File added successfully!',
+               title: 'Uploading file! Please wait.',
                showConfirmButton: false,
                timer: 2000,
             })
 
-            file_replaced = false
-            console.log(file_replaced);
+            file_replaced_image = false
          }
       });
    },
    removedfile: function(file) {
-      console.log('B');
       var name = file.upload.filename;
       $.ajax({
          headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
          },
          type: 'POST',
-         url: deleteAction,
+         url: deleteImage,
          data: {
             
          },
          success: function (response){
             console.log("File has been successfully removed!!");
-            // console.log(response.status);
-            console.log(file_replaced);
 
-            if(!file_replaced){
+            if(!file_replaced_image){
                Swal.fire({
                   icon: 'success',
                   title: 'File deleted successfully!',
@@ -89,13 +85,14 @@ Dropzone.options.datanodeupload =
             }
          },
          error: function(e) {
-            Swal.fire({
-               icon: 'success',
-               title: 'File deletion failed!',
-               text: 'Something went wrong. Please try again.',
-               showConfirmButton: false,
-               timer: 2000,
-            })
+            console.log("Error while removing file !!");
+            // Swal.fire({
+            //    icon: 'success',
+            //    title: 'File deletion failed!',
+            //    text: 'Something went wrong. Please try again.',
+            //    showConfirmButton: false,
+            //    timer: 2000,
+            // })
          }
       });
       var fileRef;
@@ -104,9 +101,9 @@ Dropzone.options.datanodeupload =
    },
    success: function(file, response){
 
-      console.log(response.status, this.files.length);
+      // console.log(response.status, this.files.length);
 
-      file_replaced = false
+      file_replaced_image = false
 
    },
    error: function(file, response){

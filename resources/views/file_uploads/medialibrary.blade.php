@@ -59,10 +59,10 @@
 
 		<!-- DROPZONE JS -->
 		<script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
-		<script src="{{ asset('js/file_upload.js') }}" defer></script>
+		<script src="{{ asset('js/file_upload_image.js') }}" defer></script>
 
 		<script>
-			var deleteAction = '{{ route("file-delete") }}';
+			var deleteImage = '{{ route("image-file-delete") }}';
 		</script>
 
 @endpush

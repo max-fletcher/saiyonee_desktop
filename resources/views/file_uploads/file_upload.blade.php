@@ -23,7 +23,7 @@
 	@parent
 		<!-- Scripts -->
 		<script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
-		<script src="{{ asset('js/file_upload.js') }}" defer></script>
+		<script src="{{ asset('js/file_upload_video.js') }}" defer></script>
 
 		<script>
 			var home_url = "{{env('APP_URL') }}";

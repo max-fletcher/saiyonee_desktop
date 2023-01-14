@@ -665,12 +665,20 @@
             <h1 style="color: #CF0000">{{ $error }}</h1>
          @endforeach --}}
 
+         @php
+            $contest_identifier_token = md5(uniqid());
+            session()->put('contest_identifier_token', $contest_identifier_token)
+         @endphp
+         {{-- used to identify the contest data uniquely when used in conjunction with dropzone chunked data upload --}}
+         <input class="contest_identifier_token" type="hidden" value="{{ $contest_identifier_token }}">
+
          <div class="row contest_form_row">
             <div class="col-8 px-4">
                <div class="row mb-0 mb-md-2 mb-lg-3 mb-xl-4">
                   <div class="col-12 mb-0 mb-lg-2">
-                     <div id="formmessage" style="display:none">Success/Error Message Goes Here</div>
-                     <form method="POST" action="{{ route('contest.store', '#contest_section') }}" enctype="multipart/form-data" id="contestForm" class="main-form">
+                     {{-- <div id="formmessage" style="display:none">Success/Error Message Goes Here</div> --}}
+                     {{-- method="POST" action="{{ route('contest.store', '#contest_section') }}" enctype="multipart/form-data" --}}
+                     <div id="contestForm" class="main-form">
                         @csrf
                         <div class="row">
                            <div class="col-12 mb-5">
@@ -814,12 +822,34 @@
                               @enderror
                            </div>
 
+
+
+
                            {{-- Shakib Bhai's Multi/Single File Submission Plugin --}}
-                           <div class="col-12">
+                           {{-- <div class="col-12">
                               <label class="form-label contest_labels" for="InputName">Submit Image 
                                  <br> <small class="small_text">(max file upload size should be 30 MB)</small>
                               </label>
                               <div class="contest_image"></div>
+                              @error('contest_image')
+                                 <div class="text-red fw-bold">{{ $message }}</div>
+                              @enderror
+                              @error('contest_image.*')
+                                 <div class="text-red fw-bold">{{ $message }}</div>
+                              @enderror
+                           </div> --}}
+                           <div class="col-12">
+                              <label class="form-label contest_labels" for="InputName">Submit Image 
+                                 <br> <small class="small_text">(max file upload size should be 30 MB)</small>
+                              </label>
+                              <div id="uploaderHolder">
+                                 <form action="{{ route('image-file-upload') }}"
+                                    class="dropzone"
+                                    id="datanodeupload">
+                                    @csrf
+                                    <input type="file" name="file"  style="display: none;">
+                                 </form>
+                              </div>
                               @error('contest_image')
                                  <div class="text-red fw-bold">{{ $message }}</div>
                               @enderror
@@ -845,8 +875,12 @@
                               @enderror
                            </div>
 
+
+
+
+
                            {{-- Shakib Bhai's Multi/Single File Submission Plugin --}}
-                           <div class="col-12 mt-5">
+                           {{-- <div class="col-12">
                               <label class="form-label contest_labels" for="InputName">Submit Video 
                                  <br> <small class="small_text">(max file upload size should be 300 MB)
                               </label>
@@ -857,7 +891,30 @@
                               @error('contest_video.*')
                                  <div class="text-red fw-bold">{{ $message }}</div>
                               @enderror
+                           </div> --}}
+
+                           <div class="col-12 mt-5">
+                              <label class="form-label contest_labels" for="InputName">Submit Video
+                                 <br> <small class="small_text">(max file upload size should be 300 MB)
+                              </label>
+                              <div id="uploaderHolder">
+                                 <form action="{{ route('video-file-upload') }}"
+                                    class="dropzone"
+                                    id="datanodeupload2">
+                                    @csrf
+                                    <input type="file" name="file"  style="display: none;">
+                                 </form>
+                              </div>
+                              @error('contest_video')
+                                 <div class="text-red fw-bold">{{ $message }}</div>
+                              @enderror
+                              @error('contest_video.*')
+                                 <div class="text-red fw-bold">{{ $message }}</div>
+                              @enderror
                            </div>
+
+
+
 
                            <h3 class="mt-2 text-center font_weight_or">OR</h3>
 
@@ -959,8 +1016,48 @@
       @endif
    </script>
 
+   {{-- GRAB TOKEN TO UNIQUELY IDENTIFY SUBMITTED FILES--}}
+   <script>
+      var contest_identifier_token = $('.contest_identifier_token').val()
+   </script>
+
    <script>
       $( "#contest_submit" ).on( "click", function() {
+
+         var contest_user_name = $('#contest_user_name').val()
+         $('#contest_user_name').val('')
+
+         var contest_marriage_year = $('#contest_marriage_year').val()
+         $('#contest_marriage_year').val('')
+
+         var contest_marriage_medium = $("input[name='contest_marriage_medium']:checked").val()
+         $("input:radio[name=contest_marriage_medium][disabled=false]:first").attr('checked', true);
+
+         var contest_known_duration = $('#contest_known_duration').val()
+         $('#contest_known_duration').val('')
+
+         var contest_user_email = $('#contest_user_email').val()
+         $('#contest_user_email').val('')
+
+         var contest_phone_number = $('#contest_phone_number').val()
+         $('#contest_phone_number').val('')
+
+         var contest_image_gdrive_url = $('#contest_image_gdrive_url').val()
+         $('#contest_image_gdrive_url').val('')
+
+         var contest_video_gdrive_url = $('#contest_video_gdrive_url').val()
+         $('#contest_video_gdrive_url').val('')
+
+         console.log(contest_user_name,
+                     contest_marriage_year,
+                     contest_marriage_medium,
+                     contest_known_duration,
+                     contest_user_email,
+                     contest_phone_number,
+                     contest_image_gdrive_url,
+                     contest_video_gdrive_url
+         );
+
          Swal.fire({
             title: 'Please wait while your Image and Video is being uploaded...',
             didOpen: () => {
@@ -969,6 +1066,30 @@
             timerProgressBar: true,
             allowOutsideClick: false,
          })
+
+         $.ajax({
+            url: '{{ route("contest.ajax_store") }}',
+            type: 'POST',
+            data: {
+               contest_user_name: contest_user_name,
+               contest_marriage_year: contest_marriage_year,
+               contest_marriage_medium : contest_marriage_medium,
+               contest_known_duration : contest_known_duration,
+               contest_user_email : contest_user_email,
+               contest_phone_number : contest_phone_number,
+               contest_image_gdrive_url : contest_image_gdrive_url,
+               contest_video_gdrive_url : contest_video_gdrive_url,
+               _token: $('meta[name="csrf-token"]').attr('content')
+            },
+            success: function(response)
+            {
+               console.log("contest submit success");
+            },
+            error: function(error){
+               console.log("contest submit failed");
+            }
+         });
+
       });
    </script>
 
@@ -994,8 +1115,13 @@
       });
    </script>
 
-   {{-- Dropzone js --}}
+   <!-- DROPZONE JS -->
    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
-   <script src="{{ asset('js/file_upload.js') }}" defer></script>
+   <script src="{{ asset('js/file_upload_video.js') }}" defer></script>
+   <script src="{{ asset('js/file_upload_image.js') }}" defer></script>
 
+   <script>
+      var deleteImage = '{{ route("image-file-delete") }}';
+      var deleteVideo = '{{ route("video-file-delete") }}';
+   </script>
 @endpush

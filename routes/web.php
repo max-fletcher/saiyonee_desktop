@@ -27,12 +27,29 @@ Route::post('medialibrary/delete', [App\Http\Controllers\chunkUpload\UploaderCon
 
 
 
+
+//Media library routes
+// Route::get('/medialibrary', [App\Http\Controllers\chunkUpload\MediaLibraryController::class, 'mediaLibrary'])->name('media-library');
+
+// CONTEST FILES UPLOAD CONTROLLER
+Route::post('contest/image_upload', [ContestController::class, 'image_upload'])->name('image-file-upload');
+Route::post('contest/image_delete', [ContestController::class, 'image_delete'])->name('image-file-delete');
+
+Route::post('contest/video_upload', [ContestController::class, 'video_upload'])->name('video-file-upload');
+Route::post('contest/video_delete', [ContestController::class, 'video_delete'])->name('video-file-delete');
+// END CONTEST FILES UPLOAD CONTROLLER
+
+
+
+
+
+
 Route::get('/', [FrontendController::class, 'index'])->name('index');
 Route::get('/blog-details', [FrontendController::class, 'blogDetails'])->name('blog.details');
 Route::get('/story-details', [FrontendController::class, 'storyDetails'])->name('story.details');
 
 Route::get('/contest', [ContestController::class, 'index'])->name('contest.index');
-Route::post('/contest/store', [ContestController::class, 'store'])->name('contest.store');
+Route::post('/contest/ajax_store', [ContestController::class, 'ajax_store'])->name('contest.ajax_store');
 
 Route::post('/submit_contact_us', [ContactUsController::class, 'submit_contact_us'])->middleware('throttle:5,1440')->name('submit_contact_us');
 
