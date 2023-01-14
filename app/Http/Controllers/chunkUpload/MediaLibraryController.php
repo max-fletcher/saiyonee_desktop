@@ -11,8 +11,8 @@ class MediaLibraryController extends Controller
      * Get Media Library page
      * @return View
      */
+
     public function mediaLibrary(Request $request){
-        $user_obj = auth()->user();
-        return view('file_uploads.medialibrary', ['user_obj' => $user_obj ]);
+        return view('file_uploads.medialibrary');
     }
 }

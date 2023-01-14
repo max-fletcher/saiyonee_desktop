@@ -5,7 +5,6 @@ namespace App\Http\Controllers\chunkUpload;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Pion\Laravel\ChunkUpload\Exceptions\UploadFailedException;
-use Storage;
 use Illuminate\Http\UploadedFile;
 use Pion\Laravel\ChunkUpload\Exceptions\UploadMissingFileException;
 use Pion\Laravel\ChunkUpload\Handler\AbstractHandler;
@@ -75,17 +74,17 @@ class UploaderController extends Controller
         // move the file name
         $file->move($finalPath, $fileName);
 
-        $contest_data = new Contest();
-        $contest_data->video = $filePath.$fileName;
-        $contest_data->save();
+        // $contest_data = new Contest();
+        // $contest_data->video = $filePath.$fileName;
+        // $contest_data->save();
     
         // $url_base = 'storage/upload/medialibrary/'.$user_obj->id."/{$folderDATE}/".$fileName;
     
         return response()->json([
             'path'              => $finalPath,
             'name'              => $fileName,
-            'contest__data_id'  => $contest_data->id
-            // 'mime_type' => $mime
+            // 'mime_type'         => $mime,
+            // 'contest__data_id'  => $contest_data->id
         ]);
     }
 
@@ -98,6 +97,8 @@ class UploaderController extends Controller
         $extension = $file->extension();
         // $filename = str_replace(".".$extension, "", $file->getClientOriginalName()); // Filename without extension
         $filename = md5(uniqid());
+
+        session()->put('file_name_with_ext', $filename.".".$extension);
         
         // dd($file->getClientOriginalExtension(), $file->getClientOriginalName(), $extension, $filename);
 
@@ -117,22 +118,26 @@ class UploaderController extends Controller
      * @param Request request
      * @return JsonResponse
      */
-    public function delete (Request $request){
-    
-        $user_obj = auth()->user();
-    
-        $file = $request->filename;
-    
+    public function delete(){
+
+        // $user_obj = auth()->user();
+
+        $file = session()->get('file_name_with_ext');
+
+        // return response([
+        //     'filename' => $file
+        // ]);
+
         //delete timestamp from filename
-        $temp_arr = explode('_', $file);
-        if ( isset($temp_arr[0]) ) unset($temp_arr[0]);
-        $file = implode('_', $temp_arr);
-    
-        $dir = $request->date;
-    
-        $filePath = "public/upload/medialibrary/{$user_obj->id}/{$dir}/";
-        $finalPath = storage_path("app/".$filePath);
-    
+        // $temp_arr = explode('_', $file);
+        // if ( isset($temp_arr[0]) ) unset($temp_arr[0]);
+        // $file = implode('_', $temp_arr);
+
+        // $dir = $request->date;
+
+        $filePath = "uploads/contest_video/";
+        $finalPath = public_path($filePath);
+
         if (unlink($finalPath.$file) ){
             return response()->json([
             'status' => 'ok'

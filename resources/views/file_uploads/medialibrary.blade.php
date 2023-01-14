@@ -12,11 +12,6 @@
 
       {{-- File Upload Moda; --}}
       <!-- Modal Upload-->
-      @php
-      $ts = time();
-      $user_id = $user_obj;
-      $date = date("Y-m-d");
-      @endphp
 
       <section id="contest_rules_section" class="page-section-ptb">
          <div class="container">
@@ -26,10 +21,7 @@
                class="dropzone"
                id="datanodeupload">
                @csrf
-
                   <input type="file" name="file"  style="display: none;">
-                  <input type="hidden" name="dataTS" id="dataTS" value="{{ $ts }}">
-                  <input type="hidden" name="dataDATE" id="dataDATE" value="{{ $date }}">
                </form>
 
                <div class="modal-footer">
@@ -63,17 +55,14 @@
 
 
 @push('page-specific-js')
-	@parent
-		<!-- Scripts -->
+      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+		<!-- DROPZONE JS -->
 		<script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
 		<script src="{{ asset('js/file_upload.js') }}" defer></script>
 
 		<script>
-			var home_url = "{{env('APP_URL') }}";
 			var deleteAction = '{{ route("file-delete") }}';
-			var generalTS =  document.getElementById('dataTS').value;
-			var generalDATE = document.getElementById('dataDATE').value;
-			var token = '{!! csrf_token() !!}';
 		</script>
 
 @endpush
