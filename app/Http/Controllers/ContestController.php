@@ -82,13 +82,13 @@ class ContestController extends Controller
             $validator = Validator::make($request->all(), $validation_rules, $validation_messages);
 
             $validator->after(function ($validator) use($request){
-                if((isset($contest) && !$contest->image && !$request->contest_image_gdrive_url) || !isset($contest)){
+                if((isset($contest) && !$contest->image && !$request->contest_image_gdrive_url)){
                     $validator->errors()->add(
                         'contest_image', 'Either an image or a google drive/dropbox/onedrive link has to be provided.'
                     );
                 }
 
-                if((isset($contest) && !$contest->video && !$request->contest_video_gdrive_url) || !isset($contest)){
+                if((isset($contest) && !$contest->video && !$request->contest_video_gdrive_url)){
                     $validator->errors()->add(
                         'contest_video', 'Either a video or a google drive/dropbox/onedrive link has to be provided.'
                     );
@@ -119,15 +119,25 @@ class ContestController extends Controller
                 return response()->json(['status' => 'failed', 'errors' => $validator->errors()], 422);
             }
 
-            dd('Validation Passed', $request->all(), session()->get('contest_identifier_token'));
-
-            // dd($validation_rules, $validation_messages , $request);
+            // dd('Validation Passed', $request->all(), session()->get('contest_identifier_token'), $validation_rules, $validation_messages);
     
             DB::beginTransaction();
             try {
 
                 if($contest){
-
+                    $contest->name              = $request->contest_user_name;
+                    $contest->year              = $request->contest_marriage_year;
+                    $contest->medium            = $request->contest_marriage_medium;
+                    $contest->known_duration    = $request->contest_known_duration;
+                    $contest->email             = $request->contest_user_email;
+                    $contest->phone             = $request->contest_phone_number;
+                    $contest->description       = $request->contest_marriage_description;
+                    // $contest->image             = $contest_image_name;
+                    $contest->gdrive_image_link = ($contest->image == null) ? $request->contest_image_gdrive_url : null;
+                    // $contest->video             = $contest_video_name;
+                    $contest->gdrive_video_link = ($contest->video == null) ? $request->contest_video_gdrive_url : null;
+                    $contest->feedback          = $request->contest_feedback;
+                    $contest->save();
                 }
                 else{
                     $contest                    = new Contest();
@@ -174,22 +184,24 @@ class ContestController extends Controller
                 ]);
     
                 $response = json_decode($http_request->getBody());
+
+                // dd($response);
     
                 if($http_request->getStatusCode() == 200 && $response->status == 'success'){
                     DB::commit();
-                    return redirect()->route('contest.index')->with('contest_success', 'Contest Data Submitted Successfully!');
+                    return response()->json(['status' => 'success']);
                 }
                 elseif($http_request->getStatusCode() == 401 && $response->status == 'failed'){
-                    return redirect()->route('contest.index')->with('contest_failed', 'Password didn\'t match.');
+                    return response()->json(['status' => 'failed'], 401);
                 }
                 else{
                     DB::rollback();
-                    return redirect()->route('contest.index')->with('contest_failed', 'Something went wrong! Please try again.');
+                    return response()->json(['status' => 'failed'], 500);
                 }
     
             } catch (\Exception $e) {
                 DB::rollback();
-                return redirect()->route('contest.index')->with('contest_failed', 'Something went wrong! Please try again.');
+                return response()->json(['status' => 'failed'], 500);
             }
         }
 

@@ -88,10 +88,10 @@
     <div class="modal fade" id="mail_sent_modal" tabindex="-1" aria-labelledby="mail_sent_modal_label" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header text-center">
+                <div class="modal-header modal-header-onload-design onload-design text-center">
                     {{-- <div class="modal-rounded-decoration">
                     </div> --}}
-                        <h2 class="modal-head mail_sent_status"></h2>
+                        <h2 class="modal-head-onload-design mail_sent_status"></h2>
                     
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>

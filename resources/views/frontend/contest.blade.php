@@ -980,10 +980,10 @@
    <div class="modal fade" id="contest_modal" tabindex="-1" aria-labelledby="contest_modal_label" aria-hidden="true">
    <div class="modal-dialog modal-dialog-centered">
          <div class="modal-content">
-            <div class="modal-header text-center">
+            <div class="modal-header modal-header-onload-design onload-design text-center">
                {{-- <div class="modal-rounded-decoration">
                </div> --}}
-                     <h2 class="modal-head contest_title"></h2>
+                     <h2 class="modal-head-onload-design contest_modal_title"></h2>
                
                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
@@ -1081,14 +1081,16 @@
             url: '{{ route("contest.ajax_store") }}',
             type: 'POST',
             data: {
-               contest_user_name: contest_user_name,
-               contest_marriage_year: contest_marriage_year,
+               contest_user_name : contest_user_name,
+               contest_marriage_year : contest_marriage_year,
                contest_marriage_medium : contest_marriage_medium,
                contest_known_duration : contest_known_duration,
+               contest_marriage_description: contest_marriage_description,
                contest_user_email : contest_user_email,
                contest_phone_number : contest_phone_number,
                contest_image_gdrive_url : contest_image_gdrive_url,
                contest_video_gdrive_url : contest_video_gdrive_url,
+               contest_feedback : contest_feedback,
                _token: $('meta[name="csrf-token"]').attr('content')
             },
             success: function(response)
@@ -1106,7 +1108,7 @@
                $('#contest_video_gdrive_url').val('');
 
                // DISPLAY MODAL WITH SUCCESS
-               $('.contest_title').text('Contest Data Saved Successfully!')
+               $('.contest_modal_title').text('Contest Data Saved Successfully!')
                $('.contest_message').text('Thank you for your submission. We will inform you if you are selected as one of our winners.')
                $("#contest_modal").modal('show')
 
@@ -1116,47 +1118,49 @@
             error: function(error){
                console.log("contest submit failed", error.responseJSON.errors);
 
-                  if(error.status === 422){
-                     // console.log(error.responseJSON.errors, 'Validation errors');
-                     // console.log(error.responseJSON.errors.name);
-                     // console.log(error.responseJSON.errors.name[0]);
-                     // console.log(typeof(error.responseJSON.errors.name[0]));
+               if(error.status === 422){
+                  // console.log(error.responseJSON.errors, 'Validation errors');
+                  // console.log(error.responseJSON.errors.name);
+                  // console.log(error.responseJSON.errors.name[0]);
+                  // console.log(typeof(error.responseJSON.errors.name[0]));
 
-                     var message = ''
+                  var message = ''
 
-                     all_errors = error.responseJSON.errors
-                     // console.log(all_errors);
+                  all_errors = error.responseJSON.errors
+                  // console.log(all_errors);
 
-                     // console.log((Object.keys(all_errors).length - 1))
+                  // console.log((Object.keys(all_errors).length - 1))
 
-                     Object.values(all_errors).forEach((each_error, index) => {
-                        // console.log(each_error[0]);
-                        message += each_error
-                        // console.log(index);
-                           message += '<br>'
-                     });
+                  Object.values(all_errors).forEach((each_error, index) => {
+                     // console.log(each_error[0]);
+                     message += each_error
+                     // console.log(index);
+                     message += '<br>'
+                  });
 
-                     message = 'The following validation errors occured. <br>' + message + '<br> Please resolve them and try again.'
+                  message = '<h5 class="fw-bold">The following validation errors occured.</h5>' + message + '<br> Please resolve them and try again.'
 
-                     // console.log(message);
+                  // console.log(message);
 
-                     // DISPLAY MODAL WITH ERRORS
-                     $('.contest_title').text('Validation Errors!')
-                     $('.contest_message').text(message)
-                     $("#contest_modal").modal('show')
+                  // DISPLAY MODAL WITH ERRORS
+                  $('.contest_modal_title').text('Validation Errors!')
+                  $('.contest_message').html(message)
+                  $("#contest_modal").modal('show')
 
-                     // ENABLE BTN
-                     $("#contest_submit").prop('disabled', false)
-                  }
-                  else{
-                     // DISPLAY MODAL WITH ERROR
-                     $('.contest_title').text('Whoops!')
-                     $('.contest_message').text('Something went wrong! Please try again later or contact system administrators.')
-                     $("#contest_modal").modal('show')
+                  // ENABLE BTN
+                  $("#contest_submit").prop('disabled', false)
+               }
+               else{
+                  // DISPLAY MODAL WITH ERROR
+                  $('.contest_modal_title').text('Whoops!')
+                  $('.contest_message').text('Something went wrong! Please try again later or contact system administrators.')
+                  $("#contest_modal").modal('show')
 
-                     // ENABLE BTN
-                     $("#contest_submit").prop('disabled', false)
-                  }
+                  // ENABLE BTN
+                  $("#contest_submit").prop('disabled', false)
+               }
+
+               $("#contest_submit").prop('disabled', false)
             }
          });
 
