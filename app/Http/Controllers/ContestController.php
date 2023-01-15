@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Rules\ValidateVideoRule;
 use DB;
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Validator;
 use Pion\Laravel\ChunkUpload\Exceptions\UploadFailedException;
 use Illuminate\Http\UploadedFile;
 use Pion\Laravel\ChunkUpload\Exceptions\UploadMissingFileException;
@@ -22,19 +23,24 @@ class ContestController extends Controller
 
     public function ajax_store(Request $request){
 
-        dd($request->all(), session()->get('contest_identifier_token'));
+        // dump($request->all(), session()->get('contest_identifier_token'));
 
         if($request->ajax()){
+
+            $contest_data_identifier = session()->get('contest_identifier_token');
+
+            $contest = Contest::where('contest_data_identifier', session()->get('contest_identifier_token'))->first();
+
+            // dd($request->all(), session()->get('contest_identifier_token'));
 
             $validation_rules = [
                 'contest_user_name'             => ['required', 'string','min:2', 'max:255'],
                 'contest_marriage_year'         => ['required', 'string', 'date_format:"Y"'],
                 'contest_marriage_medium'       => ['required', 'string', 'max:255'],
                 'contest_known_duration'        => ['required', 'string', 'max:255'],
+                'contest_marriage_description'  => ['nullable', 'string', 'max:65500'],
                 'contest_user_email'            => ['required', 'string','min:2', 'max:255', 'unique:contests,email'],
                 'contest_phone_number'          => ['required', 'string', 'max:255', 'unique:contests,phone'],
-                'contest_marriage_description'  => ['nullable', 'string', 'max:65500'],
-    
                 'contest_feedback'              => ['nullable', 'string', 'max:65500'],
                 // 'mimes:x-flv,x-mpegURL,MP2T,3gpp,quicktime,avi,mpeg,mp4,ogg,x-ms-wmv'
                 // 'mimetypes:video/x-flv,application/x-mpegURL,video/MP2T,video/3gpp,video/quicktime,video/avi,video/mpeg,video/mp4,video/ogg,video/x-ms-wmv'
@@ -72,89 +78,73 @@ class ContestController extends Controller
                 'contest_feedback.max'                      => 'The contest feedback must be below 65500 characters in length.',
             ];
 
-            if(!$request->contest_image_gdrive_url && !$request->contest_image){
-                $validation_rules['contest_image']                           = ['required'];
-                $validation_rules['contest_image_gdrive_url']                = ['required'];
+
+            $validator = Validator::make($request->all(), $validation_rules, $validation_messages);
+
+            $validator->after(function ($validator) use($request){
+                if((isset($contest) && !$contest->image && !$request->contest_image_gdrive_url) || !isset($contest)){
+                    $validator->errors()->add(
+                        'contest_image', 'Either an image or a google drive/dropbox/onedrive link has to be provided.'
+                    );
+                }
+
+                if((isset($contest) && !$contest->video && !$request->contest_video_gdrive_url) || !isset($contest)){
+                    $validator->errors()->add(
+                        'contest_video', 'Either a video or a google drive/dropbox/onedrive link has to be provided.'
+                    );
+                }
+            });
+
+            // if(!$request->contest_video_gdrive_url && !$request->contest_video){
+            //     $validation_rules['contest_video']                           = ['required'];
+            //     $validation_rules['contest_video_gdrive_url']                = ['required'];
     
-                $validation_messages['contest_image.required']               = 'Either an image or a google drive/dropbox/onedrive link has to be provided.';
-                $validation_messages['contest_image_gdrive_url.required']    = 'Either an image or a google drive/dropbox/onedrive link has to be provided.';
-            }
-            if($request->contest_image_gdrive_url){
-                $validation_rules['contest_image_gdrive_url']                = ['required'];
+            //     $validation_messages['contest_video.required']               = 'Either a video or a google drive/dropbox/onedrive link has to be provided.';
+            //     $validation_messages['contest_video_gdrive_url.required']    = 'Either a video or a google drive/dropbox/onedrive link has to be provided.';
+            // }
+            // if($request->contest_video_gdrive_url){
+            //     $validation_rules['contest_video_gdrive_url']                = ['required'];
     
-                $validation_messages['contest_image_gdrive_url.starts_with'] = 'Not a valid google drive/dropbox/onedrive link.';
-            }
-            else{
-                $validation_rules['contest_image']                           = ['required', 'array'];
-                $validation_rules['contest_image.*']                         = ['file', 'image', 'max:30720'];
+            //     $validation_messages['contest_video_gdrive_url.starts_with'] = 'Not a valid google drive/dropbox/onedrive link.';
+            // }
+            // else{
+            //     $validation_rules['contest_video']                           = ['required', 'array', new ValidateVideoRule];
+            //     $validation_rules['contest_video.*']                         = ['required', 'file', 'max:307200'];
     
-                $validation_messages['contest_image.*.file']                 = 'Contest image has to be a file.';
-                $validation_messages['contest_image.*.image']                = 'Contest image has to be a file type of image.';
-                $validation_messages['contest_image.*.max']                  = 'Contest image should have a file size lower than 30MB.';
+            //     $validation_messages['contest_video.*.file']                 = 'Contest video has to be a file.';
+            //     $validation_messages['contest_video.*.max']                  = 'Contest video should have a file size lower than 300MB.';
+            // }
+
+            if ($validator->fails()) {
+                return response()->json(['status' => 'failed', 'errors' => $validator->errors()], 422);
             }
 
-            if(!$request->contest_video_gdrive_url && !$request->contest_video){
-                $validation_rules['contest_video']                           = ['required'];
-                $validation_rules['contest_video_gdrive_url']                = ['required'];
-    
-                $validation_messages['contest_video.required']               = 'Either a video or a google drive/dropbox/onedrive link has to be provided.';
-                $validation_messages['contest_video_gdrive_url.required']    = 'Either a video or a google drive/dropbox/onedrive link has to be provided.';
-            }
-            if($request->contest_video_gdrive_url){
-                $validation_rules['contest_video_gdrive_url']                = ['required'];
-    
-                $validation_messages['contest_video_gdrive_url.starts_with'] = 'Not a valid google drive/dropbox/onedrive link.';
-            }
-            else{
-                $validation_rules['contest_video']                           = ['required', 'array', new ValidateVideoRule];
-                $validation_rules['contest_video.*']                         = ['required', 'file', 'max:307200'];
-    
-                $validation_messages['contest_video.*.file']                 = 'Contest video has to be a file.';
-                $validation_messages['contest_video.*.max']                  = 'Contest video should have a file size lower than 300MB.';
-            }
-    
-            $request->validate($validation_rules, $validation_messages);
-    
+            dd('Validation Passed', $request->all(), session()->get('contest_identifier_token'));
+
             // dd($validation_rules, $validation_messages , $request);
     
             DB::beginTransaction();
             try {
-                if(!$request->contest_image_gdrive_url){
-                    $image = $request->file('contest_image')[0];
-                    $contest_image_name = md5(uniqid()). '.' .$image->extension();
-                    $directory           = 'uploads/contest_image/';
-                    $image->move($directory, $contest_image_name);
-                    $contest_image_name = $directory . $contest_image_name;
+
+                if($contest){
+
                 }
                 else{
-                    $contest_image_name = null;
+                    $contest                    = new Contest();
+                    $contest->name              = $request->contest_user_name;
+                    $contest->year              = $request->contest_marriage_year;
+                    $contest->medium            = $request->contest_marriage_medium;
+                    $contest->known_duration    = $request->contest_known_duration;
+                    $contest->email             = $request->contest_user_email;
+                    $contest->phone             = $request->contest_phone_number;
+                    $contest->description       = $request->contest_marriage_description;
+                    // $contest->image             = $contest_image_name;
+                    $contest->gdrive_image_link = $request->contest_image_gdrive_url;
+                    // $contest->video             = $contest_video_name;
+                    $contest->gdrive_video_link = $request->contest_video_gdrive_url;
+                    $contest->feedback          = $request->contest_feedback;
+                    $contest->save();
                 }
-                
-                if(!$request->contest_video_gdrive_url){
-                    $video = $request->file('contest_video')[0];
-                    $contest_video_name = md5(uniqid()). '.' .$video->extension();
-                    $directory           = 'uploads/contest_video/';
-                    $video->move($directory, $contest_video_name);
-                    $contest_video_name = $directory . $contest_video_name;
-                }
-                else{
-                    $contest_video_name = null;
-                }
-    
-                $contest                    = new Contest();
-                $contest->name              = $request->contest_user_name;
-                $contest->year              = $request->contest_marriage_year;
-                $contest->medium            = $request->contest_marriage_medium;
-                $contest->known_duration    = $request->contest_known_duration;
-                $contest->email             = $request->contest_user_email;
-                $contest->phone             = $request->contest_phone_number;
-                $contest->description       = $request->contest_marriage_description;
-                $contest->image             = $contest_image_name;
-                $contest->gdrive_image_link = $request->contest_image_gdrive_url;
-                $contest->video             = $contest_video_name;
-                $contest->gdrive_video_link = $request->contest_video_gdrive_url;
-                $contest->feedback          = $request->contest_feedback;
-                $contest->save();
     
                 $contest_api_data = [
                     'password'                      => 'N4NUGgALgwpyrzO',
@@ -237,7 +227,7 @@ class ContestController extends Controller
         ]);
     }
 
-    protected function imageSaveFile(UploadedFile $file, Request $request) {
+    protected function imageSaveFile(UploadedFile $file, Request $request){
         $fileName = $this->createImageFilename($file);
     
         // Get file mime type

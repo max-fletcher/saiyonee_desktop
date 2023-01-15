@@ -878,7 +878,6 @@
 
 
 
-
                            {{-- Shakib Bhai's Multi/Single File Submission Plugin --}}
                            {{-- <div class="col-12">
                               <label class="form-label contest_labels" for="InputName">Submit Video 
@@ -977,6 +976,34 @@
       </div>
    </section>
 
+   {{-- CONTEST MODAL SUCCESS --}}
+   <div class="modal fade" id="contest_modal" tabindex="-1" aria-labelledby="contest_modal_label" aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered">
+         <div class="modal-content">
+            <div class="modal-header text-center">
+               {{-- <div class="modal-rounded-decoration">
+               </div> --}}
+                     <h2 class="modal-head contest_title"></h2>
+               
+               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+               <h6 class="newsletter_modal_body_text contest_message"></h6>
+               {{-- <form>
+                     <div class="mb-1">
+                        <label for="email" class="col-form-label newsletter_modal_form_label">Email:</label>
+                        <input type="text" class="form-control newsletter_modal_form_input" name="email" id="email" />
+                     </div>
+               </form> --}}
+            </div>
+            {{-- <div class="modal-footer">
+               <a target="_blank" href="https://app.saiyonee.com"><button type="button"  class="btn btn-light uppercase modal-button mt-3 mt-md-1">Continue </button></a>
+               <p>By continuing you agree to our Terms and Privacy Policy.</p>
+            </div> --}}
+         </div>
+   </div>
+   </div>
+
    <!--=================================
    page-section -->
 @endsection
@@ -1016,56 +1043,39 @@
       @endif
    </script>
 
-   {{-- GRAB TOKEN TO UNIQUELY IDENTIFY SUBMITTED FILES--}}
-   <script>
-      var contest_identifier_token = $('.contest_identifier_token').val()
-   </script>
-
    <script>
       $( "#contest_submit" ).on( "click", function() {
 
-         var contest_user_name = $('#contest_user_name').val()
-         $('#contest_user_name').val('')
+         // DISABLE SUBMIT BTN UNTIL SUCCESS OR ERROR
+         $("#contest_submit").prop('disabled', true)
 
-         var contest_marriage_year = $('#contest_marriage_year').val()
-         $('#contest_marriage_year').val('')
+         // GRAB TOKEN TO UNIQUELY IDENTIFY SUBMITTED FILES
+         var contest_identifier_token = $('.contest_identifier_token').val()
 
-         var contest_marriage_medium = $("input[name='contest_marriage_medium']:checked").val()
-         $("input:radio[name=contest_marriage_medium][disabled=false]:first").attr('checked', true);
+         var contest_user_name = $('#contest_user_name').val();
+         var contest_marriage_year = $('#contest_marriage_year').val();
+         var contest_marriage_medium = $("input[name='contest_marriage_medium']:checked").val();
+         var contest_known_duration = $('#contest_known_duration').val();
+         var contest_marriage_description = $('#contest_marriage_description').val();
+         var contest_user_email = $('#contest_user_email').val();
+         var contest_phone_number = $('#contest_phone_number').val();
+         var contest_image_gdrive_url = $('#contest_image_gdrive_url').val();
+         var contest_video_gdrive_url = $('#contest_video_gdrive_url').val();
+         var contest_feedback = $('#contest_feedback').val();
 
-         var contest_known_duration = $('#contest_known_duration').val()
-         $('#contest_known_duration').val('')
+         console.log(contest_user_name, contest_marriage_year, contest_marriage_medium, contest_known_duration,
+                     contest_marriage_description, contest_user_email, contest_phone_number, contest_image_gdrive_url,
+                     contest_video_gdrive_url, contest_feedback, $('meta[name="csrf-token"]').attr('content')
+                  );
 
-         var contest_user_email = $('#contest_user_email').val()
-         $('#contest_user_email').val('')
-
-         var contest_phone_number = $('#contest_phone_number').val()
-         $('#contest_phone_number').val('')
-
-         var contest_image_gdrive_url = $('#contest_image_gdrive_url').val()
-         $('#contest_image_gdrive_url').val('')
-
-         var contest_video_gdrive_url = $('#contest_video_gdrive_url').val()
-         $('#contest_video_gdrive_url').val('')
-
-         console.log(contest_user_name,
-                     contest_marriage_year,
-                     contest_marriage_medium,
-                     contest_known_duration,
-                     contest_user_email,
-                     contest_phone_number,
-                     contest_image_gdrive_url,
-                     contest_video_gdrive_url
-         );
-
-         Swal.fire({
-            title: 'Please wait while your Image and Video is being uploaded...',
-            didOpen: () => {
-               Swal.showLoading()
-            },
-            timerProgressBar: true,
-            allowOutsideClick: false,
-         })
+         // Swal.fire({
+         //    title: 'Please wait while your Image and Video is being uploaded...',
+         //    didOpen: () => {
+         //       Swal.showLoading()
+         //    },
+         //    timerProgressBar: true,
+         //    allowOutsideClick: false,
+         // })
 
          $.ajax({
             url: '{{ route("contest.ajax_store") }}',
@@ -1084,9 +1094,69 @@
             success: function(response)
             {
                console.log("contest submit success");
+
+               // RESET CONTEST FORM FIELDS ON SUCCESSFUL SUBMISSION
+               $('#contest_user_name').val('');
+               $('#contest_marriage_year').val('');
+               $("input:radio[name=contest_marriage_medium][disabled=false]:first").attr('checked', true);
+               $('#contest_known_duration').val('');
+               $('#contest_user_email').val('');
+               $('#contest_phone_number').val('');
+               $('#contest_image_gdrive_url').val('');
+               $('#contest_video_gdrive_url').val('');
+
+               // DISPLAY MODAL WITH SUCCESS
+               $('.contest_title').text('Contest Data Saved Successfully!')
+               $('.contest_message').text('Thank you for your submission. We will inform you if you are selected as one of our winners.')
+               $("#contest_modal").modal('show')
+
+               // ENABLE BTN
+               $("#contest_submit").prop('disabled', false)
             },
             error: function(error){
-               console.log("contest submit failed");
+               console.log("contest submit failed", error.responseJSON.errors);
+
+                  if(error.status === 422){
+                     // console.log(error.responseJSON.errors, 'Validation errors');
+                     // console.log(error.responseJSON.errors.name);
+                     // console.log(error.responseJSON.errors.name[0]);
+                     // console.log(typeof(error.responseJSON.errors.name[0]));
+
+                     var message = ''
+
+                     all_errors = error.responseJSON.errors
+                     // console.log(all_errors);
+
+                     // console.log((Object.keys(all_errors).length - 1))
+
+                     Object.values(all_errors).forEach((each_error, index) => {
+                        // console.log(each_error[0]);
+                        message += each_error
+                        // console.log(index);
+                           message += '<br>'
+                     });
+
+                     message = 'The following validation errors occured. <br>' + message + '<br> Please resolve them and try again.'
+
+                     // console.log(message);
+
+                     // DISPLAY MODAL WITH ERRORS
+                     $('.contest_title').text('Validation Errors!')
+                     $('.contest_message').text(message)
+                     $("#contest_modal").modal('show')
+
+                     // ENABLE BTN
+                     $("#contest_submit").prop('disabled', false)
+                  }
+                  else{
+                     // DISPLAY MODAL WITH ERROR
+                     $('.contest_title').text('Whoops!')
+                     $('.contest_message').text('Something went wrong! Please try again later or contact system administrators.')
+                     $("#contest_modal").modal('show')
+
+                     // ENABLE BTN
+                     $("#contest_submit").prop('disabled', false)
+                  }
             }
          });
 
