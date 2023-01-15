@@ -571,7 +571,9 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <h6 class="newsletter_modal_body_text">First 1000 verified users will get "Premium Membership" for FREE !!</h6>
+                    <h6 class="newsletter_modal_body_text">First 1000 verified users will get "3 months Premium Membership" for FREE !!</h6>
+                    <h6 class="newsletter_modal_body_text mt-2">Less than 500 slots remaining.</h6>
+                    <p class="fw-bold mt-3">*Offer ends on January 31st, 2023.</p>
                     {{-- <form>
                         <div class="mb-1">
                             <label for="email" class="col-form-label newsletter_modal_form_label">Email:</label>

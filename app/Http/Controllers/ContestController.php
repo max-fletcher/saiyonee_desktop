@@ -27,7 +27,7 @@ class ContestController extends Controller
 
         if($request->ajax()){
 
-            $contest_data_identifier = session()->get('contest_identifier_token');
+            // $contest_data_identifier = session()->get('contest_identifier_token');
 
             $contest = Contest::where('contest_data_identifier', session()->get('contest_identifier_token'))->first();
 
@@ -81,14 +81,17 @@ class ContestController extends Controller
 
             $validator = Validator::make($request->all(), $validation_rules, $validation_messages);
 
+            // dd(isset($contest), empty($contest->image), !$request->contest_image_gdrive_url, (!isset($contest) && !$request->contest_image_gdrive_url));
+            // dd(isset($contest), isset($contest->image), !$request->contest_image_gdrive_url, !isset($contest));
+
             $validator->after(function ($validator) use($request){
-                if((isset($contest) && !$contest->image && !$request->contest_image_gdrive_url)){
+                if(((isset($contest) && (empty($contest->image) || $request->contest_image_gdrive_url))) || (!isset($contest) && $request->contest_image_gdrive_url)){
                     $validator->errors()->add(
                         'contest_image', 'Either an image or a google drive/dropbox/onedrive link has to be provided.'
                     );
                 }
 
-                if((isset($contest) && !$contest->video && !$request->contest_video_gdrive_url)){
+                if(((isset($contest) && (empty($contest->video) || $request->contest_video_gdrive_url))) || (!isset($contest) && $request->contest_video_gdrive_url)){
                     $validator->errors()->add(
                         'contest_video', 'Either a video or a google drive/dropbox/onedrive link has to be provided.'
                     );
@@ -133,9 +136,9 @@ class ContestController extends Controller
                     $contest->phone             = $request->contest_phone_number;
                     $contest->description       = $request->contest_marriage_description;
                     // $contest->image             = $contest_image_name;
-                    $contest->gdrive_image_link = ($contest->image == null) ? $request->contest_image_gdrive_url : null;
+                    $contest->gdrive_image_link = empty($contest->image) ? $request->contest_image_gdrive_url : null;
                     // $contest->video             = $contest_video_name;
-                    $contest->gdrive_video_link = ($contest->video == null) ? $request->contest_video_gdrive_url : null;
+                    $contest->gdrive_video_link = empty($contest->video) ? $request->contest_video_gdrive_url : null;
                     $contest->feedback          = $request->contest_feedback;
                     $contest->save();
                 }

@@ -64,6 +64,14 @@ Dropzone.options.datanodeupload2 =
          //    formData.append("contest_identifier_token", contest_identifier_token);
          // });
       });
+      this.on("complete", function (file) {
+         Swal.fire({
+            icon: 'success',
+            title: 'File upload complete!',
+            showConfirmButton: false,
+            timer: 2000,
+         })
+      });
    },
    removedfile: function(file) {
       var name = file.upload.filename;

@@ -556,7 +556,7 @@
                <div class="row mb-0 mb-md-2 mx-3">
                   <div class="col-12 mb-0 mb-lg-2">
 
-                     <h5 class="contest_opening mb-3"> Dear Couples, </h5>
+                     <h5 class="contest_opening mb-3"> Dear Couple, </h5>
 
                      <span class="contest_para">
                         Thank you for your interest in this contest. We are excited and eager to see your best memories as a couple.
@@ -576,7 +576,7 @@
                         <h6 class="contest_opening"> Video submission guideline </h6>
                         Create a short video <span class="underline">under 30 seconds</span>. 
 
-                        The video should cover <span class="underline">ONE</span> of the following theme, in the context of your relationship.
+                        The video should cover <span class="underline">ONE</span> of the following themes, in the context of your relationship.
                         <br>
                         1. Why did you choose 'arranged marriage' over love marriage ?
                         <br>
@@ -593,7 +593,7 @@
                         <br>
                         <span class="contest_opening">OR,</span>
                         <br>
-                        2. Upload photo and video directly to this form
+                        2. Upload photo and video directly to this form.
                         <br><br>
 
                         {{-- The file size must not exceed <span class="underline">25 MB</span>. Having trouble to keep it under 25 MB ? You can use this 
@@ -607,26 +607,29 @@
                         <h6 class="contest_opening mb-2 underline"> Awards </h6>
 
                         - <span class="font_inline_bold_800"> 1st award </span> will be given for <span class="font_inline_bold_800">
-                        "Best Overall Photo and Video"</span> category. This couple will get an "Outdoor Photo + video shoot" by Chitrogolpo Sr. 
+                        "Best Overall Photo and Video"</span> category. This couple will get an "Outdoor Photo + video shoot" by a Chitrogolpo Sr.
                         Photographer.
                         <br><br>
 
                         - <span class="font_inline_bold_800"> 2nd award </span> will be given for <span class="font_inline_bold_800"> 
-                        "Best Photo" </span>. This couple will get an "Outdoor Photo + video shoot"  by Chitrogolpo Jr. Photographer.
+                        "Best Photo" </span>. This couple will get an "Outdoor Photo + video shoot" by a Chitrogolpo Jr. Photographer.
                         <br><br>
 
                         - <span class="font_inline_bold_800"> 3rd award </span> will be given for <span class="font_inline_bold_800"> 
-                        "Best Video" </span>. This couple will get an "Outdoor Photo + video shoot"  by Chitrogolpo Jr. Photographer.
+                        "Best Video" </span>. This couple will get an "Outdoor Photo + video shoot" by a Chitrogolpo Jr. Photographer.
                         <br><br>
 
-                        - All of the <span class="font_inline_bold_800"> Top 10 photos and videos </span> winner will get exciting 
+                        - Top 3 award winners will have the opportunity to get featured by Chitrogolpo and/or Saiyonee in social media.
+                        <br><br>
+
+                        - All of the <span class="font_inline_bold_800"> Top 10 photos and videos </span> winners will get exciting 
                         <span class="font_inline_bold_800"> merchandises </span> from <span class="font_inline_bold_800"> Saiyonee </span>.
                         <br><br>
 
 
                         <h6 class="contest_opening underline"> Contest Terms and conditions </h6>
                         1. For this contest, we are ONLY looking for couples who have done &quotArranged Marriage&quot. To elaborate further, 
-                           couples who were first introduced through parent, family, online matchmaking sites, newspaper ad, 'Ghotok', matchmaking 
+                           couples who were first introduced by parent, family, online matchmaking sites, newspaper ad, 'Ghotok', matchmaking 
                            agency etc and eventually got married with both family's consent. 
                            <br><br>
 
@@ -647,10 +650,12 @@
                            facebook <a class="contest_link" href="https://www.facebook.com/saiyonee" target="_blank"> https://www.facebook.com/saiyonee </a> or
                            <br>
                            instagram <a class="contest_link" href="https://www.instagram.com/my_saiyonee" target="_blank"> https://www.instagram.com/my_saiyonee </a>
+                           <br>
+                           or call us at <a href="tel:01737556883">01737556883</a>
                            <br><br>
 
                         6. Saiyonee and Chitrogolpo reserve the right, at its sole discretion, to amend the rules, regulations, and duration of the campaign at any
-                           time without any prior notice. Saiyonee and Chitrogolpo has the sole right to disqualify any individual or participants from the campaign.
+                           time without any prior notice. Saiyonee and Chitrogolpo have the sole right to disqualify any individual or participants from the campaign.
                            <br><br>
                      </span>
 
@@ -673,7 +678,7 @@
          <input class="contest_identifier_token" type="hidden" value="{{ $contest_identifier_token }}">
 
          <div class="row contest_form_row">
-            <div class="col-8 px-4">
+            <div class="col-12 col-md-10 col-lg-8 px-4">
                <div class="row mb-0 mb-md-2 mb-lg-3 mb-xl-4">
                   <div class="col-12 mb-0 mb-lg-2">
                      {{-- <div id="formmessage" style="display:none">Success/Error Message Goes Here</div> --}}
@@ -978,30 +983,19 @@
 
    {{-- CONTEST MODAL SUCCESS --}}
    <div class="modal fade" id="contest_modal" tabindex="-1" aria-labelledby="contest_modal_label" aria-hidden="true">
-   <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-dialog modal-dialog-centered">
          <div class="modal-content">
             <div class="modal-header modal-header-onload-design onload-design text-center">
                {{-- <div class="modal-rounded-decoration">
                </div> --}}
-                     <h2 class="modal-head-onload-design contest_modal_title"></h2>
-               
-               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  <h2 class="modal-head-onload-design contest_modal_title"></h2>
+                  <button type="button" class="btn-close contest_modal_close_btn" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                <h6 class="newsletter_modal_body_text contest_message"></h6>
-               {{-- <form>
-                     <div class="mb-1">
-                        <label for="email" class="col-form-label newsletter_modal_form_label">Email:</label>
-                        <input type="text" class="form-control newsletter_modal_form_input" name="email" id="email" />
-                     </div>
-               </form> --}}
             </div>
-            {{-- <div class="modal-footer">
-               <a target="_blank" href="https://app.saiyonee.com"><button type="button"  class="btn btn-light uppercase modal-button mt-3 mt-md-1">Continue </button></a>
-               <p>By continuing you agree to our Terms and Privacy Policy.</p>
-            </div> --}}
          </div>
-   </div>
+      </div>
    </div>
 
    <!--=================================
@@ -1098,22 +1092,29 @@
                console.log("contest submit success");
 
                // RESET CONTEST FORM FIELDS ON SUCCESSFUL SUBMISSION
-               $('#contest_user_name').val('');
-               $('#contest_marriage_year').val('');
-               $("input:radio[name=contest_marriage_medium][disabled=false]:first").attr('checked', true);
-               $('#contest_known_duration').val('');
-               $('#contest_user_email').val('');
-               $('#contest_phone_number').val('');
-               $('#contest_image_gdrive_url').val('');
-               $('#contest_video_gdrive_url').val('');
+               // $('#contest_user_name').val('');
+               // $('#contest_marriage_year').val('');
+               // $("input:radio[name=contest_marriage_medium][disabled=false]:first").attr('checked', true);
+               // $('#contest_known_duration').val('');
+               // $('#contest_user_email').val('');
+               // $('#contest_phone_number').val('');
+               // $('#contest_image_gdrive_url').val('');
+               // $('#contest_video_gdrive_url').val('');
 
                // DISPLAY MODAL WITH SUCCESS
+               $("#contest_modal").attr("data-bs-backdrop", "static").attr("data-bs-keyboard", "false")
+               $('.contest_modal_close_btn').addClass('d-none')
                $('.contest_modal_title').text('Contest Data Saved Successfully!')
                $('.contest_message').text('Thank you for your submission. We will inform you if you are selected as one of our winners.')
                $("#contest_modal").modal('show')
 
                // ENABLE BTN
-               $("#contest_submit").prop('disabled', false)
+               // $("#contest_submit").prop('disabled', false)
+
+               // RELOAD PAGE SINCE CLEARING DROPZONE IS BECOMING NEAR IMPOSSIBLE
+               setTimeout(() => {
+                  location.reload(true);
+               }, 1500);
             },
             error: function(error){
                console.log("contest submit failed", error.responseJSON.errors);
@@ -1160,6 +1161,7 @@
                   $("#contest_submit").prop('disabled', false)
                }
 
+               // ENABLE BTN(TO MAKE SURE IT IS ENABLED)
                $("#contest_submit").prop('disabled', false)
             }
          });

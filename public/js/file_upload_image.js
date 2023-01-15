@@ -60,6 +60,14 @@ Dropzone.options.datanodeupload =
             file_replaced_image = false
          }
       });
+      this.on("complete", function (file) {
+         Swal.fire({
+            icon: 'success',
+            title: 'File upload complete!',
+            showConfirmButton: false,
+            timer: 2000,
+         })
+      });
    },
    removedfile: function(file) {
       var name = file.upload.filename;
