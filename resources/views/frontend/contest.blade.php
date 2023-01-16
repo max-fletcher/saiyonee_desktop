@@ -692,7 +692,7 @@
                                     Please tell us your names(Both Husband and Wife)<span class="text-danger"> *</span>
                                  </label>
                                  <input id="contest_user_name" placeholder="Your names here"
-                                    class="form-control @error('contest_user_name') input_error_border_red @else input_text @enderror" name="contest_user_name"
+                                    class="form-control input_text contest_user_name_input" name="contest_user_name"
                                     type="text" autocomplete="off" value="{{ old('contest_user_name') }}">
                               {{-- </div> --}}
                                  <div class="text-red fw-bold contest_user_name_error"></div>
@@ -704,7 +704,7 @@
                                     When did you get married? (e.g 2016 / 2018 / 2020)<span class="text-danger"> *</span>
                                  </label>
                                  <input id="contest_marriage_year" placeholder="Your year of marriage here"
-                                    class="form-control @error('contest_marriage_year') input_error_border_red @else input_text @enderror" name="contest_marriage_year"
+                                    class="form-control input_text contest_marriage_year_input" name="contest_marriage_year"
                                     type="text" autocomplete="off" value="{{ old('contest_marriage_year') }}">
                               {{-- </div> --}}
                                  <div class="text-red fw-bold contest_marriage_year_error"></div>
@@ -771,7 +771,7 @@
                                     How long did you get to know each-other before getting married? (e.g- 3 months / 1 year)<span class="text-danger"> *</span>
                                  </label>
                                  <input id="contest_known_duration" placeholder="Your acquaintance duration here"
-                                    class="form-control @error('contest_known_duration') input_error_border_red @else input_text @enderror" name="contest_known_duration"
+                                    class="form-control input_text contest_known_duration_input" name="contest_known_duration"
                                     type="text" autocomplete="off" value="{{ old('contest_known_duration') }}">
                               {{-- </div> --}}
                               <div class="text-red fw-bold contest_known_duration_error"></div>
@@ -783,7 +783,7 @@
                                     Please tell us a little about how you got introduced and then married (Max 200 words)
                                  </label>
                                  <textarea id="contest_marriage_description" 
-                                    class="form-control input-message @error('contest_marriage_description') input_error_border_red @else input_text @enderror"
+                                    class="form-control input-message"
                                     placeholder="Your description here" rows="7" name="contest_marriage_description">{{ old('contest_marriage_description') }}</textarea>
                               {{-- </div> --}}
                               <div class="text-red fw-bold contest_marriage_description_error"></div>
@@ -795,7 +795,7 @@
                                     Email<span class="text-danger"> *</span>
                                  </label>
                                  <input id="contest_user_email" placeholder="Your email here" 
-                                    class="form-control @error('contest_user_email') input_error_border_red @else input_text @enderror"
+                                    class="form-control input_text contest_user_email_input"
                                     name="contest_user_email" type="text" autocomplete="off" value="{{ old('contest_user_email') }}">
                               {{-- </div> --}}
                               <div class="text-red fw-bold contest_user_email_error"></div>
@@ -807,7 +807,7 @@
                                     Phone Number<span class="text-danger"> *</span>
                                  </label>
                                  <input id="contest_phone_number" placeholder="Your phone number here" 
-                                    class="form-control @error('contest_phone_number') input_error_border_red @else input_text @enderror"
+                                    class="form-control input_text contest_phone_number_input"
                                     name="contest_phone_number" type="text" autocomplete="off" value="{{ old('contest_phone_number') }}">
                               {{-- </div> --}}
                               <div class="text-red fw-bold contest_phone_number_error"></div>
@@ -826,6 +826,7 @@
                                  <div class="text-red fw-bold">{{ $message }}</div>
                               @enderror
                            </div> --}}
+
                            <div class="col-12">
                               <label class="form-label contest_labels" for="InputName">Submit Image 
                                  <br> <small class="small_text">(max file upload size should be 30 MB)</small>
@@ -850,14 +851,11 @@
                                     <small class="small_text">(recommended)</small>
                                  </label>
                                  <input id="contest_image_gdrive_url" placeholder="Your google drive/dropbox/onedrive link here"
-                                    class="form-control @error('contest_image_gdrive_url') input_error_border_red @else input_text @enderror"
+                                    class="form-control input_text contest_image_input"
                                     name="contest_image_gdrive_url" type="text" autocomplete="off" value="{{ old('contest_image_gdrive_url') }}">
                               {{-- </div> --}}
                               <div class="text-red fw-bold contest_image_error"></div>
                            </div>
-
-
-
 
                            {{-- Shakib Bhai's Multi/Single File Submission Plugin --}}
                            {{-- <div class="col-12">
@@ -897,7 +895,7 @@
                                     <small class="small_text">(recommended)</small>
                                  </label>
                                  <input id="contest_video_gdrive_url" placeholder="Your google drive/dropbox/onedrive link here" 
-                                    class="form-control input_text @error('contest_video_gdrive_url') input_error_border_red @else input_text @enderror"
+                                    class="form-control input_text contest_video_input"
                                     name="contest_video_gdrive_url" type="text" autocomplete="off" value="{{ old('contest_video_gdrive_url') }}">
                               {{-- </div> --}}
                               <div class="text-red fw-bold contest_video_error"></div>
@@ -1004,6 +1002,7 @@
    </script> --}}
 
    <script>
+      var first_validation = true;
       $( "#contest_submit" ).on( "click", function() {
 
          // DISABLE SUBMIT BTN UNTIL SUCCESS OR ERROR
@@ -1118,10 +1117,26 @@
                   $('.contest_video_error').text('');
                   $('.contest_feedback_error').text('');
 
+                  if(!first_validation){
+                     $('.contest_user_name_input').removeClass('input_error_border_red').addClass('input_text');
+                     $('.contest_marriage_year_input').removeClass('input_error_border_red').addClass('input_text');
+                     $('.contest_known_duration_input').removeClass('input_error_border_red').addClass('input_text');
+                     $('.contest_marriage_description_input').removeClass('input_error_border_red').addClass('input_text');
+                     $('.contest_user_email_input').removeClass('input_error_border_red').addClass('input_text');
+                     $('.contest_phone_number_input').removeClass('input_error_border_red').addClass('input_text');
+                     $('.contest_image_input').removeClass('input_error_border_red').addClass('input_text');
+                     $('.contest_video_input').removeClass('input_error_border_red').addClass('input_text');
+                     $('.contest_feedback_input').removeClass('input_error_border_red').addClass('input_text');
+                  }
+
                   for(const [key, value] of Object.entries(all_errors)) {
-                     // console.log(key, value);
+                     console.log(key, value);
+                     $('.' + key + '_input').removeClass('input_text').addClass('input_error_border_red')
+                     // input_error_border_red
                      $('.' + key + '_error').text(value)
                   }
+
+                  first_validation = false
 
                   // CLOSE SWEETALERT
                   Swal.close()

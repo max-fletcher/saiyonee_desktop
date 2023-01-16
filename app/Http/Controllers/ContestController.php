@@ -93,13 +93,15 @@ class ContestController extends Controller
             // );
 
             $validator->after(function ($validator) use($request){
-                if( ((isset($contest) && empty($contest->image)) && empty($request->contest_image_gdrive_url)) || (!isset($contest) && empty($request->contest_image_gdrive_url)) ){
+                // || (!isset($contest) && empty($request->contest_image_gdrive_url))
+                if( ((isset($contest) && empty($contest->image)) && empty($request->contest_image_gdrive_url)) ){
                     $validator->errors()->add(
                         'contest_image', 'Either an image or a google drive/dropbox/onedrive link has to be provided.'
                     );
                 }
 
-                if( ((isset($contest) && empty($contest->video)) && !isset($request->contest_video_gdrive_url)) || (!isset($contest) && empty($request->contest_video_gdrive_url)) ){
+                // || (!isset($contest) && empty($request->contest_video_gdrive_url))
+                if( ((isset($contest) && empty($contest->video)) && !isset($request->contest_video_gdrive_url)) ){
                     $validator->errors()->add(
                         'contest_video', 'Either a video or a google drive/dropbox/onedrive link has to be provided.'
                     );
