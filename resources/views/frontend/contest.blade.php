@@ -695,9 +695,7 @@
                                     class="form-control @error('contest_user_name') input_error_border_red @else input_text @enderror" name="contest_user_name"
                                     type="text" autocomplete="off" value="{{ old('contest_user_name') }}">
                               {{-- </div> --}}
-                              @error('contest_user_name')
-                                 <div class="text-red fw-bold">{{ $message }}</div>
-                              @enderror
+                                 <div class="text-red fw-bold contest_user_name_error"></div>
                            </div>
 
                            <div class="col-12 mb-5">
@@ -709,9 +707,7 @@
                                     class="form-control @error('contest_marriage_year') input_error_border_red @else input_text @enderror" name="contest_marriage_year"
                                     type="text" autocomplete="off" value="{{ old('contest_marriage_year') }}">
                               {{-- </div> --}}
-                              @error('contest_marriage_year')
-                                 <div class="text-red fw-bold">{{ $message }}</div>
-                              @enderror
+                                 <div class="text-red fw-bold contest_marriage_year_error"></div>
                            </div>
 
                            <div class="col-12 mb-5">
@@ -766,9 +762,7 @@
                                     class="form-control @error('contest_marriage_medium') input_error_border_red @else input_text @enderror" name="contest_marriage_medium"
                                     type="text" autocomplete="off" value="{{ old('contest_marriage_medium') }}"> --}}
                               {{-- </div> --}}
-                              @error('contest_marriage_medium')
-                                 <div class="text-red fw-bold">{{ $message }}</div>
-                              @enderror
+                              <div class="text-red fw-bold contest_marriage_medium_error"></div>
                            </div>
 
                            <div class="col-12 mb-5">
@@ -780,9 +774,7 @@
                                     class="form-control @error('contest_known_duration') input_error_border_red @else input_text @enderror" name="contest_known_duration"
                                     type="text" autocomplete="off" value="{{ old('contest_known_duration') }}">
                               {{-- </div> --}}
-                              @error('contest_known_duration')
-                                 <div class="text-red fw-bold">{{ $message }}</div>
-                              @enderror
+                              <div class="text-red fw-bold contest_known_duration_error"></div>
                            </div>
 
                            <div class="col-md-12 mb-5">
@@ -794,9 +786,7 @@
                                     class="form-control input-message @error('contest_marriage_description') input_error_border_red @else input_text @enderror"
                                     placeholder="Your description here" rows="7" name="contest_marriage_description">{{ old('contest_marriage_description') }}</textarea>
                               {{-- </div> --}}
-                              @error('contest_marriage_description')
-                                 <div class="text-red fw-bold">{{ $message }}</div>
-                              @enderror
+                              <div class="text-red fw-bold contest_marriage_description_error"></div>
                            </div>
 
                            <div class="col-12 mb-5">
@@ -808,9 +798,7 @@
                                     class="form-control @error('contest_user_email') input_error_border_red @else input_text @enderror"
                                     name="contest_user_email" type="text" autocomplete="off" value="{{ old('contest_user_email') }}">
                               {{-- </div> --}}
-                              @error('contest_user_email')
-                                 <div class="text-red fw-bold">{{ $message }}</div>
-                              @enderror
+                              <div class="text-red fw-bold contest_user_email_error"></div>
                            </div>
 
                            <div class="col-12 mb-5">
@@ -822,13 +810,8 @@
                                     class="form-control @error('contest_phone_number') input_error_border_red @else input_text @enderror"
                                     name="contest_phone_number" type="text" autocomplete="off" value="{{ old('contest_phone_number') }}">
                               {{-- </div> --}}
-                              @error('contest_phone_number')
-                                 <div class="text-red fw-bold">{{ $message }}</div>
-                              @enderror
+                              <div class="text-red fw-bold contest_phone_number_error"></div>
                            </div>
-
-
-
 
                            {{-- Shakib Bhai's Multi/Single File Submission Plugin --}}
                            {{-- <div class="col-12">
@@ -852,15 +835,10 @@
                                     class="dropzone"
                                     id="datanodeupload">
                                     @csrf
-                                    <input type="file" name="file"  style="display: none;">
+                                    <input type="file" name="file" style="display: none;">
                                  </form>
                               </div>
-                              @error('contest_image')
-                                 <div class="text-red fw-bold">{{ $message }}</div>
-                              @enderror
-                              @error('contest_image.*')
-                                 <div class="text-red fw-bold">{{ $message }}</div>
-                              @enderror
+                              <div class="text-red fw-bold contest_image_error"></div>
                            </div>
 
                            <h3 class="mt-2 text-center font_weight_or">OR</h3>
@@ -875,9 +853,7 @@
                                     class="form-control @error('contest_image_gdrive_url') input_error_border_red @else input_text @enderror"
                                     name="contest_image_gdrive_url" type="text" autocomplete="off" value="{{ old('contest_image_gdrive_url') }}">
                               {{-- </div> --}}
-                              @error('contest_image_gdrive_url')
-                                 <div class="text-red fw-bold">{{ $message }}</div>
-                              @enderror
+                              <div class="text-red fw-bold contest_image_error"></div>
                            </div>
 
 
@@ -909,16 +885,8 @@
                                     <input type="file" name="file"  style="display: none;">
                                  </form>
                               </div>
-                              @error('contest_video')
-                                 <div class="text-red fw-bold">{{ $message }}</div>
-                              @enderror
-                              @error('contest_video.*')
-                                 <div class="text-red fw-bold">{{ $message }}</div>
-                              @enderror
+                              <div class="text-red fw-bold contest_video_error"></div>
                            </div>
-
-
-
 
                            <h3 class="mt-2 text-center font_weight_or">OR</h3>
 
@@ -932,9 +900,7 @@
                                     class="form-control input_text @error('contest_video_gdrive_url') input_error_border_red @else input_text @enderror"
                                     name="contest_video_gdrive_url" type="text" autocomplete="off" value="{{ old('contest_video_gdrive_url') }}">
                               {{-- </div> --}}
-                              @error('contest_video_gdrive_url')
-                                 <div class="text-red fw-bold">{{ $message }}</div>
-                              @enderror
+                              <div class="text-red fw-bold contest_video_error"></div>
                            </div>
 
                            {{-- <div class="col-md-12 mb-3">
@@ -956,7 +922,7 @@
                                     placeholder="Your description here" rows="7" name="contest_feedback">{{ old('contest_feedback') }}</textarea>
                               {{-- </div> --}}
                               @error('contest_feedback')
-                                 <div class="text-red fw-bold">{{ $message }}</div>
+                                 <div class="text-red fw-bold contest_feedback"></div>
                               @enderror
                            </div>
 
@@ -1014,7 +980,7 @@
    {{-- Sweetalert JS --}}
    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-   <script type="text/javascript">
+   {{-- <script type="text/javascript">
       @if(session()->has('contest_success'))
          Swal.fire({
             icon: 'success',
@@ -1035,13 +1001,28 @@
             timer: 2000,
          })
       @endif
-   </script>
+   </script> --}}
 
    <script>
       $( "#contest_submit" ).on( "click", function() {
 
          // DISABLE SUBMIT BTN UNTIL SUCCESS OR ERROR
          $("#contest_submit").prop('disabled', true)
+
+         Swal.fire({
+            icon: 'info',
+            title: 'Form Submitted! Please wait.',
+            timerProgressBar: true,
+            showConfirmButton: false,
+            showDenyButton: false,
+            showCancelButton: false,
+            allowOutsideClick: false,
+            allowEscapeKey: false,
+            allowEnterKey: false,
+            didOpen: () => {
+               Swal.showLoading()
+            },
+         })
 
          // GRAB TOKEN TO UNIQUELY IDENTIFY SUBMITTED FILES
          var contest_identifier_token = $('.contest_identifier_token').val()
@@ -1057,19 +1038,10 @@
          var contest_video_gdrive_url = $('#contest_video_gdrive_url').val();
          var contest_feedback = $('#contest_feedback').val();
 
-         console.log(contest_user_name, contest_marriage_year, contest_marriage_medium, contest_known_duration,
-                     contest_marriage_description, contest_user_email, contest_phone_number, contest_image_gdrive_url,
-                     contest_video_gdrive_url, contest_feedback, $('meta[name="csrf-token"]').attr('content')
-                  );
-
-         // Swal.fire({
-         //    title: 'Please wait while your Image and Video is being uploaded...',
-         //    didOpen: () => {
-         //       Swal.showLoading()
-         //    },
-         //    timerProgressBar: true,
-         //    allowOutsideClick: false,
-         // })
+         // console.log(contest_user_name, contest_marriage_year, contest_marriage_medium, contest_known_duration,
+         //             contest_marriage_description, contest_user_email, contest_phone_number, contest_image_gdrive_url,
+         //             contest_video_gdrive_url, contest_feedback, $('meta[name="csrf-token"]').attr('content')
+         //          );
 
          $.ajax({
             url: '{{ route("contest.ajax_store") }}',
@@ -1092,16 +1064,21 @@
                console.log("contest submit success");
 
                // RESET CONTEST FORM FIELDS ON SUCCESSFUL SUBMISSION
-               // $('#contest_user_name').val('');
-               // $('#contest_marriage_year').val('');
-               // $("input:radio[name=contest_marriage_medium][disabled=false]:first").attr('checked', true);
-               // $('#contest_known_duration').val('');
-               // $('#contest_user_email').val('');
-               // $('#contest_phone_number').val('');
-               // $('#contest_image_gdrive_url').val('');
-               // $('#contest_video_gdrive_url').val('');
+               $('#contest_user_name').val('');
+               $('#contest_marriage_year').val('');
+               $("input:radio[name=contest_marriage_medium][disabled=false]:first").attr('checked', true);
+               $('#contest_known_duration').val('');
+               $('#contest_marriage_description').val('');
+               $('#contest_user_email').val('');
+               $('#contest_phone_number').val('');
+               $('#contest_image_gdrive_url').val('');
+               $('#contest_video_gdrive_url').val('');
+               $('#contest_feedback').val('');
 
-               // DISPLAY MODAL WITH SUCCESS
+               // CLOSE SWEETALERT
+               Swal.close()
+
+               // DISPLAY MODAL WITH SUCCESS. IT IS ALSO MADE STATIC(NON-DISMISSABLE
                $("#contest_modal").attr("data-bs-backdrop", "static").attr("data-bs-keyboard", "false")
                $('.contest_modal_close_btn').addClass('d-none')
                $('.contest_modal_title').text('Contest Data Saved Successfully!')
@@ -1117,7 +1094,7 @@
                }, 1500);
             },
             error: function(error){
-               console.log("contest submit failed", error.responseJSON.errors);
+               // console.log("contest submit failed", error.responseJSON.errors);
 
                if(error.status === 422){
                   // console.log(error.responseJSON.errors, 'Validation errors');
@@ -1125,33 +1102,42 @@
                   // console.log(error.responseJSON.errors.name[0]);
                   // console.log(typeof(error.responseJSON.errors.name[0]));
 
-                  var message = ''
-
                   all_errors = error.responseJSON.errors
                   // console.log(all_errors);
+                  // console.log('image_error', all_errors.contest_image[0]);
 
-                  // console.log((Object.keys(all_errors).length - 1))
+                  // CLEAR ALL ERROR TEXTS
+                  $('.contest_user_name_error').text('');
+                  $('.contest_marriage_year_error').text('');
+                  $('.contest_marriage_medium_error').text('');
+                  $('.contest_known_duration_error').text('');
+                  $('.contest_marriage_description_error').text('');
+                  $('.contest_user_email_error').text('');
+                  $('.contest_phone_number_error').text('');
+                  $('.contest_image_error').text('');
+                  $('.contest_video_error').text('');
+                  $('.contest_feedback_error').text('');
 
-                  Object.values(all_errors).forEach((each_error, index) => {
-                     // console.log(each_error[0]);
-                     message += each_error
-                     // console.log(index);
-                     message += '<br>'
-                  });
+                  for(const [key, value] of Object.entries(all_errors)) {
+                     // console.log(key, value);
+                     $('.' + key + '_error').text(value)
+                  }
 
-                  message = '<h5 class="fw-bold">The following validation errors occured.</h5>' + message + '<br> Please resolve them and try again.'
-
-                  // console.log(message);
+                  // CLOSE SWEETALERT
+                  Swal.close()
 
                   // DISPLAY MODAL WITH ERRORS
                   $('.contest_modal_title').text('Validation Errors!')
-                  $('.contest_message').html(message)
+                  $('.contest_message').html('Some validation errors occured. Please fix them and submit again.')
                   $("#contest_modal").modal('show')
 
                   // ENABLE BTN
                   $("#contest_submit").prop('disabled', false)
                }
                else{
+                  // CLOSE SWEETALERT
+                  Swal.close()
+
                   // DISPLAY MODAL WITH ERROR
                   $('.contest_modal_title').text('Whoops!')
                   $('.contest_message').text('Something went wrong! Please try again later or contact system administrators.')

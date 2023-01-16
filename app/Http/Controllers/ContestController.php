@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Contest;
 use Illuminate\Http\Request;
-use App\Rules\ValidateVideoRule;
+// use App\Rules\ValidateVideoRule;
 use DB;
+use File;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Validator;
-use Pion\Laravel\ChunkUpload\Exceptions\UploadFailedException;
+// use Pion\Laravel\ChunkUpload\Exceptions\UploadFailedException;
 use Illuminate\Http\UploadedFile;
 use Pion\Laravel\ChunkUpload\Exceptions\UploadMissingFileException;
 use Pion\Laravel\ChunkUpload\Handler\AbstractHandler;
@@ -78,45 +79,34 @@ class ContestController extends Controller
                 'contest_feedback.max'                      => 'The contest feedback must be below 65500 characters in length.',
             ];
 
-
             $validator = Validator::make($request->all(), $validation_rules, $validation_messages);
 
-            // dd(isset($contest), empty($contest->image), !$request->contest_image_gdrive_url, (!isset($contest) && !$request->contest_image_gdrive_url));
-            // dd(isset($contest), isset($contest->image), !$request->contest_image_gdrive_url, !isset($contest));
+            // dd(
+            //     'Overall',
+            //     ((isset($contest) && empty($contest->image)) && empty($request->contest_image_gdrive_url)),
+            //     'First Half',
+            //     (isset($contest) && empty($contest->image)),
+            //     'Second Half',
+            //     (empty($request->contest_image_gdrive_url)),
+            //     'each condition',
+            //     isset($contest), empty($contest->image), empty($request->contest_image_gdrive_url),
+            // );
 
             $validator->after(function ($validator) use($request){
-                if(((isset($contest) && (empty($contest->image) || $request->contest_image_gdrive_url))) || (!isset($contest) && $request->contest_image_gdrive_url)){
+                if( ((isset($contest) && empty($contest->image)) && empty($request->contest_image_gdrive_url)) || (!isset($contest) && empty($request->contest_image_gdrive_url)) ){
                     $validator->errors()->add(
                         'contest_image', 'Either an image or a google drive/dropbox/onedrive link has to be provided.'
                     );
                 }
 
-                if(((isset($contest) && (empty($contest->video) || $request->contest_video_gdrive_url))) || (!isset($contest) && $request->contest_video_gdrive_url)){
+                if( ((isset($contest) && empty($contest->video)) && !isset($request->contest_video_gdrive_url)) || (!isset($contest) && empty($request->contest_video_gdrive_url)) ){
                     $validator->errors()->add(
                         'contest_video', 'Either a video or a google drive/dropbox/onedrive link has to be provided.'
                     );
                 }
             });
 
-            // if(!$request->contest_video_gdrive_url && !$request->contest_video){
-            //     $validation_rules['contest_video']                           = ['required'];
-            //     $validation_rules['contest_video_gdrive_url']                = ['required'];
-    
-            //     $validation_messages['contest_video.required']               = 'Either a video or a google drive/dropbox/onedrive link has to be provided.';
-            //     $validation_messages['contest_video_gdrive_url.required']    = 'Either a video or a google drive/dropbox/onedrive link has to be provided.';
-            // }
-            // if($request->contest_video_gdrive_url){
-            //     $validation_rules['contest_video_gdrive_url']                = ['required'];
-    
-            //     $validation_messages['contest_video_gdrive_url.starts_with'] = 'Not a valid google drive/dropbox/onedrive link.';
-            // }
-            // else{
-            //     $validation_rules['contest_video']                           = ['required', 'array', new ValidateVideoRule];
-            //     $validation_rules['contest_video.*']                         = ['required', 'file', 'max:307200'];
-    
-            //     $validation_messages['contest_video.*.file']                 = 'Contest video has to be a file.';
-            //     $validation_messages['contest_video.*.max']                  = 'Contest video should have a file size lower than 300MB.';
-            // }
+            // dd($validator->errors());
 
             if ($validator->fails()) {
                 return response()->json(['status' => 'failed', 'errors' => $validator->errors()], 422);
@@ -126,7 +116,6 @@ class ContestController extends Controller
     
             DB::beginTransaction();
             try {
-
                 if($contest){
                     $contest->name              = $request->contest_user_name;
                     $contest->year              = $request->contest_marriage_year;
@@ -136,8 +125,18 @@ class ContestController extends Controller
                     $contest->phone             = $request->contest_phone_number;
                     $contest->description       = $request->contest_marriage_description;
                     // $contest->image             = $contest_image_name;
+                    if($request->contest_image_gdrive_url && !empty($contest->image) && File::exists($contest->image))
+                    {
+                        File::delete($contest->image);
+                        $contest->image = null;
+                    }
                     $contest->gdrive_image_link = empty($contest->image) ? $request->contest_image_gdrive_url : null;
                     // $contest->video             = $contest_video_name;
+                    if($request->contest_video_gdrive_url && !empty($contest->video) && File::exists($contest->video))
+                    {
+                        File::delete($contest->video);
+                        $contest->video = null;
+                    }
                     $contest->gdrive_video_link = empty($contest->video) ? $request->contest_video_gdrive_url : null;
                     $contest->feedback          = $request->contest_feedback;
                     $contest->save();
@@ -207,10 +206,7 @@ class ContestController extends Controller
                 return response()->json(['status' => 'failed'], 500);
             }
         }
-
     }
-
-
 
     public function image_upload(Request $request) { //from web route
         // create the file receiver
@@ -287,7 +283,7 @@ class ContestController extends Controller
         // $filename = str_replace(".".$extension, "", $file->getClientOriginalName()); // Filename without extension
         $filename = md5(uniqid());
 
-        session()->put('file_name_with_ext', $filename.".".$extension);
+        session()->put('image_filename_with_ext', $filename.".".$extension);
         
         // dd($file->getClientOriginalExtension(), $file->getClientOriginalName(), $extension, $filename);
 
@@ -306,7 +302,15 @@ class ContestController extends Controller
 
         // $user_obj = auth()->user();
 
-        $file = session()->get('file_name_with_ext');
+        $file = session()->get('image_filename_with_ext');
+        // EMPTY IMAGE FIELD IN CONTEST TABLE ROW
+        $contest = Contest::where('contest_data_identifier', session()->get('contest_identifier_token'))->first();
+        if($contest->video){
+            Contest::where('contest_data_identifier', session()->get('contest_identifier_token'))->update(['image' => null]);
+        }
+        else{
+            $contest->delete();
+        }
 
         // return response([
         //     'filename' => $file
@@ -333,10 +337,6 @@ class ContestController extends Controller
             ], 403);
         }
     }
-
-
-
-
 
     public function video_upload(Request $request) {  //from web route
         // create the file receiver
@@ -413,7 +413,7 @@ class ContestController extends Controller
         // $filename = str_replace(".".$extension, "", $file->getClientOriginalName()); // Filename without extension
         $filename = md5(uniqid());
 
-        session()->put('file_name_with_ext', $filename.".".$extension);
+        session()->put('video_filename_with_ext', $filename.".".$extension);
         
         // dd($file->getClientOriginalExtension(), $file->getClientOriginalName(), $extension, $filename);
 
@@ -432,7 +432,15 @@ class ContestController extends Controller
 
         // $user_obj = auth()->user();
 
-        $file = session()->get('file_name_with_ext');
+        $file = session()->get('video_filename_with_ext');
+        // EMPTY OR DELETE VIDEO FIELD IN CONTEST TABLE ROW
+        $contest = Contest::where('contest_data_identifier', session()->get('contest_identifier_token'))->first();
+        if($contest->image){
+            Contest::where('contest_data_identifier', session()->get('contest_identifier_token'))->update(['video' => null]);
+        }
+        else{
+            $contest->delete();
+        }
 
         // return response([
         //     'filename' => $file

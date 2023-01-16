@@ -38,7 +38,7 @@
     <!--=================================
         preloader -->
     <div id="preloader">
-        <div class="clear-loading loading-effect"><img src="images/loading.gif" alt="" /></div>
+        <div class="clear-loading loading-effect"><img src="{{ asset("frontend/images/loading.gif") }}" alt="" /></div>
     </div>
     <!--=================================
         preloader -->
@@ -230,6 +230,8 @@
 
                         $("#contact_us_submit").prop('disabled', false)
                     }
+
+                    // $("#contact_us_submit").prop('disabled', false)
 
                 }
             });
