@@ -38,7 +38,7 @@
     <!--=================================
         preloader -->
     <div id="preloader">
-        <div class="clear-loading loading-effect"><img src="{{ asset("frontend/images/loading.gif") }}" alt="" /></div>
+        <div class="clear-loading loading-effect"><img src="{{ asset("frontend/images/Saiyonee.png") }}" alt="" /></div>
     </div>
     <!--=================================
         preloader -->

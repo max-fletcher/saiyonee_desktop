@@ -83,25 +83,35 @@ class ContestController extends Controller
 
             // dd(
             //     'Overall',
-            //     ((isset($contest) && empty($contest->image)) && empty($request->contest_image_gdrive_url)),
+            //     ((isset($contest) && empty($contest->image)) || !isset($contest)) && empty($request->contest_image_gdrive_url),
             //     'First Half',
             //     (isset($contest) && empty($contest->image)),
             //     'Second Half',
-            //     (empty($request->contest_image_gdrive_url)),
+            //     !isset($contest),
+            //     'Third Half',
+            //     empty($request->contest_image_gdrive_url),
             //     'each condition',
             //     isset($contest), empty($contest->image), empty($request->contest_image_gdrive_url),
             // );
 
-            $validator->after(function ($validator) use($request){
-                // || (!isset($contest) && empty($request->contest_image_gdrive_url))
-                if( ((isset($contest) && empty($contest->image)) && empty($request->contest_image_gdrive_url)) ){
+            // if(empty($request->contest_image_gdrive_url)){
+            //     if(isset($contest) && empty($contest->image)){
+
+            //     }elseif(!isset($contest)){
+
+            //     }
+            // }
+
+            // empty($request->contest_image_gdrive_url) && ( (isset($contest) && empty($contest->image)) || (!isset($contest)) )
+
+            $validator->after(function ($validator) use($contest, $request){
+                if( (isset($contest) && empty($contest->image) && empty($request->contest_image_gdrive_url)) || (!isset($contest) && empty($request->contest_image_gdrive_url)) ){
                     $validator->errors()->add(
                         'contest_image', 'Either an image or a google drive/dropbox/onedrive link has to be provided.'
                     );
                 }
 
-                // || (!isset($contest) && empty($request->contest_video_gdrive_url))
-                if( ((isset($contest) && empty($contest->video)) && !isset($request->contest_video_gdrive_url)) ){
+                if( (isset($contest) && empty($contest->video) && empty($request->contest_video_gdrive_url)) || (!isset($contest) && empty($request->contest_video_gdrive_url)) ){
                     $validator->errors()->add(
                         'contest_video', 'Either a video or a google drive/dropbox/onedrive link has to be provided.'
                     );
@@ -117,7 +127,7 @@ class ContestController extends Controller
             // dd('Validation Passed', $request->all(), session()->get('contest_identifier_token'), $validation_rules, $validation_messages);
     
             DB::beginTransaction();
-            try {
+            // try {
                 if($contest){
                     $contest->name              = $request->contest_user_name;
                     $contest->year              = $request->contest_marriage_year;
@@ -180,6 +190,8 @@ class ContestController extends Controller
                 ];
     
                 $client = new Client();
+
+                // dd(config('backend.saiyonee_backend_url') . 'api/store_from_api');
     
                 $http_request = $client->post(config('backend.saiyonee_backend_url') . 'api/store_from_api', [
                     'form_params' => [
@@ -203,10 +215,10 @@ class ContestController extends Controller
                     return response()->json(['status' => 'failed'], 500);
                 }
     
-            } catch (\Exception $e) {
-                DB::rollback();
-                return response()->json(['status' => 'failed'], 500);
-            }
+            // } catch (\Exception $e) {
+            //     DB::rollback();
+            //     return response()->json(['status' => 'failed'], 500);
+            // }
         }
     }
 

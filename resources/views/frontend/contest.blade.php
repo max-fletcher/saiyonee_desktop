@@ -11,13 +11,13 @@
    <script type="text/javascript">
       function callbackThen(response){
          // read HTTP status
-         console.log(response.status);
+         // console.log(response.status);
          
          // read Promise object
          response.json().then(function(data){
-            console.log(data);
+            // console.log(data);
             if(data.success && data.score > 0.5){
-               console.log('valid source');
+               // console.log('valid source');
             }
             else{
                document.getElementById('contestForm').addEventListener('submit', function(event){
@@ -783,7 +783,7 @@
                                     Please tell us a little about how you got introduced and then married (Max 200 words)
                                  </label>
                                  <textarea id="contest_marriage_description" 
-                                    class="form-control input-message"
+                                    class="form-control input-message input_text"
                                     placeholder="Your description here" rows="7" name="contest_marriage_description">{{ old('contest_marriage_description') }}</textarea>
                               {{-- </div> --}}
                               <div class="text-red fw-bold contest_marriage_description_error"></div>
@@ -916,7 +916,7 @@
                                     Do you have any opinion or feedback regarding this contest ?  Please share with us. We would love to hear from you (optional)
                                  </label>
                                  <textarea id="contest_feedback" 
-                                    class="form-control input-message @error('contest_feedback') input_error_border_red @else input_text @enderror"
+                                    class="form-control input-message input_text"
                                     placeholder="Your description here" rows="7" name="contest_feedback">{{ old('contest_feedback') }}</textarea>
                               {{-- </div> --}}
                               @error('contest_feedback')
@@ -1060,7 +1060,7 @@
             },
             success: function(response)
             {
-               console.log("contest submit success");
+               // console.log("contest submit success");
 
                // RESET CONTEST FORM FIELDS ON SUCCESSFUL SUBMISSION
                $('#contest_user_name').val('');
@@ -1130,7 +1130,7 @@
                   }
 
                   for(const [key, value] of Object.entries(all_errors)) {
-                     console.log(key, value);
+                     // console.log(key, value);
                      $('.' + key + '_input').removeClass('input_text').addClass('input_error_border_red')
                      // input_error_border_red
                      $('.' + key + '_error').text(value)
