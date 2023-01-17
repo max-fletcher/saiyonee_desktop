@@ -319,7 +319,7 @@ class ContestController extends Controller
         $file = session()->get('image_filename_with_ext');
         // EMPTY IMAGE FIELD IN CONTEST TABLE ROW
         $contest = Contest::where('contest_data_identifier', session()->get('contest_identifier_token'))->first();
-        if($contest->video){
+        if(isset($contest) && !empty($contest->video)){
             Contest::where('contest_data_identifier', session()->get('contest_identifier_token'))->update(['image' => null]);
         }
         else{
@@ -449,7 +449,7 @@ class ContestController extends Controller
         $file = session()->get('video_filename_with_ext');
         // EMPTY OR DELETE VIDEO FIELD IN CONTEST TABLE ROW
         $contest = Contest::where('contest_data_identifier', session()->get('contest_identifier_token'))->first();
-        if($contest->image){
+        if(isset($contest) && !empty($contest->image)){
             Contest::where('contest_data_identifier', session()->get('contest_identifier_token'))->update(['video' => null]);
         }
         else{
