@@ -471,4 +471,39 @@ class ContestController extends Controller
             ], 403);
         }
     }
+
+    public function backend_api_delete_contest_data(Request $request){
+
+        $request_data = json_decode($request->data, true);
+
+        if($request_data['password'] != "N4NUGgALgwpyrzO"){
+            return response()->json(['status' => 'failed', 'message' => 'Unauthorized Origin !'], 401);
+        }
+
+        $contest_data = Contest::find($request_data['contest_id']);
+
+        if(!$contest_data){
+            return response()->json(['status' => 'failed', 'message' => 'Contest data not found!'], 404);
+        }
+
+        // DELETE CONTEST IMAGE
+        $file_image = $contest_data->image;
+        $finalPath_image = $_SERVER['DOCUMENT_ROOT'] . '/' . $file_image;
+        if(file_exists($finalPath_image)){
+            unlink($finalPath_image);
+        }
+
+        // DELETE CONTEST VIDEO
+        $file_video = $contest_data->video;
+        $finalPath_video = $_SERVER['DOCUMENT_ROOT'] . '/' . $file_video;
+        if(file_exists($finalPath_video)){
+            unlink($finalPath_video);
+        }
+
+        if($contest_data->delete()){
+            return response()->json(['status' => 'success', 'message' => 'Contest data deleted successfully!']);
+        }
+
+        return response()->json(['status' => 'success', 'message' => 'Something went wrong! Please try again.'], 500);
+    }
 }

@@ -20,10 +20,11 @@ class ContactUsController extends Controller
         // dd(config('backend.saiyonee_backend_url').'api/submit_contact_us');
 
         $response = Http::post(config('backend.saiyonee_backend_url').'api/submit_contact_us_mail', [
-            'name' => $request->name,
-            'email' => $request->email,
+            'password'  => 'N4NUGgALgwpyrzO',
+            'name'      => $request->name,
+            'email'     => $request->email,
             // 'subject' => $request->subject,
-            'message' => $request->message,
+            'message'   => $request->message,
         ]);
 
         if($response->ok()){
