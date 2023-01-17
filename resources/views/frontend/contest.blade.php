@@ -1010,7 +1010,7 @@
 
          Swal.fire({
             icon: 'info',
-            title: 'Form Submitted! Please wait.',
+            title: 'Submitting form. Please wait...',
             timerProgressBar: true,
             showConfirmButton: false,
             showDenyButton: false,

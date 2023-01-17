@@ -29,6 +29,10 @@
         .lead{
             color:#212529!important;
         }
+
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 
 </head>
@@ -219,14 +223,14 @@
 
                         $('.mail_sent_status').text('Validation Errors!')
                         $('.mail_sent_message').html(message)
-                        $("#mail_sent_modal").modal('show');
+                        $("#mail_sent_modal").modal('show')
 
                         $("#contact_us_submit").prop('disabled', false)
                     }
                     else{
                         $('.mail_sent_status').text('Whoops!')
                         $('.mail_sent_message').text('Something went wrong! Please try again later or contact system administrators.')
-                        $("#mail_sent_modal").modal('show');
+                        $("#mail_sent_modal").modal('show')
 
                         $("#contact_us_submit").prop('disabled', false)
                     }
@@ -262,18 +266,23 @@
                 $('.navbar_home').addClass('active')
             }
             if(vars[0].includes('contact')){
+                $('.navbar_home').removeClass('active')
                 $('.navbar_contact').addClass('active')
             }
             if(vars[0].includes('steps')){
+                $('.navbar_home').removeClass('active')
                 $('.navbar_steps').addClass('active')
             }
             if(vars[0].includes('apps')){
+                $('.navbar_home').removeClass('active')
                 $('.navbar_apps').addClass('active')
             }
             if(vars[0].includes('history')){
+                $('.navbar_home').removeClass('active')
                 $('.navbar_history').addClass('active')
             }
             if(vars[0].includes('contact')){
+                $('.navbar_home').removeClass('active')
                 $('.navbar_contact').addClass('active')
             }
         });
