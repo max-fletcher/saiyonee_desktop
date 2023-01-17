@@ -5,6 +5,8 @@ use App\Http\Controllers\ContestController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ContactUsController;
 
+// use Illuminate\Support\Facades\Artisan;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,17 +18,24 @@ use App\Http\Controllers\ContactUsController;
 |
 */
 
+// Route::get('optimize_clear', function(){
+//    Artisan::call('optimize:clear');
 
+//    echo('All Caches Cleared!');
+// });
 
-//Media library routes
-Route::get('/medialibrary', [App\Http\Controllers\chunkUpload\MediaLibraryController::class, 'mediaLibrary'])->name('media-library');
+// Route::get('optimize_clear', function(){
+//    Artisan::call('optimize:clear');
 
-//FILE UPLOADS CONTROLER
-Route::post('medialibrary/upload', [App\Http\Controllers\chunkUpload\UploaderController::class, 'upload'])->name('file-upload');
-Route::post('medialibrary/delete', [App\Http\Controllers\chunkUpload\UploaderController::class, 'delete'])->name('file-delete');
+//    echo('Everything is Cached!');
+// });
 
+// //Media library routes
+// Route::get('/medialibrary', [App\Http\Controllers\chunkUpload\MediaLibraryController::class, 'mediaLibrary'])->name('media-library');
 
-
+// //FILE UPLOADS CONTROLER
+// Route::post('medialibrary/upload', [App\Http\Controllers\chunkUpload\UploaderController::class, 'upload'])->name('file-upload');
+// Route::post('medialibrary/delete', [App\Http\Controllers\chunkUpload\UploaderController::class, 'delete'])->name('file-delete');
 
 //Media library routes
 // Route::get('/medialibrary', [App\Http\Controllers\chunkUpload\MediaLibraryController::class, 'mediaLibrary'])->name('media-library');
@@ -38,11 +47,6 @@ Route::post('contest/image_delete', [ContestController::class, 'image_delete'])-
 Route::post('contest/video_upload', [ContestController::class, 'video_upload'])->name('video-file-upload');
 Route::post('contest/video_delete', [ContestController::class, 'video_delete'])->name('video-file-delete');
 // END CONTEST FILES UPLOAD CONTROLLER
-
-
-
-
-
 
 Route::get('/', [FrontendController::class, 'index'])->name('index');
 Route::get('/blog-details', [FrontendController::class, 'blogDetails'])->name('blog.details');

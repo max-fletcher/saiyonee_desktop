@@ -260,7 +260,7 @@ class ContestController extends Controller
         // $mime = str_replace('/', '-', $mime_original);
 
         $filePath = "uploads/contest_image/";
-        $finalPath = public_path($filePath);
+        $finalPath = $_SERVER['DOCUMENT_ROOT'] . '/' . $filePath;
     
         // $fileSize = $file->getSize();
         // move the file name
@@ -390,7 +390,7 @@ class ContestController extends Controller
         // $mime = str_replace('/', '-', $mime_original);
 
         $filePath = "uploads/contest_video/";
-        $finalPath = public_path($filePath);
+        $finalPath = $_SERVER['DOCUMENT_ROOT'] . '/' . $filePath;
     
         // $fileSize = $file->getSize();
         // move the file name
