@@ -94,16 +94,6 @@ class ContestController extends Controller
             //     isset($contest), empty($contest->image), empty($request->contest_image_gdrive_url),
             // );
 
-            // if(empty($request->contest_image_gdrive_url)){
-            //     if(isset($contest) && empty($contest->image)){
-
-            //     }elseif(!isset($contest)){
-
-            //     }
-            // }
-
-            // empty($request->contest_image_gdrive_url) && ( (isset($contest) && empty($contest->image)) || (!isset($contest)) )
-
             $validator->after(function ($validator) use($contest, $request){
                 if( (isset($contest) && empty($contest->image) && empty($request->contest_image_gdrive_url)) || (!isset($contest) && empty($request->contest_image_gdrive_url)) ){
                     $validator->errors()->add(
@@ -127,7 +117,7 @@ class ContestController extends Controller
             // dd('Validation Passed', $request->all(), session()->get('contest_identifier_token'), $validation_rules, $validation_messages);
     
             DB::beginTransaction();
-            // try {
+            try {
                 if($contest){
                     $contest->name              = $request->contest_user_name;
                     $contest->year              = $request->contest_marriage_year;
@@ -215,10 +205,10 @@ class ContestController extends Controller
                     return response()->json(['status' => 'failed'], 500);
                 }
     
-            // } catch (\Exception $e) {
-            //     DB::rollback();
-            //     return response()->json(['status' => 'failed'], 500);
-            // }
+            } catch (\Exception $e) {
+                DB::rollback();
+                return response()->json(['status' => 'failed'], 500);
+            }
         }
     }
 
@@ -338,7 +328,7 @@ class ContestController extends Controller
         // $dir = $request->date;
 
         $filePath = "uploads/contest_image/";
-        $finalPath = public_path($filePath);
+        $finalPath = $_SERVER['DOCUMENT_ROOT'] . '/' . $filePath;
 
         if (unlink($finalPath.$file) ){
             return response()->json([
@@ -468,7 +458,7 @@ class ContestController extends Controller
         // $dir = $request->date;
 
         $filePath = "uploads/contest_video/";
-        $finalPath = public_path($filePath);
+        $finalPath = $_SERVER['DOCUMENT_ROOT'] . '/' . $filePath;
 
         if (unlink($finalPath.$file) ){
             return response()->json([
