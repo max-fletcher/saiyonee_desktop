@@ -30,7 +30,7 @@ Dropzone.options.datanodeupload =
       // var time = dt.getTime();
       return file.name;
    },
-   acceptedFiles: ".jpeg,.jpg,.png",
+   acceptedFiles: ".jpeg,.jpg,.png,.webp",
    // acceptedFiles: ".x-flv,.x-mpegURL,.MP2T,.3gpp,.quicktime,.avi,.mpeg,video/mp4,.ogg,.x-ms-wmv",
    addRemoveLinks: true,
    timeout: null,

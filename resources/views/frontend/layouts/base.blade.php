@@ -4,9 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="HTML5 Template" />
-    <meta name="description" content="Cupid Love - Dating HTML5 Template" />
-    <meta name="author" content="potenzaglobalsolutions.com" />
+    <meta name="keywords" content="dating, matchmaking, marriage. marry, life partner, social media" />
+    <meta name="title" content="Saiyonee" />
+    <meta name="description" content="Smartest way to find your perfect match" />
+    <meta name="author" content="Ontik Technology" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -33,6 +34,20 @@
         html {
             scroll-behavior: smooth;
         }
+
+
+        .floating { 
+            animation-name: floating;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+        }
+        
+        @keyframes floating {
+            0% { transform: translate(0,  0px); }
+            50%  { transform: translate(0, 15px); }
+            100%   { transform: translate(0, -0px); }   
+        }
     </style>
 
 </head>
@@ -42,7 +57,7 @@
     <!--=================================
         preloader -->
     <div id="preloader">
-        <div class="clear-loading loading-effect"><img src="{{ asset("frontend/images/Saiyonee.png") }}" alt="" /></div>
+        <div class="clear-loading loading-effect floating"><img src="{{ asset("frontend/images/Saiyonee.png") }}" alt="" /></div>
     </div>
     <!--=================================
         preloader -->

@@ -5,7 +5,6 @@
 
 @push('page-specific-css')
     <style>
-
         @media only screen and (min-width: 992px) and (max-width: 1129px) {
             .timeline-inner{
                 background-position: right -520px bottom -120px !important;

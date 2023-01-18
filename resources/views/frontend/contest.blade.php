@@ -829,7 +829,8 @@
 
                            <div class="col-12">
                               <label class="form-label contest_labels" for="InputName">Submit Image 
-                                 <br> <small class="small_text">(max file upload size should be 30 MB)</small>
+                                 <br> <small class="small_text">(Max file upload size should be 30 MB.)</small>
+                                 <br> <small class="small_text">(Supports jpeg, jpg, png & webp only.)</small>
                               </label>
                               <div id="uploaderHolder">
                                  <form action="{{ route('image-file-upload') }}"
@@ -873,7 +874,8 @@
 
                            <div class="col-12 mt-5">
                               <label class="form-label contest_labels" for="InputName">Submit Video
-                                 <br> <small class="small_text">(max file upload size should be 300 MB)
+                                 <br> <small class="small_text">(Max file upload size should be 300 MB.)
+                                 <br> <small class="small_text">(Supports x-flv, x-mpegURL, MP2T, 3gpp, quicktime, avi, mpeg,video/mp4, ogg & x-ms-wmv only.)
                               </label>
                               <div id="uploaderHolder">
                                  <form action="{{ route('video-file-upload') }}"
