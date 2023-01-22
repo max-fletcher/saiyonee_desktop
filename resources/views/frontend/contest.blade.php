@@ -1,7 +1,7 @@
 @extends('frontend.layouts.base')
 
 @section('home') active @endsection
-@section('frontend-header-title') Home @endsection
+@section('frontend-header-title') Contest @endsection
 
 @push('page-specific-css')
 
@@ -564,17 +564,17 @@
                         relationship is.
                         <br><br>
 
-                        <h6 class="contest_opening"> Photo submission guideline </h6>
+                        {{-- <h6 class="contest_opening"> Photo submission guideline </h6>
                         It can be from any type of event or setup. Show us your favourite couple photo !
-                        <br><br>
+                        <br><br> --}}
 
                         {{-- The image file size must not exceed 
                         <span class="underline">5 MB</span>. Having trouble to keep it under 5 MB ? You can use this online tool to shrink photo: 
                         <a class="contest_link" href="https://www.freeconvert.com/image-compressor" target="_blank">https://www.freeconvert.com/image-compressor</a>
                         <br><br> --}}
 
-                        <h6 class="contest_opening"> Video submission guideline </h6>
-                        Create a short video <span class="underline">under 30 seconds</span>. 
+                        {{-- <h6 class="contest_opening"> Video submission guideline </h6>
+                        Create a short video <span class="underline">under 30 seconds</span>. --}}
 
                         The video should cover <span class="underline">ONE</span> of the following themes, in the context of your relationship.
                         <br>
@@ -827,6 +827,11 @@
                               @enderror
                            </div> --}}
 
+                           <span class="contest_para mb-4">
+                              <h6 class="contest_opening"> Photo submission guideline </h6>
+                              It can be from any type of event or setup. Show us your favourite couple photo !
+                           </span>
+
                            <div class="col-12">
                               <label class="form-label contest_labels" for="InputName">Submit Image 
                                  <br> <small class="small_text">(Max file upload size should be 30 MB.)</small>
@@ -845,7 +850,7 @@
 
                            <h3 class="mt-2 text-center font_weight_or">OR</h3>
 
-                           <div class="col-md-12 mb-3">
+                           <div class="col-md-12 mb-5">
                               {{-- <div class="input-group"> --}}
                                  <label class="label_text" for="contest_image_gdrive_url">
                                     Contest Image Google drive/Dropbox/Onedrive Url
@@ -872,7 +877,12 @@
                               @enderror
                            </div> --}}
 
-                           <div class="col-12 mt-5">
+                           <span class="contest_para mb-4">
+                              <h6 class="contest_opening"> Video submission guideline </h6>
+                              Create a short video <span class="underline">under 30 seconds</span>.
+                           </span>
+
+                           <div class="col-12">
                               <label class="form-label contest_labels" for="InputName">Submit Video
                                  <br> <small class="small_text">(Max file upload size should be 300 MB.)
                                  <br> <small class="small_text">(Supports x-flv, x-mpegURL, MP2T, 3gpp, quicktime, avi, mpeg,video/mp4, ogg & x-ms-wmv only.)
