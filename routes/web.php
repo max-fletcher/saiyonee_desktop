@@ -55,6 +55,9 @@ Route::get('/story-details', [FrontendController::class, 'storyDetails'])->name(
 Route::get('/contest', [ContestController::class, 'index'])->name('contest.index');
 Route::post('/contest/ajax_store', [ContestController::class, 'ajax_store'])->name('contest.ajax_store');
 
+Route::get('/privacy-policy', [FrontendController::class, 'privacy_policy'])->name('privacy_policy');
+Route::get('/terms-of-service', [FrontendController::class, 'terms_of_service'])->name('terms_of_service');
+
 Route::post('/submit_contact_us', [ContactUsController::class, 'submit_contact_us'])->middleware('throttle:5,1440')->name('submit_contact_us');
 
 // url: "{{ env('SAIYONEE_BACKEND_URL') }}" + "api/submit_contact_us_mail",

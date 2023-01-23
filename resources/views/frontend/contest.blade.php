@@ -507,7 +507,7 @@
    {{-- <link rel="stylesheet" href="{{ asset('dropify/css/dropify.css' )}}"> --}}
 
    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-   <link rel="stylesheet" href="{{ asset('Image Uploader/image-uploader.min.css' )}}">
+   {{-- <link rel="stylesheet" href="{{ asset('Image Uploader/image-uploader.min.css' )}}"> --}}
 @endpush
 
 @section('frontend-page-content')
@@ -1070,8 +1070,7 @@
                contest_feedback : contest_feedback,
                _token: $('meta[name="csrf-token"]').attr('content')
             },
-            success: function(response)
-            {
+            success: function(response){
                // console.log("contest submit success");
 
                // RESET CONTEST FORM FIELDS ON SUCCESSFUL SUBMISSION

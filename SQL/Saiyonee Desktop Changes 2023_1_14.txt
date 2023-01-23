@@ -1,0 +1,13 @@
+ALTER TABLE `contests` ADD `contest_data_identifier` VARCHAR(255) NULL DEFAULT NULL COMMENT 'Used in conjunction with dropzone for identifying chunk upload files.' AFTER `feedback`;
+
+ALTER TABLE `contests` CHANGE `name` `name` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL;
+
+ALTER TABLE `contests` CHANGE `year` `year` YEAR(4) NULL DEFAULT NULL;
+
+ALTER TABLE `contests` CHANGE `medium` `medium` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL;
+
+ALTER TABLE `contests` CHANGE `known_duration` `known_duration` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL;
+
+ALTER TABLE `contests` CHANGE `email` `email` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL;
+
+ALTER TABLE `contests` CHANGE `phone` `phone` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL;

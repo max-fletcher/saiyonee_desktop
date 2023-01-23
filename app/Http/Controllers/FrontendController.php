@@ -20,4 +20,14 @@ class FrontendController extends Controller
     {
         return view('frontend.story-details');
     }
+
+    public function privacy_policy()
+    {
+        return view('frontend.privacy_policy');
+    }
+
+    public function terms_of_service()
+    {
+        return view('frontend.terms_of_service');
+    }
 }
