@@ -80,7 +80,15 @@ footer -->
                         {{-- <li class="social-youtube"><a href="#" class="text-dark icon_link"><i class="fa fa-youtube social_link"></i></a></li> --}}
                     </ul>
                 </div>
-                    <p class="copyright">© 2022  - Saiyonee All Right Reserved </p>
+
+                <div class="">
+                    <ul class="d-md-flex justify-content-center">
+                        <li class="fw-bold mx-md-2"><a href="{{ route('privacy_policy') }}" class="text-dark icon_link privacy_and_terms">Privacy Policy</a></li>
+                        <li class="fw-bold mx-md-2"><a href="{{ route('terms_of_service') }}" class="text-dark icon_link privacy_and_terms">Terms Of Service</a></li>
+                    </ul>
+                </div>
+
+                    <p class="copyright">© 2022 - Saiyonee All Right Reserved </p>
                 </div>
             </div>
         </div>

@@ -349,11 +349,11 @@
          }
       }
 
-      @media screen and (max-width: 767px){
+      /* @media screen and (max-width: 767px){
          h4 {
                font-size: 40px;
          }
-      }
+      } */
 
       #contest_section{
          margin-top: 10px !important;
@@ -438,6 +438,7 @@
 
       .list_disc{
          list-style-type: disc;
+         margin-left: 14px;
       }
 
       .grey_text{

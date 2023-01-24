@@ -35,7 +35,6 @@
             scroll-behavior: smooth;
         }
 
-
         .floating { 
             animation-name: floating;
             animation-duration: 3s;
@@ -47,6 +46,10 @@
             0% { transform: translate(0,  0px); }
             50%  { transform: translate(0, 15px); }
             100%   { transform: translate(0, -0px); }   
+        }
+
+        .privacy_and_terms:hover{
+            color: #CF0000 !important;
         }
     </style>
 
