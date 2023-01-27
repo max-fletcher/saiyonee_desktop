@@ -38,8 +38,8 @@ class ContestController extends Controller
                 'contest_user_name'             => ['required', 'string','min:2', 'max:255'],
                 'contest_marriage_year'         => ['required', 'string', 'date_format:"Y"'],
                 'contest_marriage_medium'       => ['required', 'string', 'max:255'],
-                'contest_known_duration'        => ['required', 'string', 'max:255'],
-                'contest_marriage_description'  => ['nullable', 'string', 'max:65500'],
+                // 'contest_known_duration'        => ['required', 'string', 'max:255'],
+                // 'contest_marriage_description'  => ['nullable', 'string', 'max:65500'],
                 'contest_user_email'            => ['required', 'string','min:2', 'max:255', 'unique:contests,email'],
                 'contest_phone_number'          => ['required', 'string', 'max:255', 'unique:contests,phone'],
                 'contest_feedback'              => ['nullable', 'string', 'max:65500'],
@@ -101,11 +101,11 @@ class ContestController extends Controller
                     );
                 }
 
-                if( (isset($contest) && empty($contest->video) && empty($request->contest_video_gdrive_url)) || (!isset($contest) && empty($request->contest_video_gdrive_url)) ){
-                    $validator->errors()->add(
-                        'contest_video', 'Either a video or a google drive/dropbox/onedrive link has to be provided.'
-                    );
-                }
+                // if( (isset($contest) && empty($contest->video) && empty($request->contest_video_gdrive_url)) || (!isset($contest) && empty($request->contest_video_gdrive_url)) ){
+                //     $validator->errors()->add(
+                //         'contest_video', 'Either a video or a google drive/dropbox/onedrive link has to be provided.'
+                //     );
+                // }
             });
 
             // dd($validator->errors());
@@ -122,24 +122,27 @@ class ContestController extends Controller
                     $contest->name              = $request->contest_user_name;
                     $contest->year              = $request->contest_marriage_year;
                     $contest->medium            = $request->contest_marriage_medium;
-                    $contest->known_duration    = $request->contest_known_duration;
+                    // $contest->known_duration    = $request->contest_known_duration;
                     $contest->email             = $request->contest_user_email;
                     $contest->phone             = $request->contest_phone_number;
-                    $contest->description       = $request->contest_marriage_description;
-                    // $contest->image             = $contest_image_name;
+                    // $contest->description       = $request->contest_marriage_description;
+
+                    // $contest->image             = $contest_image_name; (DISABLE FOR BULK UPLOAD)
                     if($request->contest_image_gdrive_url && !empty($contest->image) && File::exists($contest->image))
                     {
                         File::delete($contest->image);
                         $contest->image = null;
                     }
                     $contest->gdrive_image_link = empty($contest->image) ? $request->contest_image_gdrive_url : null;
-                    // $contest->video             = $contest_video_name;
-                    if($request->contest_video_gdrive_url && !empty($contest->video) && File::exists($contest->video))
-                    {
-                        File::delete($contest->video);
-                        $contest->video = null;
-                    }
-                    $contest->gdrive_video_link = empty($contest->video) ? $request->contest_video_gdrive_url : null;
+
+                    // $contest->video             = $contest_video_name; (DISABLE FOR BULK UPLOAD)
+                    // if($request->contest_video_gdrive_url && !empty($contest->video) && File::exists($contest->video))
+                    // {
+                    //     File::delete($contest->video);
+                    //     $contest->video = null;
+                    // }
+                    // $contest->gdrive_video_link = empty($contest->video) ? $request->contest_video_gdrive_url : null;
+
                     $contest->feedback          = $request->contest_feedback;
                     $contest->save();
                 }
@@ -148,13 +151,13 @@ class ContestController extends Controller
                     $contest->name              = $request->contest_user_name;
                     $contest->year              = $request->contest_marriage_year;
                     $contest->medium            = $request->contest_marriage_medium;
-                    $contest->known_duration    = $request->contest_known_duration;
+                    // $contest->known_duration    = $request->contest_known_duration;
                     $contest->email             = $request->contest_user_email;
                     $contest->phone             = $request->contest_phone_number;
-                    $contest->description       = $request->contest_marriage_description;
-                    // $contest->image             = $contest_image_name;
+                    // $contest->description       = $request->contest_marriage_description;
+                    // $contest->image             = $contest_image_name; (DISABLE FOR BULK UPLOAD)
                     $contest->gdrive_image_link = $request->contest_image_gdrive_url;
-                    // $contest->video             = $contest_video_name;
+                    // $contest->video             = $contest_video_name; (DISABLE FOR BULK UPLOAD)
                     $contest->gdrive_video_link = $request->contest_video_gdrive_url;
                     $contest->feedback          = $request->contest_feedback;
                     $contest->save();
@@ -166,10 +169,10 @@ class ContestController extends Controller
                     'contest_user_name'             => $contest->name,
                     'contest_marriage_year'         => $request->contest_marriage_year,
                     'contest_marriage_medium'       => $request->contest_marriage_medium,
-                    'contest_known_duration'        => $request->contest_known_duration,
+                    // 'contest_known_duration'        => $request->contest_known_duration,
                     'contest_user_email'            => $contest->email,
                     'contest_phone_number'          => $request->contest_phone_number,
-                    'contest_marriage_description'  => $request->contest_marriage_description,
+                    // 'contest_marriage_description'  => $request->contest_marriage_description,
     
                     'contest_image'                 => $contest->image ? asset($contest->image) : null,
                     'contest_image_gdrive_url'      => $contest->gdrive_image_link,

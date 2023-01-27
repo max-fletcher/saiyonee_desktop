@@ -557,12 +557,11 @@
                   <div class="col-12 mb-0 mb-lg-2">
 
                      <h5 class="contest_opening mb-3"> Dear Couple, </h5>
-                     
-
-
 
                      <span class="contest_para">
-                        Thank you for your interest in this contest. We are excited and eager to see your best memories as a couple. Please upload your<span class="underline"> best couple photo</span>, that shows how beautiful and precious your relationship is.
+                        Thank you for your interest in this contest. We are excited and eager to see your best memories as a couple.
+                        Please upload <span class="underline">1 photo and 1 short video</span> that show how beautiful and precious your
+                        relationship is.
                         <br><br>
 
                         {{-- <h6 class="contest_opening"> Photo submission guideline </h6>
@@ -574,53 +573,56 @@
                         <a class="contest_link" href="https://www.freeconvert.com/image-compressor" target="_blank">https://www.freeconvert.com/image-compressor</a>
                         <br><br> --}}
 
-                        <!--{{-- <h6 class="contest_opening"> Video submission guideline </h6>-->
-                        <!--Create a short video <span class="underline">under 30 seconds</span>. --}}-->
+                        {{-- <h6 class="contest_opening"> Video submission guideline </h6>
+                        Create a short video <span class="underline">under 30 seconds</span>. --}}
 
-                        <!--The video should cover <span class="underline">ONE</span> of the following themes, in the context of your relationship.-->
-                        <!--<br>-->
-                        <!--1. Why did you choose 'arranged marriage' over love marriage ?-->
-                        <!--<br>-->
-                        <!--2. What are the beautiful aspects of 'arranged marriage' in your opinion ?-->
-                        <!--<br>-->
-                        <!--3. What are the "myths" against 'arranged marriage' that you believe are not true ?-->
-                        <!--<br><br>-->
+                        The video should cover <span class="underline">ONE</span> of the following themes, in the context of your relationship.
+                        <br>
+                        1. Why did you choose 'arranged marriage' over love marriage ?
+                        <br>
+                        2. What are the beautiful aspects of 'arranged marriage' in your opinion ?
+                        <br>
+                        3. What are the "myths" against 'arranged marriage' that you believe are not true ?
+                        <br><br>
 
-                        <!--You can be as creative as you like !-->
-                        <!--<br><br>-->
+                        You can be as creative as you like !
+                        <br><br>
 
                         <h6 class="contest_opening"> How to Upload ? </h6>
-                        1. Please upload your photo in a Google drive/Dropbox/Onedrive folder and share the link with us <span class="contest_opening"> (Recommended method) </span>
+                        1. Please upload your photo and video in a Google drive/Dropbox/Onedrive folder and share the link with us <span class="contest_opening"> (Recommended method) </span>
                         <br>
                         <span class="contest_opening">OR,</span>
                         <br>
-                        2. Upload photo directly to this form.
+                        2. Upload photo and video directly to this form.
                         <br><br>
 
-                        <!--{{-- The file size must not exceed <span class="underline">25 MB</span>. Having trouble to keep it under 25 MB ? You can use this -->
-                        <!--online tool to shrink your video:-->
-                        <!--<a class="contest_link" href="https://www.freeconvert.com/video-compressor" target="_blank">https://www.freeconvert.com/video-compressor</a>-->
-                        <!--<br><br> --}}-->
+                        {{-- The file size must not exceed <span class="underline">25 MB</span>. Having trouble to keep it under 25 MB ? You can use this 
+                        online tool to shrink your video:
+                        <a class="contest_link" href="https://www.freeconvert.com/video-compressor" target="_blank">https://www.freeconvert.com/video-compressor</a>
+                        <br><br> --}}
 
-                        <h6 class="contest_submission_date mb-2"> Last date of submission : 31st January, 2023 </h6>
+                        <h6 class="contest_submission_date mb-2"> Last date of submission : 30th January, 2023 </h6>
                         <br>
 
                         <h6 class="contest_opening mb-2 underline"> Awards </h6>
 
-                        - <span class="font_inline_bold_800"> 1st award.</span>  This couple will get an "Outdoor Photo + video shoot" by a Chitrogolpo Sr.
+                        - <span class="font_inline_bold_800"> 1st award </span> will be given for <span class="font_inline_bold_800">
+                        "Best Overall Photo and Video"</span> category. This couple will get an "Outdoor Photo + video shoot" by a Chitrogolpo Sr.
                         Photographer.
                         <br><br>
 
-                        - <span class="font_inline_bold_800"> 2nd award.</span> . This couple will get an "Outdoor Photo + video shoot" by a Chitrogolpo Jr. Photographer.
+                        - <span class="font_inline_bold_800"> 2nd award </span> will be given for <span class="font_inline_bold_800"> 
+                        "Best Photo" </span>. This couple will get an "Outdoor Photo + video shoot" by a Chitrogolpo Jr. Photographer.
                         <br><br>
 
-                        - <span class="font_inline_bold_800"> 3rd award. </span>  This couple will get an "Outdoor Photo + video shoot" by a Chitrogolpo Jr. Photographer.
+                        - <span class="font_inline_bold_800"> 3rd award </span> will be given for <span class="font_inline_bold_800"> 
+                        "Best Video" </span>. This couple will get an "Outdoor Photo + video shoot" by a Chitrogolpo Jr. Photographer.
                         <br><br>
 
                         - Top 3 award winners will have the opportunity to get featured by Chitrogolpo and/or Saiyonee in social media.
                         <br><br>
 
-                        - All of the <span class="font_inline_bold_800"> Top 10 photo </span> winners will get exciting 
+                        - All of the <span class="font_inline_bold_800"> Top 10 photos and videos </span> winners will get exciting 
                         <span class="font_inline_bold_800"> merchandises </span> from <span class="font_inline_bold_800"> Saiyonee </span>.
                         <br><br>
 
@@ -631,14 +633,14 @@
                            agency etc and eventually got married with both family's consent. 
                            <br><br>
 
-                        2. You have to submit <span class="underline">1 photo </span> otherwise
+                        2. You have to submit <span class="underline">1 photo and 1 short video</span> under 30 seconds. If you do not submit both, 
                            your submission will be considered <span class="underline">incomplete</span>.
                            <br><br>
 
                         3. <a class="contest_link" href="https://www.facebook.com/saiyonee" target="_blank">Saiyonee</a> and Chitrogolpo together will select the winners.
                            <br><br>
 
-                        4. <span class="font_inline_bold_800"> Saiyonee will have the right to use Top 10 photos in it's website and 
+                        4. <span class="font_inline_bold_800"> Saiyonee will have the right to use Top 10 photos and videos in it's website and 
                            social media.</span>
                            <br><br>
 
@@ -715,15 +717,40 @@
                               </label>
 
                               <div class="form-check mb-1">
-                                 <input class="form-check-input me-1" type="radio" name="contest_marriage_medium" id="parents_sibling" value="Love Marriage" checked>
+                                 <input class="form-check-input me-1" type="radio" name="contest_marriage_medium" id="parents_sibling" value="Parents/Sibling" checked>
                                  <label class="radio_label" for="parents_sibling">
-                                    Love Marriage
+                                    Parents/Sibling
                                  </label>
                               </div>
                               <div class="form-check mb-1">
-                                 <input class="form-check-input me-1" type="radio" name="contest_marriage_medium" id="relative" value="Arranged Marriage">
+                                 <input class="form-check-input me-1" type="radio" name="contest_marriage_medium" id="relative" value="Relative">
                                  <label class="radio_label" for="relative">
-                                    Arranged Marriage
+                                    Relative
+                                 </label>
+                              </div>
+                              <div class="form-check mb-1">
+                                 <input class="form-check-input me-1" type="radio" name="contest_marriage_medium" id="ghotok_or_marriage_media" value="Ghotok/Marriage Media">
+                                 <label class="radio_label" for="ghotok_or_marriage_media">
+                                    Ghotok/Marriage Media
+                                 </label>
+                              </div>
+
+                              <div class="form-check mb-1">
+                                 <input class="form-check-input me-1" type="radio" name="contest_marriage_medium" id="newspaper" value="Newspaper">
+                                 <label class="radio_label" for="newspaper">
+                                    Newspaper
+                                 </label>
+                              </div>
+                              <div class="form-check mb-1">
+                                 <input class="form-check-input me-1" type="radio" name="contest_marriage_medium" id="online_matchmaking_site" value="Online Matchmaking site">
+                                 <label class="radio_label" for="online_matchmaking_site">
+                                    Online Matchmaking site
+                                 </label>
+                              </div>
+                              <div class="form-check mb-1">
+                                 <input class="form-check-input me-1" type="radio" name="contest_marriage_medium" id="other" value="Other">
+                                 <label class="radio_label" for="other">
+                                    Other
                                  </label>
                               </div>
 
@@ -738,6 +765,29 @@
                               <div class="text-red fw-bold contest_marriage_medium_error"></div>
                            </div>
 
+                           <div class="col-12 mb-5">
+                              {{-- <div class="input-group"> --}}
+                                 <label class="label_text" for="contest_known_duration">
+                                    How long did you get to know each-other before getting married? (e.g- 3 months / 1 year)<span class="text-danger"> *</span>
+                                 </label>
+                                 <input id="contest_known_duration" placeholder="Your acquaintance duration here"
+                                    class="form-control input_text contest_known_duration_input" name="contest_known_duration"
+                                    type="text" autocomplete="off" value="{{ old('contest_known_duration') }}">
+                              {{-- </div> --}}
+                              <div class="text-red fw-bold contest_known_duration_error"></div>
+                           </div>
+
+                           <div class="col-md-12 mb-5">
+                              {{-- <div class="input-group"> --}}
+                                 <label class="label_text" for="contest_marriage_description">
+                                    Please tell us a little about how you got introduced and then married (Max 200 words)
+                                 </label>
+                                 <textarea id="contest_marriage_description" 
+                                    class="form-control input-message input_text"
+                                    placeholder="Your description here" rows="7" name="contest_marriage_description">{{ old('contest_marriage_description') }}</textarea>
+                              {{-- </div> --}}
+                              <div class="text-red fw-bold contest_marriage_description_error"></div>
+                           </div>
 
                            <div class="col-12 mb-5">
                               {{-- <div class="input-group"> --}}
@@ -813,6 +863,65 @@
                               <div class="text-red fw-bold contest_image_error"></div>
                            </div>
 
+                           {{-- Shakib Bhai's Multi/Single File Submission Plugin --}}
+                           {{-- <div class="col-12">
+                              <label class="form-label contest_labels" for="InputName">Submit Video 
+                                 <br> <small class="small_text">(max file upload size should be 300 MB)
+                              </label>
+                              <div class="contest_video"></div>
+                              @error('contest_video')
+                                 <div class="text-red fw-bold">{{ $message }}</div>
+                              @enderror
+                              @error('contest_video.*')
+                                 <div class="text-red fw-bold">{{ $message }}</div>
+                              @enderror
+                           </div> --}}
+
+                           <span class="contest_para mb-4">
+                              <h6 class="contest_opening"> Video submission guideline </h6>
+                              Create a short video <span class="underline">under 30 seconds</span>.
+                           </span>
+
+                           <div class="col-12">
+                              <label class="form-label contest_labels" for="InputName">Submit Video
+                                 <br> <small class="small_text">(Max file upload size should be 300 MB.)
+                                 <br> <small class="small_text">(Supports x-flv, x-mpegURL, MP2T, 3gpp, quicktime, avi, mpeg,video/mp4, ogg & x-ms-wmv only.)
+                              </label>
+                              <div id="uploaderHolder">
+                                 <form action="{{ route('video-file-upload') }}"
+                                    class="dropzone"
+                                    id="datanodeupload2">
+                                    @csrf
+                                    <input type="file" name="file"  style="display: none;">
+                                 </form>
+                              </div>
+                              <div class="text-red fw-bold contest_video_error"></div>
+                           </div>
+
+                           <h3 class="mt-2 text-center font_weight_or">OR</h3>
+
+                           <div class="col-md-12 mb-3">
+                              {{-- <div class="input-group"> --}}
+                                 <label class="label_text" for="contest_video_gdrive_url">
+                                    Contest Video Google drive/Dropbox/Onedrive Url
+                                    <small class="small_text">(recommended)</small>
+                                 </label>
+                                 <input id="contest_video_gdrive_url" placeholder="Your google drive/dropbox/onedrive link here" 
+                                    class="form-control input_text contest_video_input"
+                                    name="contest_video_gdrive_url" type="text" autocomplete="off" value="{{ old('contest_video_gdrive_url') }}">
+                              {{-- </div> --}}
+                              <div class="text-red fw-bold contest_video_error"></div>
+                           </div>
+
+                           {{-- <div class="col-md-12 mb-3">
+                              <div class="input-group">
+                                 <input type="file" name="contest_video1" class="dropify" />
+                              </div>
+                           </div>
+                           @error('contest_video1')
+                              <div class="text-danger">{{ $message }}</div>
+                           @enderror --}}
+
                            <div class="col-md-12 mt-4 mb-2">
                               {{-- <div class="input-group"> --}}
                                  <label class="label_text" for="contest_feedback">
@@ -833,7 +942,7 @@
                            </p>
 
                            <p class="mb-1 fw-bold" style="font-size: 1rem;">
-                              Also, if both the image and google drive/dropbox/onedrive link is submitted, only the drive link will be saved.
+                              Also, if both the image/video and google drive/dropbox/onedrive link is submitted, only the drive link will be saved.
                            </p>
 
                            <div class="col-md-12 mb-0 d-flex justify-content-center">
@@ -931,10 +1040,13 @@
 
          var contest_user_name = $('#contest_user_name').val();
          var contest_marriage_year = $('#contest_marriage_year').val();
-         var contest_marriage_medium = $('input[name="contest_marriage_medium"]:checked').val();
+         var contest_marriage_medium = $("input[name='contest_marriage_medium']:checked").val();
+         var contest_known_duration = $('#contest_known_duration').val();
+         var contest_marriage_description = $('#contest_marriage_description').val();
          var contest_user_email = $('#contest_user_email').val();
          var contest_phone_number = $('#contest_phone_number').val();
          var contest_image_gdrive_url = $('#contest_image_gdrive_url').val();
+         var contest_video_gdrive_url = $('#contest_video_gdrive_url').val();
          var contest_feedback = $('#contest_feedback').val();
 
          // console.log(contest_user_name, contest_marriage_year, contest_marriage_medium, contest_known_duration,
@@ -949,9 +1061,12 @@
                contest_user_name : contest_user_name,
                contest_marriage_year : contest_marriage_year,
                contest_marriage_medium : contest_marriage_medium,
+               contest_known_duration : contest_known_duration,
+               contest_marriage_description: contest_marriage_description,
                contest_user_email : contest_user_email,
                contest_phone_number : contest_phone_number,
                contest_image_gdrive_url : contest_image_gdrive_url,
+               contest_video_gdrive_url : contest_video_gdrive_url,
                contest_feedback : contest_feedback,
                _token: $('meta[name="csrf-token"]').attr('content')
             },
@@ -962,15 +1077,18 @@
                $('#contest_user_name').val('');
                $('#contest_marriage_year').val('');
                $("input:radio[name=contest_marriage_medium][disabled=false]:first").attr('checked', true);
+               $('#contest_known_duration').val('');
+               $('#contest_marriage_description').val('');
                $('#contest_user_email').val('');
                $('#contest_phone_number').val('');
                $('#contest_image_gdrive_url').val('');
+               $('#contest_video_gdrive_url').val('');
                $('#contest_feedback').val('');
 
                // CLOSE SWEETALERT
                Swal.close()
 
-               // DISPLAY MODAL WITH SUCCESS. IT IS ALSO MADE STATIC(NON-DISMISSABLE)
+               // DISPLAY MODAL WITH SUCCESS. IT IS ALSO MADE STATIC(NON-DISMISSABLE
                $("#contest_modal").attr("data-bs-backdrop", "static").attr("data-bs-keyboard", "false")
                $('.contest_modal_close_btn').addClass('d-none')
                $('.contest_modal_title').text('Contest Data Saved Successfully!')
@@ -1002,17 +1120,23 @@
                   $('.contest_user_name_error').text('');
                   $('.contest_marriage_year_error').text('');
                   $('.contest_marriage_medium_error').text('');
+                  $('.contest_known_duration_error').text('');
+                  $('.contest_marriage_description_error').text('');
                   $('.contest_user_email_error').text('');
                   $('.contest_phone_number_error').text('');
                   $('.contest_image_error').text('');
+                  $('.contest_video_error').text('');
                   $('.contest_feedback_error').text('');
 
                   if(!first_validation){
                      $('.contest_user_name_input').removeClass('input_error_border_red').addClass('input_text');
                      $('.contest_marriage_year_input').removeClass('input_error_border_red').addClass('input_text');
+                     $('.contest_known_duration_input').removeClass('input_error_border_red').addClass('input_text');
+                     $('.contest_marriage_description_input').removeClass('input_error_border_red').addClass('input_text');
                      $('.contest_user_email_input').removeClass('input_error_border_red').addClass('input_text');
                      $('.contest_phone_number_input').removeClass('input_error_border_red').addClass('input_text');
                      $('.contest_image_input').removeClass('input_error_border_red').addClass('input_text');
+                     $('.contest_video_input').removeClass('input_error_border_red').addClass('input_text');
                      $('.contest_feedback_input').removeClass('input_error_border_red').addClass('input_text');
                   }
 
@@ -1065,11 +1189,11 @@
       });
    </script>
 
-   {{-- <script type="text/javascript">
+   <script type="text/javascript">
       $(document).ready(function(){
          $('.contest_video').imageUploader({imagesInputName: 'contest_video', multiple: false});
       });
-   </script> --}}
+   </script>
 
    {{-- RBox plugin JS --}}
    <script src="{{asset('frontend/rbox/jquery-rbox.js')}}"></script>
