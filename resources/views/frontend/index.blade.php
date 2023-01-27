@@ -141,7 +141,7 @@
 
         @media only screen and (max-width: 570px) {
             .main_image{
-                background-position: -400px 0px !important;
+                background-position: -200px 0px !important;
             }
             .carousel-caption{
                 left: 50px;
@@ -150,7 +150,7 @@
 
         @media only screen and (max-width: 470px) {
             .main_image{
-                background-position: -450px 0px !important;
+                background-position: -270px 0px !important;
             }
         }
 
@@ -344,11 +344,11 @@
     <section id="home-slider" class="fullscreen">
         <div class="carousel-inner">
             <!--/ Carousel item end -->
-            <div class="mt-5 carousel-item active h-100 bg-overlay-red main_image" style="background: url({{ asset('frontend/images/banner2.png') }}) no-repeat 0 0; background-size: cover;" >
+            <div class="mt-5 carousel-item active h-100 bg-overlay-red main_image" style="background: url({{ asset('frontend/images/Saiyonee-Cover-edited.jpeg') }}) no-repeat 0 0; background-size: cover;" >
                 <div class="slider-content">
                     <div class="container">
-                        <div class="row carousel-caption align-items-center h-100">
-                            <div class="col-md-12 text-start banner_image_text">
+                        <div class="row carousel-caption align-items-end h-100">
+                            <div class="col-md-12 banner_image_text">
                                 <h3 class="text-white" style="font-weight: 600">Smartest Way to</h3>
                                 <div class="slider-1">
                                     <h1 class="animated2 text-white divider-3">Find <span>Your</span> Perfect <span class="text_no_wrap"> Match !</span></h1>

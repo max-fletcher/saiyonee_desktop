@@ -67,9 +67,9 @@ Dropzone.options.datanodeupload2 =
       this.on("complete", function (file) {
          Swal.fire({
             icon: 'success',
-            title: 'File upload complete!',
+            title: 'File upload complete! Please submit the form with relevant information to complete your participation.',
             showConfirmButton: false,
-            timer: 2000,
+            timer: 3000,
          })
       });
    },
