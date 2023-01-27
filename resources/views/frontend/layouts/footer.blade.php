@@ -68,7 +68,7 @@ footer -->
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                <div class="footer-logo mb-2"> <img class="img-center" src="{{ asset('frontend/images/saiyonee-header.png') }}" alt="" /> </div>
+                <div class="footer-logo mb-2"> <img class="img-center" src="{{ asset('frontend/images/saiyonee-logo-2x.png') }}" alt="logo" width="217" /> </div>
                 <div class="social-icons color-hover mt-2">
                     <ul>
                         <li class="social-facebook"><a href="https://www.facebook.com/saiyonee" class="text-dark icon_link"><i class="fa fa-facebook social_link"></i></a></li>

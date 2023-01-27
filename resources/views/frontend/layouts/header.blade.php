@@ -45,7 +45,7 @@ header -->
                 <div class="col-md-12 position-relative">
                     <!-- menu logo -->
                     <ul class="menu-logo">
-                        <li> <a href="/"><img src="{{ asset('frontend/images/saiyonee-header.png') }}" alt="logo" /> </a> </li>
+                        <li> <a href="/"><img src="{{ asset('frontend/images/saiyonee-logo-2x.png') }}" alt="logo" width="217" /> </a> </li>
                     </ul>
 
                     <!-- menu links -->

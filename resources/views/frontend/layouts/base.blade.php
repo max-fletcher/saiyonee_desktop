@@ -14,7 +14,7 @@
     <title>Saiyonee</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ asset('frontend/images/favicon.png') }}" />
+    <link rel="shortcut icon" href="{{ asset('frontend/images/favicon-saiyonee.png') }}" />
 
     @include('frontend.layouts.inc.css')
 
@@ -60,7 +60,7 @@
     <!--=================================
         preloader -->
     <div id="preloader">
-        <div class="clear-loading loading-effect floating"><img src="{{ asset("frontend/images/Saiyonee.png") }}" alt="" /></div>
+        <div class="clear-loading loading-effect floating"><img src="{{ asset("frontend/images/saiyonee-logo-2x.png") }}" alt="logo" /></div>
     </div>
     <!--=================================
         preloader -->
