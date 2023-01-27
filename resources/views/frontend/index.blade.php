@@ -150,7 +150,7 @@
 
         @media only screen and (max-width: 470px) {
             .main_image{
-                background-position: -270px 0px !important;
+                background-position: -240px 0px !important;
             }
         }
 

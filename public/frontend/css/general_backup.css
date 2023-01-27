@@ -267,9 +267,7 @@ Page section margin padding
 .bg-overlay-blue-90:before {  background: rgba(0, 46, 91, 0.9); content: ""; height: 100%; left: 0; position: absolute; top: 0; width: 100%; z-index: -1; }
 .bg-overlay-blue-95:before {  background: rgba(0, 46, 91, 0.95); content: ""; height: 100%; left: 0; position: absolute; top: 0; width: 100%; z-index: -1; }
 
-.bg-overlay-red:before {  
-    background: linear-gradient(360deg, #fe704366, #ffffff00); 
-    content: ""; height: 20%; left: 0; position: absolute; bottom: 0; width: 100%; z-index:-1; }
+.bg-overlay-red:before {  background: linear-gradient(270deg, #fe704366, #00000069); content: ""; height: 100%; left: 0; position: absolute; top: 0; width: 100%; z-index:-1; }
 
 [class*='bg-overlay-']:before{z-index:0;}
 
@@ -982,7 +980,7 @@ form .textarea { resize: vertical; }
   width: 614px;
   height: 1000px;
   content: "";
-  /*background: url(../images/side-image.png) no-repeat 0 0;*/
+  background: url(../images/side-image.png) no-repeat 0 0;
   background-size: contain;}
 .timeline-inner{ background-position: right -270px bottom -100px !important; height: 578px; background-repeat: no-repeat !important;}
 
@@ -1639,7 +1637,7 @@ h6.title2 {font-size: 22px; line-height: 30px;}
 /*-------------------------------------------------
   Mega Menu
 ---------------------------------------------------*/
-.mega-menu .menu-logo img {max-width:80% !important;}
+.mega-menu .menu-logo img {max-width:100% !important;}
 
 
 /*-------------------------------------------------

@@ -51,6 +51,15 @@
         .privacy_and_terms:hover{
             color: #CF0000 !important;
         }
+
+        @media screen and (max-width: 767px){
+            .mega-menu .menu-logo img {
+                max-width: 80% !important;
+            }
+            .mega-menu .menu-logo img {
+                height: auto;
+            }
+        }
     </style>
 
 </head>
