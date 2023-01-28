@@ -558,11 +558,9 @@
 
                      <h5 class="contest_opening mb-3"> Dear Couple, </h5>
                      
-
-
-
                      <span class="contest_para">
-                        Thank you for your interest in this contest. We are excited and eager to see your best memories as a couple. Please upload your<span class="underline"> best couple photo</span>, that shows how beautiful and precious your relationship is.
+                        Thank you for your interest in this contest. We are excited and eager to see your best memories as a couple. Please upload your
+                        <span class="underline">best couple photo</span>, that shows how beautiful and precious your relationship is.
                         <br><br>
 
                         {{-- <h6 class="contest_opening"> Photo submission guideline </h6>
@@ -589,13 +587,13 @@
                         <!--You can be as creative as you like !-->
                         <!--<br><br>-->
 
-                        <h6 class="contest_opening"> How to Upload ? </h6>
+                        {{-- <h6 class="contest_opening"> How to Upload ? </h6>
                         1. Please upload your photo in a Google drive/Dropbox/Onedrive folder and share the link with us <span class="contest_opening"> (Recommended method) </span>
                         <br>
                         <span class="contest_opening">OR,</span>
                         <br>
                         2. Upload photo directly to this form.
-                        <br><br>
+                        <br><br> --}}
 
                         <!--{{-- The file size must not exceed <span class="underline">25 MB</span>. Having trouble to keep it under 25 MB ? You can use this -->
                         <!--online tool to shrink your video:-->
@@ -614,7 +612,7 @@
                         - <span class="font_inline_bold_800"> 2nd award.</span> . This couple will get an "Outdoor Photo + video shoot" by a Chitrogolpo Jr. Photographer.
                         <br><br>
 
-                        - <span class="font_inline_bold_800"> 3rd award. </span>  This couple will get an "Outdoor Photo + video shoot" by a Chitrogolpo Jr. Photographer.
+                        - <span class="font_inline_bold_800"> 3rd award. </span>  This couple will get an "Outdoor Photo shoot" by a Chitrogolpo Jr. Photographer.
                         <br><br>
 
                         - Top 3 award winners will have the opportunity to get featured by Chitrogolpo and/or Saiyonee in social media.
@@ -626,23 +624,23 @@
 
 
                         <h6 class="contest_opening underline"> Contest Terms and conditions </h6>
-                        1. For this contest, we are ONLY looking for couples who have done &quotArranged Marriage&quot. To elaborate further, 
+                        {{-- 1. For this contest, we are ONLY looking for couples who have done &quotArranged Marriage&quot. To elaborate further, 
                            couples who were first introduced by parent, family, online matchmaking sites, newspaper ad, 'Ghotok', matchmaking 
                            agency etc and eventually got married with both family's consent. 
                            <br><br>
 
                         2. You have to submit <span class="underline">1 photo </span> otherwise
                            your submission will be considered <span class="underline">incomplete</span>.
+                           <br><br> --}}
+
+                        1. <a class="contest_link" href="https://www.facebook.com/saiyonee" target="_blank">Saiyonee</a> and Chitrogolpo together will select the winners.
                            <br><br>
 
-                        3. <a class="contest_link" href="https://www.facebook.com/saiyonee" target="_blank">Saiyonee</a> and Chitrogolpo together will select the winners.
-                           <br><br>
-
-                        4. <span class="font_inline_bold_800"> Saiyonee will have the right to use Top 10 photos in it's website and 
+                        2. <span class="font_inline_bold_800"> Saiyonee reserves the right to feature the Top 10 photos in it's website and 
                            social media.</span>
                            <br><br>
 
-                        5. If you have any question, please email to <span class="font_inline_bold_800"> contact@saiyonee.com </span> or message us 
+                        {{-- 3. If you have any question, please email to <span class="font_inline_bold_800"> contact@saiyonee.com </span> or message us 
                            in 
                            <br> 
                            facebook <a class="contest_link" href="https://www.facebook.com/saiyonee" target="_blank"> https://www.facebook.com/saiyonee </a> or
@@ -650,10 +648,13 @@
                            instagram <a class="contest_link" href="https://www.instagram.com/my_saiyonee" target="_blank"> https://www.instagram.com/my_saiyonee </a>
                            <br>
                            or call us at <a href="tel:01737556883">01737556883</a>
+                           <br><br> --}}
+
+                        3. If you have any questions, please call us at <a href="tel:01737556883">01737556883</a>
                            <br><br>
 
-                        6. Saiyonee and Chitrogolpo reserve the right, at its sole discretion, to amend the rules, regulations, and duration of the campaign at any
-                           time without any prior notice. Saiyonee and Chitrogolpo have the sole right to disqualify any individual or participants from the campaign.
+                        4. Saiyonee and Chitrogolpo reserve the right, at their discretion, to amend the rules, regulations, and duration of the campaign at any
+                           time without any prior notice. Saiyonee and Chitrogolpo have the right to disqualify any individual or participants from the campaign.
                            <br><br>
                      </span>
 
